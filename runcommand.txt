@@ -1,0 +1,1 @@
+pytest main.py --no-header -vv --html=report.html >report.txt

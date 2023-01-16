@@ -122,7 +122,7 @@ def delete_valve_error(driver, site_number, water_system_number, product_number)
 
 def set_policy(driver, site_number, water_system_number, product_number, valve_status, auto_shutoff, detection_mode, algo_mode,
                warning_threshold, close_threshold):
-    #for now it is for default, need to add recurring and exception
+    #  for now, it is for default, need to add recurring and exception
     policy_button = WebDriverWait(driver, 10).until(
         EC.visibility_of_element_located((By.XPATH,
                                           "//a[@href='/en/sites/{}/water_systems/{}/policies']".format(
@@ -151,6 +151,9 @@ def set_policy(driver, site_number, water_system_number, product_number, valve_s
         assistants_functions.check_commands_arrived_in_portal(driver, 8, 1, 'OP_RES_INSERT_DEVICE_CONF_FL3', now)
     except:
         assert False
+
+def start_inject_water(flow_level):
+
 
 
 

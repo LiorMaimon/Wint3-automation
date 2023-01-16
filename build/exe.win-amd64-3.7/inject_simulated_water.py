@@ -83,7 +83,7 @@ def main(filename, verbose, line):
         except KeyboardInterrupt:
             logger.info("ctrl-C pressed")
 
-    logger.info('Exiting...')
+    logger.info('Exiting../.')
 
 
 if __name__ == "__main__":

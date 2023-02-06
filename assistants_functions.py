@@ -1,13 +1,15 @@
+import importlib
+import multiprocessing
 from datetime import datetime, timedelta
 from time import sleep
-
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import sys
 
 
-def check_commands_arrived_in_portal(driver,number_of_commands_to_check,time_range,message_to_check,now_time):
+def check_commands_arrived_in_portal(driver,number_of_commands_to_check,time_range,message_to_check,now_time, content=False):
     sleep(3)
     tbodys = driver.find_elements(By.TAG_NAME, 'tbody')
     tbody_commands = tbodys[1]
@@ -20,8 +22,18 @@ def check_commands_arrived_in_portal(driver,number_of_commands_to_check,time_ran
         time_from_portal = datetime.strptime(year_time + ' ' + hour_time, '%Y-%m-%d %H:%M:%S')
         if (time_from_portal - timedelta(minutes=time_range) < now_time < time_from_portal + timedelta(minutes=time_range) and cells[
             1].text == message_to_check):
-            return
-    assert False
+            if not content:
+                return
+            else:
+
+                content = cells[2].find_element(By.TAG_NAME,"div")
+
+                content.click()
+                sleep(1)
+                content_text = cells[2]
+                return content_text.text
+
+
 
 
 def set_new_command(driver,site_number_json,water_system_number_json,product_number_json, unique_text_command):
@@ -102,4 +114,18 @@ def set_policy_detection_mode(driver, detection_mode_status, warning_threshold, 
         fixed_check = WebDriverWait(driver, 10).until(
             EC.visibility_of_element_located((By.ID, 'policy_detection_mode_adaptive')))
         fixed_check.click()
+
+
+def inject_water_in_process(flow_level='major'):
+
+    # injection_script_path = "/C:/Users/liorm/Desktop/Automation-Selenium/injection/inject_simulated_water.py"
+    # sys.path.append(injection_script_path)
+    # from injection.inject_simulated_water import main
+    # main()
+    from injection.inject_simulated_water import main
+    main()
+    # injection_process = multiprocessing.Process(target=injection.inject_simulated_water.main())
+    # injection_process.start()
+    # return injection_process
+#ask uri why it is not running from test and run from function
 

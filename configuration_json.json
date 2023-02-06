@@ -1,8 +1,18 @@
 {
-	"url": "https://control-staging.wint.ai/en",
-	"user_name": "liorm@wint.ai",
-	"password": "0547588533",
-	"site_number": "2263",
-	"water_system_number": "8464",
-	"product_id": "10617"
+	"portal": {
+		"url": "https://control-staging.wint.ai/en",
+		"user_name": "liorm@wint.ai",
+		"password": "0547588533",
+		"site_number": "2263",
+		"water_system_number": "8464",
+		"product_id": "10652"
+	},
+	"default_policy_1": {
+		"valve_status": "open",
+		"auto_shutoff": "enabled",
+		"detection_mode": "fixed",
+		"algo_mode": "event based",
+		"warning_threshold": "50",
+		"close_threshold": "150"
+	}
 }

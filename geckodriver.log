@@ -9142,3 +9142,1251 @@ console.warn: LoginRecipes: "Falling back to a synchronous message for: https://
 JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
 JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
 1673425060049	Marionette	INFO	Stopped listening on port 51237
+1673873242651	geckodriver	INFO	Listening on 127.0.0.1:56220
+1673873245706	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "56221" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilevkeoYc"
+1673873246294	Marionette	INFO	Marionette enabled
+1673873246300	Marionette	INFO	Listening on port 56231
+Read port: 56231
+WebDriver BiDi listening on ws://127.0.0.1:56221
+1673873246448	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilevkeoYc\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:56221/devtools/browser/0712bff2-d324-47fc-b989-c46aec7e3c27
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1673873324374	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1673873348019	Marionette	INFO	Stopped listening on port 56231
+1673873762671	geckodriver	INFO	Listening on 127.0.0.1:56446
+1673873765702	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "56447" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileWUatSB"
+1673873766203	Marionette	INFO	Marionette enabled
+1673873766208	Marionette	INFO	Listening on port 56457
+Read port: 56457
+WebDriver BiDi listening on ws://127.0.0.1:56447
+1673873766347	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileWUatSB\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:56447/devtools/browser/0d9b889a-af19-44dd-bf5b-5ccfe3c0ecde
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1673873844229	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1673873867954	Marionette	INFO	Stopped listening on port 56457
+1673879336408	geckodriver	INFO	Listening on 127.0.0.1:50424
+1673879339442	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "50425" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileGoEwES"
+1673879340042	Marionette	INFO	Marionette enabled
+1673879340054	Marionette	INFO	Listening on port 50434
+Read port: 50434
+WebDriver BiDi listening on ws://127.0.0.1:50425
+1673879340300	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileGoEwES\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:50425/devtools/browser/f9430960-b7ef-42a5-aeeb-0db75e147fb4
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1673879420468	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1673879444191	Marionette	INFO	Stopped listening on port 50434
+1673938079823	geckodriver	INFO	Listening on 127.0.0.1:54819
+1673938082899	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "54820" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofiledbqZ86"
+1673938083768	Marionette	INFO	Marionette enabled
+1673938083777	Marionette	INFO	Listening on port 54841
+Read port: 54841
+WebDriver BiDi listening on ws://127.0.0.1:54820
+1673938083975	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofiledbqZ86\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:54820/devtools/browser/a46f39f1-5d27-4dc8-ba4d-fa6c86a1ad00
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1673938106177	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1673938143807	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1673938174488	Marionette	INFO	Stopped listening on port 54841
+1673938292205	geckodriver	INFO	Listening on 127.0.0.1:54932
+1673938295235	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "54933" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilesftDiS"
+1673938295815	Marionette	INFO	Marionette enabled
+1673938295823	Marionette	INFO	Listening on port 54942
+Read port: 54942
+WebDriver BiDi listening on ws://127.0.0.1:54933
+1673938296000	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilesftDiS\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:54933/devtools/browser/c71b3d66-f08b-46e9-81df-8c58eb9b1e55
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1673938394918	geckodriver	INFO	Listening on 127.0.0.1:55004
+1673938397943	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "55005" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilelF8lih"
+1673938398425	Marionette	INFO	Marionette enabled
+1673938398431	Marionette	INFO	Listening on port 55014
+Read port: 55014
+WebDriver BiDi listening on ws://127.0.0.1:55005
+1673938398574	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilelF8lih\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:55005/devtools/browser/eec0d3b4-366b-4036-806d-590e7d0971bb
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1673938431765	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 560: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1673938666151	Marionette	INFO	Stopped listening on port 55014
+JavaScript error: chrome://remote/content/marionette/cert.sys.mjs, line 51: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_E1673938667202	Marionette	INFO	Marionette enabled
+1673938667219	Marionette	INFO	Listening on port 55146
+Read port: 55146
+WebDriver BiDi listening on ws://127.0.0.1:55137
+1673938667538	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileeWJxBa\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:55137/devtools/browser/68fc6693-d704-419a-a0d0-207eea7fb7eb
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1673938690014	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1673938747082	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1673938770756	Marionette	INFO	Stopped listening on port 55146
+1673938812447	geckodriver	INFO	Listening on 127.0.0.1:55202
+1673938815487	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "55203" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileQVD3xm"
+1673938815980	Marionette	INFO	Marionette enabled
+1673938815989	Marionette	INFO	Listening on port 55212
+Read port: 55212
+WebDriver BiDi listening on ws://127.0.0.1:55203
+1673938816140	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileQVD3xm\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:55203/devtools/browser/13d829cd-2bc0-4c8c-ab15-c7b757d24289
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1673938835993	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1673938925949	Marionette	INFO	Stopped listening on port 55212
+1673947368378	geckodriver	INFO	Listening on 127.0.0.1:54504
+1673947371449	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "54505" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileB8fiTP"
+1673947372151	Marionette	INFO	Marionette enabled
+1673947372160	Marionette	INFO	Listening on port 54514
+Read port: 54514
+WebDriver BiDi listening on ws://127.0.0.1:54505
+1673947372355	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileB8fiTP\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:54505/devtools/browser/e7afe893-ea74-4fa2-9360-ebf28c5e391f
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1673949977780	Marionette	INFO	Stopped listening on port 54514
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1673949990005	geckodriver	INFO	Listening on 127.0.0.1:54936
+1673949993062	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "54937" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileCRU1wL"
+1673949993563	Marionette	INFO	Marionette enabled
+1673949993573	Marionette	INFO	Listening on port 54946
+Read port: 54946
+WebDriver BiDi listening on ws://127.0.0.1:54937
+1673949993728	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileCRU1wL\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:54937/devtools/browser/b510b4b2-acda-4ca7-9fdd-cf19be838de1
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1673950012647	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1673958825219	geckodriver	INFO	Listening on 127.0.0.1:57560
+1673958828280	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "57561" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileBkmEoi"
+1673958828858	Marionette	INFO	Marionette enabled
+1673958828865	Marionette	INFO	Listening on port 57570
+Read port: 57570
+WebDriver BiDi listening on ws://127.0.0.1:57561
+1673958829023	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileBkmEoi\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:57561/devtools/browser/84b12c4d-7293-42b4-aee7-7515652122f6
+1673959318020	geckodriver	INFO	Listening on 127.0.0.1:57650
+1673959321075	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "57651" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileC9U8bc"
+1673959321765	Marionette	INFO	Marionette enabled
+1673959321782	Marionette	INFO	Listening on port 57660
+Read port: 57660
+WebDriver BiDi listening on ws://127.0.0.1:57651
+1673959321971	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileC9U8bc\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:57651/devtools/browser/3fa2b55f-310a-4c21-97ad-0491b869e6a3
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1673959520397	Marionette	INFO	Stopped listening on port 57660
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1673959527888	geckodriver	INFO	Listening on 127.0.0.1:57773
+1673959540419	geckodriver	INFO	Listening on 127.0.0.1:57781
+1673959543472	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "57782" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileGdQcOX"
+1673959544022	Marionette	INFO	Marionette enabled
+1673959544030	Marionette	INFO	Listening on port 57792
+WebDriver BiDi listening on ws://127.0.0.1:57782
+Read port: 57792
+1673959544208	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileGdQcOX\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:57782/devtools/browser/79936123-9bc3-4d62-a3b7-f3f1dd1e6d84
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1673959728966	geckodriver	INFO	Listening on 127.0.0.1:57867
+1673959732042	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "57868" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile3jW6GN"
+1673959732706	Marionette	INFO	Marionette enabled
+1673959732712	Marionette	INFO	Listening on port 57878
+Read port: 57878
+WebDriver BiDi listening on ws://127.0.0.1:57868
+1673959732937	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile3jW6GN\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:57868/devtools/browser/465b3d13-6e84-4cbe-bcb6-e7b5260760a3
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1673960128515	geckodriver	INFO	Listening on 127.0.0.1:58009
+1673960131547	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "58010" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile1dxXLw"
+1673960132121	Marionette	INFO	Marionette enabled
+1673960132128	Marionette	INFO	Listening on port 58019
+Read port: 58019
+WebDriver BiDi listening on ws://127.0.0.1:58010
+1673960132279	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile1dxXLw\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:58010/devtools/browser/bdf097e1-52cc-4190-81c1-185a3c53ae01
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1673960413828	geckodriver	INFO	Listening on 127.0.0.1:58135
+1673960416872	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "58136" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilelngk3B"
+1673960418042	Marionette	INFO	Marionette enabled
+1673960418061	Marionette	INFO	Listening on port 58145
+Read port: 58145
+WebDriver BiDi listening on ws://127.0.0.1:58136
+1673960418407	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilelngk3B\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:58136/devtools/browser/99d98b6c-01f7-4313-b683-5a8763616547
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1673960581766	geckodriver	INFO	Listening on 127.0.0.1:58229
+1673960584800	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "58230" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilewVeg0x"
+1673960585859	Marionette	INFO	Marionette enabled
+1673960585874	Marionette	INFO	Listening on port 58239
+Read port: 58239
+WebDriver BiDi listening on ws://127.0.0.1:58230
+1673960586132	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilewVeg0x\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:58230/devtools/browser/2c6e88e7-d2bb-4aa9-9f12-1bccb3329b55
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1673961183379	geckodriver	INFO	Listening on 127.0.0.1:59872
+1673961186567	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "59873" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilej5d3Ni"
+1673961187333	Marionette	INFO	Marionette enabled
+1673961187345	Marionette	INFO	Listening on port 59883
+Read port: 59883
+WebDriver BiDi listening on ws://127.0.0.1:59873
+1673961187589	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilej5d3Ni\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:59873/devtools/browser/be37880d-9d5a-4044-8d6e-fc84be79a33b
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1673961776383	geckodriver	INFO	Listening on 127.0.0.1:60136
+1673961779432	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "60137" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilefi7dTr"
+1673961780929	Marionette	INFO	Marionette enabled
+1673961780978	Marionette	INFO	Listening on port 60149
+Read port: 60149
+WebDriver BiDi listening on ws://127.0.0.1:60137
+1673961781413	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilefi7dTr\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:60137/devtools/browser/9cd52a5e-f033-4cbd-bcc6-c53cff1d102c
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1673962189364	geckodriver	INFO	Listening on 127.0.0.1:60275
+1673962192395	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "60276" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileCQ7XYy"
+1673962192895	Marionette	INFO	Marionette enabled
+1673962192901	Marionette	INFO	Listening on port 60285
+Read port: 60285
+WebDriver BiDi listening on ws://127.0.0.1:60276
+1673962193032	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileCQ7XYy\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:60276/devtools/browser/977f3c85-e5fe-40bd-a7a9-ce553ef8abbb
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1673962384776	Marionette	INFO	Stopped listening on port 60285
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1673965876832	geckodriver	INFO	Listening on 127.0.0.1:60778
+1673965879860	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "60779" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofiledFW0zx"
+1673965880458	Marionette	INFO	Marionette enabled
+1673965880465	Marionette	INFO	Listening on port 60788
+Read port: 60788
+WebDriver BiDi listening on ws://127.0.0.1:60779
+1673965880617	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofiledFW0zx\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:60779/devtools/browser/a953d37f-d641-4dad-9081-5c7336b04c4a
+1673965901869	Marionette	INFO	Stopped listening on port 60788
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+!!! error running onStopped callback: TypeError: callback is not a function
+WARNING: A blocker encountered an error while we were waiting.
+          Blocker:  Waiting for ping task
+          Phase: TelemetryController: Waiting for pending ping activity
+          State: (none)
+WARNING: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+WARNING: addBlocker@resource://gre/modules/AsyncShutdown.jsm:703:15
+addBlocker@resource://gre/modules/AsyncShutdown.jsm:511:26
+addBlocker@resource://gre/modules/AsyncShutdown.jsm:450:15
+setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1563:28
+@resource://gre/modules/osfile/osfile_async_front.jsm:1583:16
+@resource://gre/modules/osfile.jsm:12:30
+@resource://gre/modules/TelemetryStorage.jsm:19:28
+promiseArchivePing@resource://gre/modules/TelemetryArchive.jsm:103:5
+promiseArchivePing@resource://gre/modules/TelemetryArchive.jsm:63:33
+_submitPingLogic@resource://gre/modules/TelemetryControllerParent.jsm:540:48
+send@resource://gre/modules/TelemetryControllerParent.jsm:628:24
+submitExternalPing@resource://gre/modules/TelemetryControllerParent.jsm:182:17
+sendPing@resource://gre/modules/EventPing.jsm:51:30
+_submitPing@resource://gre/modules/EventPing.jsm:229:12
+shutdown@resource://gre/modules/EventPing.jsm:112:10
+_cleanupOnShutdown@resource://gre/modules/TelemetryControllerParent.jsm:940:31
+shutdown/<@resource://gre/modules/TelemetryControllerParent.jsm:1010:24
+observe@resource://gre/modules/AsyncShutdown.jsm:560:16
+
+WARNING: A blocker encountered an error while we were waiting.
+          Blocker:  Waiting for ping task
+          Phase: TelemetryController: Waiting for pending ping activity
+          State: (none)
+WARNING: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+WARNING: addBlocker@resource://gre/modules/AsyncShutdown.jsm:703:15
+addBlocker@resource://gre/modules/AsyncShutdown.jsm:511:26
+addBlocker@resource://gre/modules/AsyncShutdown.jsm:450:15
+setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1563:28
+@resource://gre/modules/osfile/osfile_async_front.jsm:1583:16
+@resource://gre/modules/osfile.jsm:12:30
+@resource://gre/modules/TelemetryStorage.jsm:19:28
+promiseArchivePing@resource://gre/modules/TelemetryArchive.jsm:103:5
+promiseArchivePing@resource://gre/modules/TelemetryArchive.jsm:63:33
+_submitPingLogic@resource://gre/modules/TelemetryControllerParent.jsm:540:48
+send@resource://gre/modules/TelemetryControllerParent.jsm:628:24
+submitExternalPing@resource://gre/modules/TelemetryControllerParent.jsm:182:17
+saveShutdownPings@resource://gre/modules/TelemetrySession.jsm:982:34
+shutdownChromeProcess/cleanup/<@resource://gre/modules/TelemetrySession.jsm:1232:20
+cleanup@resource://gre/modules/TelemetrySession.jsm:1239:9
+shutdownChromeProcess@resource://gre/modules/TelemetrySession.jsm:1256:14
+shutdown@resource://gre/modules/TelemetrySession.jsm:247:17
+_cleanupOnShutdown@resource://gre/modules/TelemetryControllerParent.jsm:959:35
+observe@resource://gre/modules/AsyncShutdown.jsm:560:16
+
+WARNING: A blocker encountered an error while we were waiting.
+          Blocker:  Waiting for ping task
+          Phase: TelemetryController: Waiting for pending ping activity
+          State: (none)
+WARNING: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+WARNING: addBlocker@resource://gre/modules/AsyncShutdown.jsm:703:15
+addBlocker@resource://gre/modules/AsyncShutdown.jsm:511:26
+addBlocker@resource://gre/modules/AsyncShutdown.jsm:450:15
+setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1563:28
+@resource://gre/modules/osfile/osfile_async_front.jsm:1583:16
+@resource://gre/modules/osfile.jsm:12:30
+@resource://gre/modules/TelemetryStorage.jsm:19:28
+promiseArchivePing@resource://gre/modules/TelemetryArchive.jsm:103:5
+promiseArchivePing@resource://gre/modules/TelemetryArchive.jsm:63:33
+_submitPingLogic@resource://gre/modules/TelemetryControllerParent.jsm:540:48
+send@resource://gre/modules/TelemetryControllerParent.jsm:628:24
+submitExternalPing@resource://gre/modules/TelemetryControllerParent.jsm:182:17
+saveShutdownPings@resource://gre/modules/TelemetrySession.jsm:1014:36
+shutdownChromeProcess/cleanup/<@resource://gre/modules/TelemetrySession.jsm:1232:20
+cleanup@resource://gre/modules/TelemetrySession.jsm:1239:9
+shutdownChromeProcess@resource://gre/modules/TelemetrySession.jsm:1256:14
+shutdown@resource://gre/modules/TelemetrySession.jsm:247:17
+_cleanupOnShutdown@resource://gre/modules/TelemetryControllerParent.jsm:959:35
+observe@resource://gre/modules/AsyncShutdown.jsm:560:16
+
+WARNING: A blocker encountered an error while we were waiting.
+          Blocker:  TelemetryController: shutting down
+          Phase: profile-before-change-telemetry
+          State: Error getting state: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange" at addBlocker@resource://gre/modules/AsyncShutdown.jsm:703:15
+addBlocker@resource://gre/modules/AsyncShutdown.jsm:511:26
+addBlocker@resource://gre/modules/AsyncShutdown.jsm:450:15
+setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1563:28
+@resource://gre/modules/osfile/osfile_async_front.jsm:1583:16
+@resource://gre/modules/osfile.jsm:12:30
+@resource://gre/modules/TelemetryStorage.jsm:19:28
+getShutdownState@resource://gre/modules/TelemetrySend.jsm:1687:7
+getShutdownState@resource://gre/modules/TelemetrySend.jsm:369:30
+_getState@resource://gre/modules/TelemetryControllerParent.jsm:1058:38
+setupTelemetry/<@resource://gre/modules/TelemetryControllerParent.jsm:917:18
+safeGetState@resource://gre/modules/AsyncShutdown.jsm:242:17
+Barrier/addBlocker/promise<@resource://gre/modules/AsyncShutdown.jsm:751:20
+observe@resource://gre/modules/AsyncShutdown.jsm:560:16
+
+WARNING: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+WARNING: addBlocker@resource://gre/modules/AsyncShutdown.jsm:703:15
+addBlocker@resource://gre/modules/AsyncShutdown.jsm:511:26
+addBlocker@resource://gre/modules/AsyncShutdown.jsm:450:15
+setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1563:28
+@resource://gre/modules/osfile/osfile_async_front.jsm:1583:16
+@resource://gre/modules/osfile.jsm:12:30
+@resource://gre/modules/TelemetryStorage.jsm:19:28
+removeAbortedSessionPing@resource://gre/modules/TelemetryControllerParent.jsm:721:5
+removeAbortedSessionPing@resource://gre/modules/TelemetryControllerParent.jsm:249:17
+shutdownChromeProcess/cleanup/<@resource://gre/modules/TelemetrySession.jsm:1235:42
+observe@resource://gre/modules/AsyncShutdown.jsm:560:16
+
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 703: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 703: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 703: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 703: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 703: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 703: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+1673965943302	geckodriver	INFO	Listening on 127.0.0.1:60843
+1673965946355	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "60844" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile6ChqM1"
+1673965946778	Marionette	INFO	Marionette enabled
+1673965946783	Marionette	INFO	Listening on port 60853
+Read port: 60853
+WebDriver BiDi listening on ws://127.0.0.1:60844
+1673965946924	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile6ChqM1\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:60844/devtools/browser/6df112d2-1854-4985-920d-f540554501d1
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1673965969077	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1673966047421	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1673966226102	Marionette	INFO	Stopped listening on port 60853
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1673966300407	geckodriver	INFO	Listening on 127.0.0.1:60976
+1673966303486	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "60977" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileFiichr"
+1673966303924	Marionette	INFO	Marionette enabled
+1673966303932	Marionette	INFO	Listening on port 60986
+WebDriver BiDi listening on ws://127.0.0.1:60977
+Read port: 60986
+1673966304250	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileFiichr\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:60977/devtools/browser/23008231-909c-4939-a71f-2776da52de18
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1673966502550	geckodriver	INFO	Listening on 127.0.0.1:61053
+1673966505604	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "61054" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile5lTysK"
+1673966506003	Marionette	INFO	Marionette enabled
+1673966506010	Marionette	INFO	Listening on port 61063
+Read port: 61063
+WebDriver BiDi listening on ws://127.0.0.1:61054
+1673966506155	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile5lTysK\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:61054/devtools/browser/7fb85e57-8dcd-478d-9930-69e4e6316709
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1673966526420	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1673966730029	geckodriver	INFO	Listening on 127.0.0.1:61127
+1673966733090	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "61128" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilek5FFeW"
+1673966733510	Marionette	INFO	Marionette enabled
+1673966733516	Marionette	INFO	Listening on port 61137
+Read port: 61137
+WebDriver BiDi listening on ws://127.0.0.1:61128
+1673966733655	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilek5FFeW\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:61128/devtools/browser/af704980-7425-43fc-9394-03a68b0f3c26
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1673966752076	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1673967858676	geckodriver	INFO	Listening on 127.0.0.1:61272
+1673967861756	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "61273" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilem1obAs"
+1673967862279	Marionette	INFO	Marionette enabled
+1673967862290	Marionette	INFO	Listening on port 61284
+WebDriver BiDi listening on ws://127.0.0.1:61273
+Read port: 61284
+1673967862577	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilem1obAs\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:61273/devtools/browser/4e60e091-f51f-4eb0-a7ac-54e651552922
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1673968217269	geckodriver	INFO	Listening on 127.0.0.1:61350
+1673968220332	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "61351" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileEX8UNy"
+1673968220840	Marionette	INFO	Marionette enabled
+1673968220846	Marionette	INFO	Listening on port 61360
+Read port: 61360
+WebDriver BiDi listening on ws://127.0.0.1:61351
+1673968221004	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileEX8UNy\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:61351/devtools/browser/8fa73861-03db-4eb3-9458-9b0e61d75ee6
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1673968774265	geckodriver	INFO	Listening on 127.0.0.1:61446
+1673968777318	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "61447" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileFOG454"
+1673968777779	Marionette	INFO	Marionette enabled
+1673968777786	Marionette	INFO	Listening on port 61456
+Read port: 61456
+WebDriver BiDi listening on ws://127.0.0.1:61447
+1673968777921	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileFOG454\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:61447/devtools/browser/90f95529-b0be-45b2-8754-3bde8d73ed82
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1673969089003	geckodriver	INFO	Listening on 127.0.0.1:61525
+1673969092027	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "61526" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileXGhiaO"
+1673969092490	Marionette	INFO	Marionette enabled
+1673969092496	Marionette	INFO	Listening on port 61535
+Read port: 61535
+WebDriver BiDi listening on ws://127.0.0.1:61526
+1673969092667	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileXGhiaO\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:61526/devtools/browser/4f4d28be-3c21-46a6-b2ad-382f4bf4afc8
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1673969170901	geckodriver	INFO	Listening on 127.0.0.1:61581
+1673969173924	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "61582" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileVnInXM"
+1673969174317	Marionette	INFO	Marionette enabled
+1673969174323	Marionette	INFO	Listening on port 61591
+Read port: 61591
+WebDriver BiDi listening on ws://127.0.0.1:61582
+1673969174450	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileVnInXM\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:61582/devtools/browser/f6ade82c-9762-4801-a3fc-4b026318d6ae
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1673969430278	geckodriver	INFO	Listening on 127.0.0.1:61653
+1673969433330	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "61654" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileSMQiKl"
+1673969433746	Marionette	INFO	Marionette enabled
+1673969433754	Marionette	INFO	Listening on port 61663
+Read port: 61663
+WebDriver BiDi listening on ws://127.0.0.1:61654
+1673969433906	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileSMQiKl\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:61654/devtools/browser/58417470-5217-4dab-bb78-a9f23750f3f4
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1673969496234	geckodriver	INFO	Listening on 127.0.0.1:61705
+1673969499263	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "61706" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilenLRhwS"
+1673969499690	Marionette	INFO	Marionette enabled
+1673969499698	Marionette	INFO	Listening on port 61716
+WebDriver BiDi listening on ws://127.0.0.1:61706
+Read port: 61716
+1673969499963	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilenLRhwS\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:61706/devtools/browser/bb583aad-7386-49c0-beeb-20aad0dd13fb
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1673969771493	geckodriver	INFO	Listening on 127.0.0.1:61790
+1673969774559	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "61791" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilei0epUv"
+1673969775053	Marionette	INFO	Marionette enabled
+1673969775061	Marionette	INFO	Listening on port 61800
+Read port: 61800
+WebDriver BiDi listening on ws://127.0.0.1:61791
+1673969775213	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilei0epUv\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:61791/devtools/browser/c9fd2797-9efc-42b9-9a52-0b3a67b07c51
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674023038474	Marionette	INFO	Stopped listening on port 61800
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1674023044059	geckodriver	INFO	Listening on 127.0.0.1:57508
+1674023047128	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "57509" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile0mkzP3"
+1674023047802	Marionette	INFO	Marionette enabled
+1674023047812	Marionette	INFO	Listening on port 57518
+Read port: 57518
+WebDriver BiDi listening on ws://127.0.0.1:57509
+1674023047990	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile0mkzP3\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:57509/devtools/browser/0aa8bf9d-ed5c-402a-b22d-1387565737ad
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674023281675	Marionette	INFO	Stopped listening on port 57518
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1674023967166	geckodriver	INFO	Listening on 127.0.0.1:63103
+1674023970210	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "63104" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileuIVt8s"
+1674023970788	Marionette	INFO	Marionette enabled
+1674023970796	Marionette	INFO	Listening on port 63113
+Read port: 63113
+WebDriver BiDi listening on ws://127.0.0.1:63104
+1674023970945	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileuIVt8s\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:63104/devtools/browser/a628fbd1-936a-4a3e-9f25-900210fe80a6
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674024306954	geckodriver	INFO	Listening on 127.0.0.1:63272
+1674024309965	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "63273" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilejlZiVS"
+1674024310638	Marionette	INFO	Marionette enabled
+1674024310650	Marionette	INFO	Listening on port 63280
+Read port: 63280
+WebDriver BiDi listening on ws://127.0.0.1:63273
+1674024310939	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilejlZiVS\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:63273/devtools/browser/99d20f98-dbd2-414b-8034-f3a41235ae10
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674025000037	geckodriver	INFO	Listening on 127.0.0.1:64344
+1674025003062	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "64345" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile0fuMZv"
+1674025003638	Marionette	INFO	Marionette enabled
+1674025003644	Marionette	INFO	Listening on port 64354
+Read port: 64354
+WebDriver BiDi listening on ws://127.0.0.1:64345
+1674025003803	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile0fuMZv\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:64345/devtools/browser/8732836b-f4fc-4f7c-8eea-ec1ac666878c
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674025330471	geckodriver	INFO	Listening on 127.0.0.1:64446
+1674025333499	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "64447" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileoj2Zon"
+1674025334025	Marionette	INFO	Marionette enabled
+1674025334032	Marionette	INFO	Listening on port 64456
+Read port: 64456
+WebDriver BiDi listening on ws://127.0.0.1:64447
+1674025334181	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileoj2Zon\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:64447/devtools/browser/e1e8a738-f7a4-4a8d-a099-ec5fcb492780
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674025415833	geckodriver	INFO	Listening on 127.0.0.1:64513
+1674025418889	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "64514" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileQtVLaX"
+1674025419472	Marionette	INFO	Marionette enabled
+1674025419483	Marionette	INFO	Listening on port 64523
+Read port: 64523
+WebDriver BiDi listening on ws://127.0.0.1:64514
+1674025419655	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileQtVLaX\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:64514/devtools/browser/707ed22f-68ce-405e-aa39-2ed056d8c071
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674025713116	geckodriver	INFO	Listening on 127.0.0.1:64644
+1674025716163	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "64645" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilenDNJE1"
+1674025716863	Marionette	INFO	Marionette enabled
+1674025716875	Marionette	INFO	Listening on port 64656
+Read port: 64656
+WebDriver BiDi listening on ws://127.0.0.1:64645
+1674025717082	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilenDNJE1\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:64645/devtools/browser/63f49ea0-640c-470a-9cf9-395d10eec892
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674025870948	geckodriver	INFO	Listening on 127.0.0.1:64743
+1674025873961	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "64744" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileIMM5mg"
+1674025874523	Marionette	INFO	Marionette enabled
+1674025874531	Marionette	INFO	Listening on port 64753
+Read port: 64753
+WebDriver BiDi listening on ws://127.0.0.1:64744
+1674025874719	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileIMM5mg\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:64744/devtools/browser/fa4f8deb-bdf4-4ea7-8873-dea39846079d
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674027438719	geckodriver	INFO	Listening on 127.0.0.1:65121
+1674027441752	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "65122" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileBhkd0k"
+1674027442361	Marionette	INFO	Marionette enabled
+1674027442367	Marionette	INFO	Listening on port 65133
+Read port: 65133
+WebDriver BiDi listening on ws://127.0.0.1:65122
+1674027442509	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileBhkd0k\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:65122/devtools/browser/56994e0c-06a7-43b0-a61f-3dc382d52b8e
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674027569454	geckodriver	INFO	Listening on 127.0.0.1:65216
+1674027572485	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "65217" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile8t5itV"
+1674027573082	Marionette	INFO	Marionette enabled
+1674027573089	Marionette	INFO	Listening on port 65226
+Read port: 65226
+WebDriver BiDi listening on ws://127.0.0.1:65217
+1674027573234	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile8t5itV\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:65217/devtools/browser/6ae35654-17f8-4f69-97bd-035b0daaec51
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674027889126	geckodriver	INFO	Listening on 127.0.0.1:65304
+1674027892158	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "65305" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileIngXQB"
+1674027892801	Marionette	INFO	Marionette enabled
+1674027892810	Marionette	INFO	Listening on port 65316
+Read port: 65316
+WebDriver BiDi listening on ws://127.0.0.1:65305
+1674027893002	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileIngXQB\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:65305/devtools/browser/ecd1b693-702f-428c-99a3-f80360ebca9c
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674028010761	geckodriver	INFO	Listening on 127.0.0.1:65370
+1674028013788	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "65371" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileXjD3IN"
+1674028014450	Marionette	INFO	Marionette enabled
+1674028014458	Marionette	INFO	Listening on port 65380
+Read port: 65380
+WebDriver BiDi listening on ws://127.0.0.1:65371
+1674028014701	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileXjD3IN\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:65371/devtools/browser/267b5663-7c28-4e57-8c19-82a58a4db171
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674028020933	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1674028330236	geckodriver	INFO	Listening on 127.0.0.1:65445
+1674028333259	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "65446" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileBaWyrw"
+1674028333794	Marionette	INFO	Marionette enabled
+1674028333801	Marionette	INFO	Listening on port 65455
+WebDriver BiDi listening on ws://127.0.0.1:65446
+Read port: 65455
+1674028334091	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileBaWyrw\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:65446/devtools/browser/98a298c4-d11f-4c85-bdfe-941646bca1bf
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674028524109	Marionette	INFO	Stopped listening on port 65455
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1674029289190	geckodriver	INFO	Listening on 127.0.0.1:49373
+1674029292251	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "49374" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile1fqB4j"
+1674029292983	Marionette	INFO	Marionette enabled
+1674029292990	Marionette	INFO	Listening on port 49385
+Read port: 49385
+WebDriver BiDi listening on ws://127.0.0.1:49374
+1674029293167	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile1fqB4j\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:49374/devtools/browser/6df27bde-6e5b-4e4b-baae-a3024f3cbdbf
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674029526702	geckodriver	INFO	Listening on 127.0.0.1:49743
+1674029529731	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "49744" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile0Z9CIl"
+1674029530372	Marionette	INFO	Marionette enabled
+1674029530380	Marionette	INFO	Listening on port 49753
+Read port: 49753
+WebDriver BiDi listening on ws://127.0.0.1:49744
+1674029530587	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile0Z9CIl\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:49744/devtools/browser/d7c32672-34ca-47e2-9208-b84dd4d5e90c
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674029615137	geckodriver	INFO	Listening on 127.0.0.1:49837
+1674029618158	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "49838" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileoZvOfp"
+1674029618748	Marionette	INFO	Marionette enabled
+1674029618756	Marionette	INFO	Listening on port 49848
+Read port: 49848
+WebDriver BiDi listening on ws://127.0.0.1:49838
+1674029618907	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileoZvOfp\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:49838/devtools/browser/bd0f8d3b-ad17-4293-aab6-8a3b22d48cf7
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674029832129	Marionette	INFO	Stopped listening on port 49848
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1674031766149	geckodriver	INFO	Listening on 127.0.0.1:50287
+1674031769195	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "50288" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilerOM1Iv"
+1674031769804	Marionette	INFO	Marionette enabled
+1674031769811	Marionette	INFO	Listening on port 50297
+Read port: 50297
+WebDriver BiDi listening on ws://127.0.0.1:50288
+1674031769950	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilerOM1Iv\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:50288/devtools/browser/8947b0d3-016d-496d-8346-9ed7cc8a01c8
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674031961798	Marionette	INFO	Stopped listening on port 50297
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1674032537683	geckodriver	INFO	Listening on 127.0.0.1:50822
+1674032540706	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "50823" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileWpqN5G"
+1674032541256	Marionette	INFO	Marionette enabled
+1674032541264	Marionette	INFO	Listening on port 50832
+Read port: 50832
+WebDriver BiDi listening on ws://127.0.0.1:50823
+1674032541450	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileWpqN5G\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:50823/devtools/browser/ca62aba0-6751-4c3f-99b9-fd0a85639f68
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674033399615	geckodriver	INFO	Listening on 127.0.0.1:51084
+1674033402683	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51085" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile7yGgt0"
+1674033403474	Marionette	INFO	Marionette enabled
+1674033403484	Marionette	INFO	Listening on port 51094
+Read port: 51094
+WebDriver BiDi listening on ws://127.0.0.1:51085
+1674033403684	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile7yGgt0\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51085/devtools/browser/f01a182a-007b-47ef-a335-fc56fcdb3067
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674033601562	geckodriver	INFO	Listening on 127.0.0.1:51238
+1674033604587	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51239" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilew3lAPA"
+1674033605161	Marionette	INFO	Marionette enabled
+1674033605169	Marionette	INFO	Listening on port 51250
+Read port: 51250
+WebDriver BiDi listening on ws://127.0.0.1:51239
+1674033605346	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilew3lAPA\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51239/devtools/browser/7774e913-b932-4be1-928a-07fa0cdd168b
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674033980838	geckodriver	INFO	Listening on 127.0.0.1:51356
+1674033983857	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51357" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilesyQyAj"
+1674033984430	Marionette	INFO	Marionette enabled
+1674033984438	Marionette	INFO	Listening on port 51367
+Read port: 51367
+WebDriver BiDi listening on ws://127.0.0.1:51357
+1674033984594	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilesyQyAj\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51357/devtools/browser/3169dffd-db20-475e-bcbe-08d049d0d3ef
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674034510441	geckodriver	INFO	Listening on 127.0.0.1:51570
+1674034513474	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51571" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilekBxjW0"
+1674034514323	Marionette	INFO	Marionette enabled
+1674034514333	Marionette	INFO	Listening on port 51593
+Read port: 51593
+WebDriver BiDi listening on ws://127.0.0.1:51571
+1674034514588	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilekBxjW0\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51571/devtools/browser/43f78bba-3369-42d0-873e-e19a06316f88
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674034550140	Marionette	INFO	Stopped listening on port 51593
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+WARNING: A blocker encountered an error while we were waiting.
+          Blocker:  Waiting for ping task
+          Phase: TelemetryController: Waiting for pending ping activity
+          State: (none)
+WARNING: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+WARNING: addBlocker@resource://gre/modules/AsyncShutdown.jsm:703:15
+addBlocker@resource://gre/modules/AsyncShutdown.jsm:511:26
+addBlocker@resource://gre/modules/AsyncShutdown.jsm:450:15
+setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1563:28
+@resource://gre/modules/osfile/osfile_async_front.jsm:1583:16
+@resource://gre/modules/osfile.jsm:12:30
+@resource://gre/modules/TelemetryStorage.jsm:19:28
+promiseArchivePing@resource://gre/modules/TelemetryArchive.jsm:103:5
+promiseArchivePing@resource://gre/modules/TelemetryArchive.jsm:63:33
+_submitPingLogic@resource://gre/modules/TelemetryControllerParent.jsm:540:48
+send@resource://gre/modules/TelemetryControllerParent.jsm:628:24
+submitExternalPing@resource://gre/modules/TelemetryControllerParent.jsm:182:17
+sendPing@resource://gre/modules/EventPing.jsm:51:30
+_submitPing@resource://gre/modules/EventPing.jsm:229:12
+shutdown@resource://gre/modules/EventPing.jsm:112:10
+_cleanupOnShutdown@resource://gre/modules/TelemetryControllerParent.jsm:940:31
+shutdown/<@resource://gre/modules/TelemetryControllerParent.jsm:1010:24
+observe@resource://gre/modules/AsyncShutdown.jsm:560:16
+
+WARNING: A blocker encountered an error while we were waiting.
+          Blocker:  Waiting for ping task
+          Phase: TelemetryController: Waiting for pending ping activity
+          State: (none)
+WARNING: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+WARNING: addBlocker@resource://gre/modules/AsyncShutdown.jsm:703:15
+addBlocker@resource://gre/modules/AsyncShutdown.jsm:511:26
+addBlocker@resource://gre/modules/AsyncShutdown.jsm:450:15
+setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1563:28
+@resource://gre/modules/osfile/osfile_async_front.jsm:1583:16
+@resource://gre/modules/osfile.jsm:12:30
+@resource://gre/modules/TelemetryStorage.jsm:19:28
+promiseArchivePing@resource://gre/modules/TelemetryArchive.jsm:103:5
+promiseArchivePing@resource://gre/modules/TelemetryArchive.jsm:63:33
+_submitPingLogic@resource://gre/modules/TelemetryControllerParent.jsm:540:48
+send@resource://gre/modules/TelemetryControllerParent.jsm:628:24
+submitExternalPing@resource://gre/modules/TelemetryControllerParent.jsm:182:17
+saveShutdownPings@resource://gre/modules/TelemetrySession.jsm:982:34
+shutdownChromeProcess/cleanup/<@resource://gre/modules/TelemetrySession.jsm:1232:20
+cleanup@resource://gre/modules/TelemetrySession.jsm:1239:9
+shutdownChromeProcess@resource://gre/modules/TelemetrySession.jsm:1256:14
+shutdown@resource://gre/modules/TelemetrySession.jsm:247:17
+_cleanupOnShutdown@resource://gre/modules/TelemetryControllerParent.jsm:959:35
+observe@resource://gre/modules/AsyncShutdown.jsm:560:16
+
+WARNING: A blocker encountered an error while we were waiting.
+          Blocker:  Waiting for ping task
+          Phase: TelemetryController: Waiting for pending ping activity
+          State: (none)
+WARNING: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+WARNING: addBlocker@resource://gre/modules/AsyncShutdown.jsm:703:15
+addBlocker@resource://gre/modules/AsyncShutdown.jsm:511:26
+addBlocker@resource://gre/modules/AsyncShutdown.jsm:450:15
+setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1563:28
+@resource://gre/modules/osfile/osfile_async_front.jsm:1583:16
+@resource://gre/modules/osfile.jsm:12:30
+@resource://gre/modules/TelemetryStorage.jsm:19:28
+promiseArchivePing@resource://gre/modules/TelemetryArchive.jsm:103:5
+promiseArchivePing@resource://gre/modules/TelemetryArchive.jsm:63:33
+_submitPingLogic@resource://gre/modules/TelemetryControllerParent.jsm:540:48
+send@resource://gre/modules/TelemetryControllerParent.jsm:628:24
+submitExternalPing@resource://gre/modules/TelemetryControllerParent.jsm:182:17
+saveShutdownPings@resource://gre/modules/TelemetrySession.jsm:1014:36
+shutdownChromeProcess/cleanup/<@resource://gre/modules/TelemetrySession.jsm:1232:20
+cleanup@resource://gre/modules/TelemetrySession.jsm:1239:9
+shutdownChromeProcess@resource://gre/modules/TelemetrySession.jsm:1256:14
+shutdown@resource://gre/modules/TelemetrySession.jsm:247:17
+_cleanupOnShutdown@resource://gre/modules/TelemetryControllerParent.jsm:959:35
+observe@resource://gre/modules/AsyncShutdown.jsm:560:16
+
+WARNING: A blocker encountered an error while we were waiting.
+          Blocker:  TelemetryController: shutting down
+          Phase: profile-before-change-telemetry
+          State: Error getting state: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange" at addBlocker@resource://gre/modules/AsyncShutdown.jsm:703:15
+addBlocker@resource://gre/modules/AsyncShutdown.jsm:511:26
+addBlocker@resource://gre/modules/AsyncShutdown.jsm:450:15
+setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1563:28
+@resource://gre/modules/osfile/osfile_async_front.jsm:1583:16
+@resource://gre/modules/osfile.jsm:12:30
+@resource://gre/modules/TelemetryStorage.jsm:19:28
+getShutdownState@resource://gre/modules/TelemetrySend.jsm:1687:7
+getShutdownState@resource://gre/modules/TelemetrySend.jsm:369:30
+_getState@resource://gre/modules/TelemetryControllerParent.jsm:1058:38
+setupTelemetry/<@resource://gre/modules/TelemetryControllerParent.jsm:917:18
+safeGetState@resource://gre/modules/AsyncShutdown.jsm:242:17
+Barrier/addBlocker/promise<@resource://gre/modules/AsyncShutdown.jsm:751:20
+observe@resource://gre/modules/AsyncShutdown.jsm:560:16
+
+WARNING: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+WARNING: addBlocker@resource://gre/modules/AsyncShutdown.jsm:703:15
+addBlocker@resource://gre/modules/AsyncShutdown.jsm:511:26
+addBlocker@resource://gre/modules/AsyncShutdown.jsm:450:15
+setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1563:28
+@resource://gre/modules/osfile/osfile_async_front.jsm:1583:16
+@resource://gre/modules/osfile.jsm:12:30
+@resource://gre/modules/TelemetryStorage.jsm:19:28
+removeAbortedSessionPing@resource://gre/modules/TelemetryControllerParent.jsm:721:5
+removeAbortedSessionPing@resource://gre/modules/TelemetryControllerParent.jsm:249:17
+shutdownChromeProcess/cleanup/<@resource://gre/modules/TelemetrySession.jsm:1235:42
+observe@resource://gre/modules/AsyncShutdown.jsm:560:16
+
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 703: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 703: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 703: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 703: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 703: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 703: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+1674034556690	geckodriver	INFO	Listening on 127.0.0.1:51658
+1674034559716	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51659" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileYFLHEc"
+1674034560281	Marionette	INFO	Marionette enabled
+1674034560290	Marionette	INFO	Listening on port 51668
+Read port: 51668
+WebDriver BiDi listening on ws://127.0.0.1:51659
+1674034560460	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileYFLHEc\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51659/devtools/browser/c68bb9c4-4b85-481e-b98a-8fee09d9325c
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674034970602	geckodriver	INFO	Listening on 127.0.0.1:51866
+1674034973634	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51867" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofiletx6yPK"
+1674034974193	Marionette	INFO	Marionette enabled
+1674034974200	Marionette	INFO	Listening on port 51883
+Read port: 51883
+WebDriver BiDi listening on ws://127.0.0.1:51867
+1674034974358	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofiletx6yPK\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51867/devtools/browser/46acceb2-3d8c-4267-9af0-e6503bf13c53
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674035064579	geckodriver	INFO	Listening on 127.0.0.1:51980
+1674035067597	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51981" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileFgqiY5"
+1674035068200	Marionette	INFO	Marionette enabled
+1674035068206	Marionette	INFO	Listening on port 51990
+Read port: 51990
+WebDriver BiDi listening on ws://127.0.0.1:51981
+1674035068338	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileFgqiY5\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51981/devtools/browser/854ee4ff-a9ee-49e3-958d-dad956b438fc
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674035172010	geckodriver	INFO	Listening on 127.0.0.1:52043
+1674035175046	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "52044" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofiledCKXvv"
+1674035175599	Marionette	INFO	Marionette enabled
+1674035175607	Marionette	INFO	Listening on port 52054
+Read port: 52054
+WebDriver BiDi listening on ws://127.0.0.1:52044
+1674035175817	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofiledCKXvv\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:52044/devtools/browser/fda0af3c-e4b0-49b9-ac6f-7b66803c219c
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674035682568	geckodriver	INFO	Listening on 127.0.0.1:52261
+1674035685589	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "52262" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilevCntwX"
+1674035686198	Marionette	INFO	Marionette enabled
+1674035686205	Marionette	INFO	Listening on port 52271
+Read port: 52271
+WebDriver BiDi listening on ws://127.0.0.1:52262
+1674035686369	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilevCntwX\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:52262/devtools/browser/a8662a8a-f5fa-4a3b-8775-be7358215c52
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674035837146	geckodriver	INFO	Listening on 127.0.0.1:52350
+1674035840172	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "52351" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileMDiw3f"
+1674035840712	Marionette	INFO	Marionette enabled
+1674035840719	Marionette	INFO	Listening on port 52360
+Read port: 52360
+WebDriver BiDi listening on ws://127.0.0.1:52351
+1674035840915	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileMDiw3f\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:52351/devtools/browser/aa3dfc4e-0784-4ffc-bd1e-967b514b71f5
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674036001546	geckodriver	INFO	Listening on 127.0.0.1:52455
+1674036004559	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "52456" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileNnFrec"
+1674036005145	Marionette	INFO	Marionette enabled
+1674036005152	Marionette	INFO	Listening on port 52465
+Read port: 52465
+WebDriver BiDi listening on ws://127.0.0.1:52456
+1674036005288	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileNnFrec\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:52456/devtools/browser/9820f419-8614-4bc5-9e3b-003809f4855a
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674036607344	geckodriver	INFO	Listening on 127.0.0.1:52920
+1674036610389	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "52921" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileQVj87C"
+1674036611156	Marionette	INFO	Marionette enabled
+1674036611165	Marionette	INFO	Listening on port 52944
+Read port: 52944
+WebDriver BiDi listening on ws://127.0.0.1:52921
+1674036611370	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileQVj87C\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:52921/devtools/browser/01f2c9e7-edde-4236-bafe-adf05f727cdc
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674036675538	geckodriver	INFO	Listening on 127.0.0.1:53038
+1674036678567	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "53039" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofiletlt16M"
+1674036679117	Marionette	INFO	Marionette enabled
+1674036679124	Marionette	INFO	Listening on port 53051
+Read port: 53051
+WebDriver BiDi listening on ws://127.0.0.1:53039
+1674036679326	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofiletlt16M\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:53039/devtools/browser/6b95e487-0685-4e79-8bfa-e34a6b884c0b
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674036762868	geckodriver	INFO	Listening on 127.0.0.1:53116
+1674036766173	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "53117" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilea8IRJi"
+1674036766676	Marionette	INFO	Marionette enabled
+1674036766683	Marionette	INFO	Listening on port 53126
+Read port: 53126
+WebDriver BiDi listening on ws://127.0.0.1:53117
+1674036766852	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilea8IRJi\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:53117/devtools/browser/78b454da-ce47-4b1f-a79d-6109cfbe5aea
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674037012599	geckodriver	INFO	Listening on 127.0.0.1:53264
+1674037015621	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "53265" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileueMVse"
+1674037016186	Marionette	INFO	Marionette enabled
+1674037016194	Marionette	INFO	Listening on port 53274
+WebDriver BiDi listening on ws://127.0.0.1:53265
+Read port: 53274
+1674037016503	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileueMVse\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:53265/devtools/browser/37a37be1-7c4c-4de2-b041-2249a695719a
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674037090866	geckodriver	INFO	Listening on 127.0.0.1:53345
+1674037093887	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "53346" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileqOKK5V"
+1674037094448	Marionette	INFO	Marionette enabled
+1674037094456	Marionette	INFO	Listening on port 53356
+Read port: 53356
+WebDriver BiDi listening on ws://127.0.0.1:53346
+1674037094669	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileqOKK5V\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:53346/devtools/browser/4b7ad54a-3be6-47d3-9c3d-0fb38f867ca1
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674037396143	geckodriver	INFO	Listening on 127.0.0.1:63916
+1674037399182	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "63917" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilelS36Bm"
+1674037399785	Marionette	INFO	Marionette enabled
+1674037399794	Marionette	INFO	Listening on port 63926
+Read port: 63926
+WebDriver BiDi listening on ws://127.0.0.1:63917
+1674037399988	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilelS36Bm\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:63917/devtools/browser/29e8e99b-2635-4b50-92ef-925bcfaa96a9
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674039983483	geckodriver	INFO	Listening on 127.0.0.1:51293
+1674039986521	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51294" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileAB2iUA"
+1674039987117	Marionette	INFO	Marionette enabled
+1674039987126	Marionette	INFO	Listening on port 51304
+Read port: 51304
+WebDriver BiDi listening on ws://127.0.0.1:51294
+1674039987276	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileAB2iUA\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51294/devtools/browser/42b5be47-fb4c-4454-9685-a92c115df470
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674040435748	geckodriver	INFO	Listening on 127.0.0.1:51459
+1674040438815	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51460" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile4EMV4S"
+1674040439409	Marionette	INFO	Marionette enabled
+1674040439416	Marionette	INFO	Listening on port 51469
+Read port: 51469
+WebDriver BiDi listening on ws://127.0.0.1:51460
+1674040439584	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile4EMV4S\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51460/devtools/browser/bbefb3bd-da8f-4112-8594-a3ba2269278c
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674040830631	geckodriver	INFO	Listening on 127.0.0.1:51659
+1674040833669	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51660" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileRigBll"
+1674040834325	Marionette	INFO	Marionette enabled
+1674040834333	Marionette	INFO	Listening on port 51669
+Read port: 51669
+WebDriver BiDi listening on ws://127.0.0.1:51660
+1674040834518	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileRigBll\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51660/devtools/browser/f456e343-8f2e-402d-909a-7dc2066056d5
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674050124200	geckodriver	INFO	Listening on 127.0.0.1:50332
+1674050127243	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "50333" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofiledvucd2"
+1674050127845	Marionette	INFO	Marionette enabled
+1674050127851	Marionette	INFO	Listening on port 50341
+Read port: 50341
+WebDriver BiDi listening on ws://127.0.0.1:50333
+1674050128004	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofiledvucd2\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:50333/devtools/browser/c3ba4b81-4016-4c8e-86eb-3ef83cd3920f
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674050231780	Marionette	INFO	Stopped listening on port 50341
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+!!! error running onStopped callback: TypeError: callback is not a function
+1674050335977	geckodriver	INFO	Listening on 127.0.0.1:50557
+1674050339004	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "50558" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileaid2mW"
+1674050339567	Marionette	INFO	Marionette enabled
+1674050339575	Marionette	INFO	Listening on port 50567
+Read port: 50567
+WebDriver BiDi listening on ws://127.0.0.1:50558
+1674050339765	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileaid2mW\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:50558/devtools/browser/8d1a8c4b-ef2c-4d7a-b14d-9164aa943394
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674050624677	geckodriver	INFO	Listening on 127.0.0.1:50691
+1674050627711	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "50692" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileQ6TLnF"
+1674050628236	Marionette	INFO	Marionette enabled
+1674050628244	Marionette	INFO	Listening on port 50701
+Read port: 50701
+WebDriver BiDi listening on ws://127.0.0.1:50692
+1674050628397	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileQ6TLnF\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:50692/devtools/browser/138d519a-2038-41f4-8347-76c5ed0b8d80
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674050765389	geckodriver	INFO	Listening on 127.0.0.1:50787
+1674050768422	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "50788" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilehmB5Of"
+1674050769033	Marionette	INFO	Marionette enabled
+1674050769041	Marionette	INFO	Listening on port 50797
+Read port: 50797
+WebDriver BiDi listening on ws://127.0.0.1:50788
+1674050769231	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilehmB5Of\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:50788/devtools/browser/a088a4f8-9f50-45c6-a3fd-bc502e1c7c96
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674052354203	Marionette	INFO	Stopped listening on port 50797
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+remote-debugging-port" "50943" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileGn61Fl"
+1674050999180	Marionette	INFO	Marionette enabled
+1674050999188	Marionette	INFO	Listening on port 50954
+Read port: 50954
+WebDriver BiDi listening on ws://127.0.0.1:50943
+1674050999352	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileGn61Fl\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:50943/devtools/browser/888d48f7-a5d6-48c3-95f9-49f495cd938b
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674051068898	geckodriver	INFO	Listening on 127.0.0.1:51045
+1674051071926	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51046" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileatyZY7"
+1674051072556	Marionette	INFO	Marionette enabled
+1674051072566	Marionette	INFO	Listening on port 51055
+Read port: 51055
+WebDriver BiDi listening on ws://127.0.0.1:51046
+1674051072788	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileatyZY7\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51046/devtools/browser/66b873c9-4800-4bcd-85cd-7faec49be7fe
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674051117908	geckodriver	INFO	Listening on 127.0.0.1:51131
+1674051120922	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51132" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilekbvqab"
+1674051121533	Marionette	INFO	Marionette enabled
+1674051121543	Marionette	INFO	Listening on port 51142
+Read port: 51142
+WebDriver BiDi listening on ws://127.0.0.1:51132
+1674051121734	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilekbvqab\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51132/devtools/browser/be2cacaf-bf40-4765-8071-f3b07e61e2ad
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1674051507737	geckodriver	INFO	Listening on 127.0.0.1:51311
+1674051510766	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51312" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofiles0aWx5"
+1674051511284	Marionette	INFO	Marionette enabled
+1674051511288	Marionette	INFO	Listening on port 51321
+Read port: 51321
+WebDriver BiDi listening on ws://127.0.0.1:51312
+1674051511421	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofiles0aWx5\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51312/devtools/browser/196ea6d2-b0c2-45ac-a1bf-5c1c54437bd1
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1674052350201	Marionette	INFO	Stopped listening on port 51321
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+remote-debugging-port" "51577" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileZdlGWr"
+1674052068494	Marionette	INFO	Marionette enabled
+1674052068502	Marionette	INFO	Listening on port 51586
+Read port: 51586
+WebDriver BiDi listening on ws://127.0.0.1:51577
+1674052068707	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileZdlGWr\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51577/devtools/browser/c0fd5455-7b21-44e4-965d-8a51ffd988a7
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1674052249608	Marionette	INFO	Stopped listening on port 51586
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1675666232463	geckodriver	INFO	Listening on 127.0.0.1:51619
+1675666235503	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51620" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilec0ULsn"
+1675666236054	Marionette	INFO	Marionette enabled
+1675666236061	Marionette	INFO	Listening on port 51632
+WebDriver BiDi listening on ws://127.0.0.1:51620
+Read port: 51632
+1675666236234	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilec0ULsn\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51620/devtools/browser/077aff13-afdd-4d6b-b65f-2f3963fa5c5b
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1675666348739	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1675666573122	Marionette	INFO	Stopped listening on port 51632
+!!! error running onStopped callback: TypeError: callback is not a function
+1675669047610	geckodriver	INFO	Listening on 127.0.0.1:52049
+1675669050644	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "52050" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileVOYews"
+1675669051092	Marionette	INFO	Marionette enabled
+1675669051097	Marionette	INFO	Listening on port 52059
+WebDriver BiDi listening on ws://127.0.0.1:52050
+Read port: 52059
+1675669051327	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileVOYews\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:52050/devtools/browser/2f6fc500-a4d8-40fc-906f-9c7495b42805
+1675669094763	geckodriver	INFO	Listening on 127.0.0.1:52096
+1675669097818	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "52097" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilehNyj1G"
+1675669098193	Marionette	INFO	Marionette enabled
+1675669098199	Marionette	INFO	Listening on port 52106
+Read port: 52106
+WebDriver BiDi listening on ws://127.0.0.1:52097
+1675669098323	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilehNyj1G\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:52097/devtools/browser/0647c8bf-2985-4b4c-924b-1b3daa2b663c
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control-staging.wint.ai."
+1675669175808	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1675669199503	Marionette	INFO	Stopped listening on port 52106

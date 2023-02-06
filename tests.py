@@ -1,11 +1,18 @@
+import multiprocessing
+import sys
 from time import sleep
-from selenium import webdriver
-from datetime import datetime, timedelta
-from selenium.webdriver import Keys
+from datetime import datetime
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import assistants_functions
+import subprocess
+import signal
+import win32api
+import os
+import psutil
+
+import injection.inject_simulated_water
 
 
 # Set the URL of the website to be tested
@@ -152,8 +159,76 @@ def set_policy(driver, site_number, water_system_number, product_number, valve_s
     except:
         assert False
 
-def start_inject_water(flow_level):
+
+def start_inject_water(flow_level= 'major'):
+    file_path = "injection\\inject_simulated_water.py"
+    inject_process = subprocess.Popen(["python", file_path], shell=True)
+    return inject_process
 
 
+def stop_inject_water(injection_process):
+    injection_process.terminate()
+    win32api.TerminateProcess(int(injection_process._handle), -1)
+    injection_process.kill(signal.SIGKILL)
 
 
+def is_warning_command_was_gotten(driver, site_number, water_system_number, product_number):
+    # # to delete
+    # driver = webdriver.Firefox()
+    # driver.get('https://control-staging.wint.ai/en/sites/2263/water_systems/8464')
+    # # to delete
+    commands_button = WebDriverWait(driver, 10).until(
+        EC.visibility_of_element_located((By.XPATH,
+                                          "//a[@href='/en/sites/{}/water_systems/{}/products/{}/commands']".format(
+                                              site_number, water_system_number, product_number))))
+    commands_button.click()
+    leak_detect_content = None
+    for i in range(30):
+        now = datetime.now()
+        try:
+            leak_detect_content = assistants_functions.check_commands_arrived_in_portal(driver, 8, 1, 'OP_EVT_SMG_LEAKDETECT', now, True)
+            if leak_detect_content:
+                break
+        except:
+            print("no leak detect")
+        sleep(10)
+        driver.refresh()
+
+    if leak_detect_content is not None:
+        if '"LeakNotificationLevel"=>2' in leak_detect_content:
+            return True
+        else:
+            return False
+    else:
+        return False
+
+
+def is_close_command_was_gotten(driver, site_number, water_system_number, product_number):
+    # # to delete
+    # driver = webdriver.Firefox()
+    # driver.get('https://control-staging.wint.ai/en/sites/2263/water_systems/8464')
+    # # to delete
+    commands_button = WebDriverWait(driver, 10).until(
+        EC.visibility_of_element_located((By.XPATH,
+                                          "//a[@href='/en/sites/{}/water_systems/{}/products/{}/commands']".format(
+                                              site_number, water_system_number, product_number))))
+    commands_button.click()
+    leak_detect_content = None
+    for i in range(30):
+        now = datetime.now()
+        try:
+            leak_detect_content = assistants_functions.check_commands_arrived_in_portal(driver, 8, 1, 'OP_EVT_SMG_LEAKDETECT', now, True)
+            if leak_detect_content:
+                break
+        except:
+            print("no leak detect")
+        sleep(10)
+        driver.refresh()
+
+    if leak_detect_content is not None:
+        if '"LeakNotificationLevel"=>3' in leak_detect_content:
+            return True
+        else:
+            return False
+    else:
+        return False

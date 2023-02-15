@@ -1,0 +1,200 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--  <head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Valve Control Form</title>-->
+<!--  </head>-->
+<!--  <body>-->
+<!--    <form id="myForm">-->
+<!--      <fieldset>-->
+<!--        <legend>Wint automation testing station:</legend>-->
+<!--        <input type="checkbox" name="open_valve"> open valve<br>-->
+<!--        <input type="checkbox" name="close_valve"> close valve<br>-->
+<!--        <input type="checkbox" name="inject_water"> inject water<br>-->
+<!--        <input type="checkbox" name="set_policy"> set policy<br>-->
+<!--      </fieldset>-->
+<!--      <button type="submit">Submit</button>-->
+<!--    </form>-->
+<!--    <div id="response-content"></div>-->
+
+<!--    <script>-->
+<!--      const form = document.getElementById("myForm");-->
+<!--      form.addEventListener("submit", (e) => {-->
+<!--        e.preventDefault();-->
+<!--        const checkboxes = form.elements;-->
+<!--        const selected = [];-->
+<!--        for (let i = 0; i < checkboxes.length; i++) {-->
+<!--          if (checkboxes[i].type === "checkbox" && checkboxes[i].checked) {-->
+<!--            selected.push(checkboxes[i].name);-->
+<!--          }-->
+<!--        }-->
+<!--        fetch("/run_command", {-->
+<!--          method: "POST",-->
+<!--          headers: {-->
+<!--            "Content-Type": "application/json",-->
+<!--          },-->
+<!--          body: JSON.stringify({-->
+<!--            selected: selected,-->
+<!--          }),-->
+<!--        })-->
+<!--          .then((response) => {-->
+<!--            return response.text();-->
+<!--          })-->
+<!--          .then((htmlContent) => {-->
+<!--            const responseContent = document.getElementById("response-content");-->
+<!--            responseContent.innerHTML += htmlContent;-->
+<!--          })-->
+<!--          .catch((error) => {-->
+<!--            console.error("Error:", error);-->
+<!--          });-->
+<!--      });-->
+<!--    </script>-->
+<!--  </body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Wint Automation Testing Station</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+      tr:hover {
+        background-color: #C7CDFF;
+      }
+      h1 {
+        text-align: center;
+        margin-top: 50px;
+        background-color: #C7FFE1;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Wint Automation Testing Station</h1>
+    <div class="container-fluid">
+      <form id="myForm">
+        <table id="myTable" class="table">
+          <thead>
+            <tr>
+              <th>Test Name</th>
+              <th>Description</th>
+              <th>Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input type="checkbox" name="open_valve"> Open Valve</input>
+              </td>
+              <td id="open_valve_description"> test for open valve command from control<br>
+                panel - expected result = getting open valve event</td>
+              <td id="open_valve_result"></td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" name="close_valve"> Close Valve</input>
+              </td>
+              <td> test for close valve command from control<br>
+                panel - expected result = getting close valve event</td>
+              <td id="close_valve_result"></td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" name="inject_water"> Inject Water</input>
+              </td>
+              <td>test of full injection cycle - <br> 1. set default policy. <br> 2. start inject simulated water flow.
+               <br> 3. wait for warning threshold. <br> 4. wait for close threshold. <br> expected result:
+               getting warning + close events</td>
+              <td id="inject_water_result"></td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" name="set_policy"> Set default Policy</input>
+              </td>
+              <td>test for set policy (detail in the JSON file)</td>
+              <td id="set_policy_result"></td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" name="set_recurring_policy"> Set Recurring Policy</input>
+              </td>
+              <td>test for set recurring policy (detail in the JSON file) -
+              <br> 1. set recurring policy to close valve. <br> 2. wait till policy get into effect and valve closes.
+              <br> 3. wait till policy finished and valve open again</td>
+              <td id="set_recurring_result"></td>
+            </tr>
+          </tbody>
+        </table>
+        <button id="submit-button" type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <br> <br>
+      <div id="response-content"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+          $('input[type="checkbox"]').click(function() {
+            if($(this).is(':checked')) {
+              $(this).closest('tr').css('background-color', '#33E6FF');
+            } else {
+              $(this).closest('tr').css('background-color', '');
+            }
+          });
+        });
+    </script>
+    <script>
+      const form = document.getElementById("myForm");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const checkboxes = form.elements;
+        const selected = [];
+        for (let i = 0; i < checkboxes.length; i++) {
+          if (checkboxes[i].type === "checkbox" && checkboxes[i].checked) {
+            selected.push(checkboxes[i].name);
+          }
+        }
+        fetch("/run_command", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            selected: selected,
+          }),
+        })
+          .then((response) => {
+            return response.text();
+          })
+          .then((htmlContent) => {
+            const responseContent = document.getElementById("response-content");
+            responseContent.innerHTML += htmlContent;
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      });
+    </script>
+<!--    <script>-->
+<!--      const form1 = document.getElementById("myForm");-->
+<!--      form1.addEventListener("submit", (e) => {-->
+<!--        setInterval(function() {-->
+<!--          fetch("/results")-->
+<!--            .then(response => response.json())-->
+<!--            .then(data => {-->
+<!--              if (Object.keys(obj).length === 0)-->
+<!--              {-->
+<!--                const moduleName = data.module_name;-->
+<!--                const testName = data.test_name;-->
+<!--                const nextWord = data.next_word;-->
+
+<!--                const tdElement = document.getElementById(moduleName + "_result");-->
+<!--                tdElement.textContent += testName + " " + nextWord;-->
+<!--              }-->
+<!--            })-->
+<!--            .catch(error => {-->
+<!--              console.error("Error:", error);-->
+<!--            });-->
+<!--        }, 1000);-->
+<!--      });-->
+<!--    </script>-->
+  </body>
+</html>

@@ -12,13 +12,19 @@ with open("C:\\Users\\liorm\\Desktop\\Automation-Selenium\\configuration_json.js
 url = configuration_date['portal']["url"]
 driver = webdriver.Firefox()
 driver.get(url)
-
 user_name = configuration_date['portal']['user_name']
 password = configuration_date['portal']['password']
 site_number = configuration_date['portal']['site_number']
 water_system_number = configuration_date['portal']['water_system_number']
 product_id = configuration_date['portal']['product_id']
-
+valve_status = configuration_date['recurring_policy_1']['valve_status']
+auto_shutoff = configuration_date['recurring_policy_1']['auto_shutoff']
+detection_mode = configuration_date['recurring_policy_1']['detection_mode']
+algo_mode = configuration_date['recurring_policy_1']['algo_mode']
+warning_threshold = configuration_date['recurring_policy_1']['warning_threshold']
+close_threshold = configuration_date['recurring_policy_1']['close_threshold']
+start_time = configuration_date['recurring_policy_1']['start_time']
+end_time = configuration_date['recurring_policy_1']['end_time']
 
 def test_login():
     try:
@@ -27,23 +33,20 @@ def test_login():
         pytest.fail("failed to login")
 
 
-def test_delete_waiting():
+
+def test_pre_testing():
     try:
         tests.connect_to_product(driver, site_number, water_system_number)
         tests.delete_waiting(driver)
     except:
         pytest.fail("failed to delete waiting")
 
-
-def test_clear_all_leaks():
     try:
         tests.connect_to_product(driver, site_number, water_system_number)
         tests.clear_all_leaks(driver, site_number, water_system_number, product_id)
     except Exception as e:
         pytest.fail(str(e))
 
-
-def test_delete_valve_error():
     try:
         tests.connect_to_product(driver, site_number, water_system_number)
         tests.delete_valve_error(driver, site_number, water_system_number, product_id)
@@ -59,15 +62,32 @@ def test_open_valve_from_system_control():
         pytest.fail("No event was received")
 
 
+def test_set_recurring_policy_close_valve():
+    try:
+        tests.connect_to_product(driver, site_number, water_system_number)
+        tests.set_policy(driver, site_number, water_system_number, product_id,
+                     valve_status, auto_shutoff, detection_mode, algo_mode, warning_threshold, close_threshold,
+                         'recurring_policy',start_time, end_time)
+    except:
+        pytest.fail("fail to set recurring policy")
+
+
+def test_wait_and_and_check_open_valve():
+    try:
+        tests.connect_to_product(driver, site_number, water_system_number)
+        tests.wait_policy_changed(driver, site_number,water_system_number,product_id, (int(end_time)-int(start_time)))
+    except:
+        pytest.fail("fail to get open valve")
+
+
+def test_delete_all_policies():
+    try:
+        tests.connect_to_product(driver, site_number, water_system_number)
+        tests.delete_all_policies(driver, site_number, water_system_number, product_id)
+    except:
+        pytest.fail("fail to delete policies")
+
 
 def test_close_connection():
     sleep(3)
     driver.quit()
-
-
-# test_login()
-# test_connect_to_product()
-# test_delete_waiting()
-# test_clear_all_leaks()
-# test_open_valve_from_system_control()
-# test_close_connection()

@@ -1,4 +1,5 @@
 import importlib
+import json
 import multiprocessing
 from datetime import datetime, timedelta
 from time import sleep
@@ -32,8 +33,7 @@ def check_commands_arrived_in_portal(driver,number_of_commands_to_check,time_ran
                 sleep(1)
                 content_text = cells[2]
                 return content_text.text
-
-
+    assert False
 
 
 def set_new_command(driver,site_number_json,water_system_number_json,product_number_json, unique_text_command):
@@ -116,16 +116,109 @@ def set_policy_detection_mode(driver, detection_mode_status, warning_threshold, 
         fixed_check.click()
 
 
-def inject_water_in_process(flow_level='major'):
+def set_policy_time(driver, start_time, end_time):
+    start_time_button = driver.find_element(By.XPATH, "/html/body/div[1]/div[4]/div/div/form/div[8]/div[1]/span/span")
+    end_time_button = driver.find_element(By.XPATH, "/html/body/div[1]/div[4]/div/div/form/div[8]/div[3]/span/span")
+    start_time_button.click()
+    start_hour = WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, '/html/body/div[2]/div/div[1]/table/tbody/tr[2]/td[1]/span')))
+    start_hour.click()
+    start_hour = (datetime.now()).hour
+    start_hour_str = "{:02d}".format(start_hour)
+    start_hour_table = WebDriverWait(driver, 10).until(
+        EC.visibility_of_element_located((By.XPATH, '/html/body/div[2]/div/div[2]/table/tbody')))
+    sleep(1)
+    try:
+        picked_hour = iterate_tbody(start_hour_table, start_hour_str)
+        picked_hour.click()
+    except:
+        raise Exception("not valid hour")
+    if start_time>=0:
+        up_hour_button = WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, '/html/body/div[2]/div/div[1]/table/tbody/tr[1]/td[3]/a/span')))
+        for i in range(start_time):
+            up_hour_button.click()
+    else:
+        down_hour_button = WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, '/html/body/div[2]/div/div[1]/table/tbody/tr[3]/td[3]/a/span')))
+        for i in range(start_time):
+            down_hour_button.click()
 
-    # injection_script_path = "/C:/Users/liorm/Desktop/Automation-Selenium/injection/inject_simulated_water.py"
-    # sys.path.append(injection_script_path)
-    # from injection.inject_simulated_water import main
-    # main()
-    from injection.inject_simulated_water import main
-    main()
-    # injection_process = multiprocessing.Process(target=injection.inject_simulated_water.main())
-    # injection_process.start()
-    # return injection_process
-#ask uri why it is not running from test and run from function
+    end_time_button.click()
+    end_hour = WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, '/html/body/div[3]/div/div[1]/table/tbody/tr[2]/td[1]/span')))
+    end_hour.click()
+    end_hour = (datetime.now()).hour
+    start_hour_str = "{:02d}".format(end_hour)
+    end_hour_table = WebDriverWait(driver, 10).until(
+        EC.visibility_of_element_located((By.XPATH, '/html/body/div[3]/div/div[2]/table/tbody')))
+    sleep(1)
+    try:
+        picked_hour = iterate_tbody(end_hour_table, start_hour_str)
+        picked_hour.click()
+    except:
+        raise Exception("not valid hour")
+    if end_time>=0:
+        up_minute_button = WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, '/html/body/div[3]/div/div[1]/table/tbody/tr[1]/td[3]/a/span')))
+        for i in range(end_time):
+            up_minute_button.click()
+    else:
+        down_minute_button = WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, '/html/body/div[3]/div/div[1]/table/tbody/tr[3]/td[3]/a/span')))
+        for i in range(end_time):
+            down_minute_button.click()
+
+
+
+def policy_check(policy_command_content, kind_of_policy):
+    with open("C:\\Users\\liorm\\Desktop\\Automation-Selenium\\configuration_json.json") as f:
+        configuration_date = json.load(f)
+    valve_status = configuration_date[f'{kind_of_policy}_1']['valve_status']
+    if valve_status == 'close':
+        valve_status = "shut_off"
+    auto_shutoff = configuration_date[f'{kind_of_policy}_1']['auto_shutoff']
+    if auto_shutoff == 'enabled':
+        auto_shutoff = 'true'
+    else:
+        auto_shutoff = 'false'
+    detection_mode = configuration_date[f'{kind_of_policy}_1']['detection_mode']
+    algo_mode = (configuration_date[f'{kind_of_policy}_1']['algo_mode']).replace(" ", "_")
+    warning_threshold = configuration_date[f'{kind_of_policy}_1']['warning_threshold']
+    close_threshold = configuration_date[f'{kind_of_policy}_1']['close_threshold']
+    valve_status_check = f"\"valveAction\"=>\"{valve_status}\"".lower() in policy_command_content.lower()
+    auto_shutoff_check = f"\"autoShutoff\"=>{auto_shutoff}".lower() in policy_command_content.lower()
+    detection_mode_check = f"\"detectionMode\"=>\"{detection_mode}\"".lower() in policy_command_content.lower()
+    algo_mode_check = f"\"fixedAlgoMode\"=>\"{algo_mode}\"".lower() in policy_command_content.lower()
+    warning_threshold_check = f"\"fixedWarningThreshold\"=>{warning_threshold}".lower() in policy_command_content.lower()
+    close_threshold_check = f"\"fixedCloseThreshold\"=>{close_threshold}".lower() in policy_command_content.lower()
+    return valve_status_check and auto_shutoff_check and detection_mode_check and algo_mode_check \
+        and warning_threshold_check and close_threshold_check
+
+
+def iterate_tbody(tbody, text_to_find):
+    rows = tbody.find_elements(By.CSS_SELECTOR, "tr")
+    for row in rows:
+        cells = row.find_elements(By.CSS_SELECTOR, "td")
+        for cell in cells:
+            if cell.text == text_to_find:
+                return cell
+    assert False
+
+def set_policy_name(driver):
+    policy_name = WebDriverWait(driver, 10).until(
+        EC.visibility_of_element_located((By.ID, 'policy_name')))
+    policy_name.send_keys('automation test')
+
+
+def find_element_by_xpath_and_click_it(driver, xpath_str):
+    button = WebDriverWait(driver, 10).until(
+        EC.visibility_of_element_located((By.XPATH, xpath_str)))
+    button.click()
+
+# def inject_water_in_process(flow_level='major'):
+#
+#     from injection.inject_simulated_water import main
+#     main()
+
 

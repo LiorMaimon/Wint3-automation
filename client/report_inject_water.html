@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>report_inject_water.html</title>
+    <link href="assets/style.css" rel="stylesheet" type="text/css"/></head>
+  <body onLoad="init()">
+    <script>/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+ * You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+
+function toArray(iter) {
+    if (iter === null) {
+        return null;
+    }
+    return Array.prototype.slice.call(iter);
+}
+
+function find(selector, elem) { // eslint-disable-line no-redeclare
+    if (!elem) {
+        elem = document;
+    }
+    return elem.querySelector(selector);
+}
+
+function findAll(selector, elem) {
+    if (!elem) {
+        elem = document;
+    }
+    return toArray(elem.querySelectorAll(selector));
+}
+
+function sortColumn(elem) {
+    toggleSortStates(elem);
+    const colIndex = toArray(elem.parentNode.childNodes).indexOf(elem);
+    let key;
+    if (elem.classList.contains('result')) {
+        key = keyResult;
+    } else if (elem.classList.contains('links')) {
+        key = keyLink;
+    } else {
+        key = keyAlpha;
+    }
+    sortTable(elem, key(colIndex));
+}
+
+function showAllExtras() { // eslint-disable-line no-unused-vars
+    findAll('.col-result').forEach(showExtras);
+}
+
+function hideAllExtras() { // eslint-disable-line no-unused-vars
+    findAll('.col-result').forEach(hideExtras);
+}
+
+function showExtras(colresultElem) {
+    const extras = colresultElem.parentNode.nextElementSibling;
+    const expandcollapse = colresultElem.firstElementChild;
+    extras.classList.remove('collapsed');
+    expandcollapse.classList.remove('expander');
+    expandcollapse.classList.add('collapser');
+}
+
+function hideExtras(colresultElem) {
+    const extras = colresultElem.parentNode.nextElementSibling;
+    const expandcollapse = colresultElem.firstElementChild;
+    extras.classList.add('collapsed');
+    expandcollapse.classList.remove('collapser');
+    expandcollapse.classList.add('expander');
+}
+
+function showFilters() {
+    let visibleString = getQueryParameter('visible') || 'all';
+    visibleString = visibleString.toLowerCase();
+    const checkedItems = visibleString.split(',');
+
+    const filterItems = document.getElementsByClassName('filter');
+    for (let i = 0; i < filterItems.length; i++) {
+        filterItems[i].hidden = false;
+
+        if (visibleString != 'all') {
+            filterItems[i].checked = checkedItems.includes(filterItems[i].getAttribute('data-test-result'));
+            filterTable(filterItems[i]);
+        }
+    }
+}
+
+function addCollapse() {
+    // Add links for show/hide all
+    const resulttable = find('table#results-table');
+    const showhideall = document.createElement('p');
+    showhideall.innerHTML = '<a href="javascript:showAllExtras()">Show all details</a> / ' +
+                            '<a href="javascript:hideAllExtras()">Hide all details</a>';
+    resulttable.parentElement.insertBefore(showhideall, resulttable);
+
+    // Add show/hide link to each result
+    findAll('.col-result').forEach(function(elem) {
+        const collapsed = getQueryParameter('collapsed') || 'Passed';
+        const extras = elem.parentNode.nextElementSibling;
+        const expandcollapse = document.createElement('span');
+        if (extras.classList.contains('collapsed')) {
+            expandcollapse.classList.add('expander');
+        } else if (collapsed.includes(elem.innerHTML)) {
+            extras.classList.add('collapsed');
+            expandcollapse.classList.add('expander');
+        } else {
+            expandcollapse.classList.add('collapser');
+        }
+        elem.appendChild(expandcollapse);
+
+        elem.addEventListener('click', function(event) {
+            if (event.currentTarget.parentNode.nextElementSibling.classList.contains('collapsed')) {
+                showExtras(event.currentTarget);
+            } else {
+                hideExtras(event.currentTarget);
+            }
+        });
+    });
+}
+
+function getQueryParameter(name) {
+    const match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+}
+
+function init () { // eslint-disable-line no-unused-vars
+    resetSortHeaders();
+
+    addCollapse();
+
+    showFilters();
+
+    sortColumn(find('.initial-sort'));
+
+    findAll('.sortable').forEach(function(elem) {
+        elem.addEventListener('click',
+            function() {
+                sortColumn(elem);
+            }, false);
+    });
+}
+
+function sortTable(clicked, keyFunc) {
+    const rows = findAll('.results-table-row');
+    const reversed = !clicked.classList.contains('asc');
+    const sortedRows = sort(rows, keyFunc, reversed);
+    /* Whole table is removed here because browsers acts much slower
+     * when appending existing elements.
+     */
+    const thead = document.getElementById('results-table-head');
+    document.getElementById('results-table').remove();
+    const parent = document.createElement('table');
+    parent.id = 'results-table';
+    parent.appendChild(thead);
+    sortedRows.forEach(function(elem) {
+        parent.appendChild(elem);
+    });
+    document.getElementsByTagName('BODY')[0].appendChild(parent);
+}
+
+function sort(items, keyFunc, reversed) {
+    const sortArray = items.map(function(item, i) {
+        return [keyFunc(item), i];
+    });
+
+    sortArray.sort(function(a, b) {
+        const keyA = a[0];
+        const keyB = b[0];
+
+        if (keyA == keyB) return 0;
+
+        if (reversed) {
+            return keyA < keyB ? 1 : -1;
+        } else {
+            return keyA > keyB ? 1 : -1;
+        }
+    });
+
+    return sortArray.map(function(item) {
+        const index = item[1];
+        return items[index];
+    });
+}
+
+function keyAlpha(colIndex) {
+    return function(elem) {
+        return elem.childNodes[1].childNodes[colIndex].firstChild.data.toLowerCase();
+    };
+}
+
+function keyLink(colIndex) {
+    return function(elem) {
+        const dataCell = elem.childNodes[1].childNodes[colIndex].firstChild;
+        return dataCell == null ? '' : dataCell.innerText.toLowerCase();
+    };
+}
+
+function keyResult(colIndex) {
+    return function(elem) {
+        const strings = ['Error', 'Failed', 'Rerun', 'XFailed', 'XPassed',
+            'Skipped', 'Passed'];
+        return strings.indexOf(elem.childNodes[1].childNodes[colIndex].firstChild.data);
+    };
+}
+
+function resetSortHeaders() {
+    findAll('.sort-icon').forEach(function(elem) {
+        elem.parentNode.removeChild(elem);
+    });
+    findAll('.sortable').forEach(function(elem) {
+        const icon = document.createElement('div');
+        icon.className = 'sort-icon';
+        icon.textContent = 'vvv';
+        elem.insertBefore(icon, elem.firstChild);
+        elem.classList.remove('desc', 'active');
+        elem.classList.add('asc', 'inactive');
+    });
+}
+
+function toggleSortStates(elem) {
+    //if active, toggle between asc and desc
+    if (elem.classList.contains('active')) {
+        elem.classList.toggle('asc');
+        elem.classList.toggle('desc');
+    }
+
+    //if inactive, reset all other functions and add ascending active
+    if (elem.classList.contains('inactive')) {
+        resetSortHeaders();
+        elem.classList.remove('inactive');
+        elem.classList.add('active');
+    }
+}
+
+function isAllRowsHidden(value) {
+    return value.hidden == false;
+}
+
+function filterTable(elem) { // eslint-disable-line no-unused-vars
+    const outcomeAtt = 'data-test-result';
+    const outcome = elem.getAttribute(outcomeAtt);
+    const classOutcome = outcome + ' results-table-row';
+    const outcomeRows = document.getElementsByClassName(classOutcome);
+
+    for(let i = 0; i < outcomeRows.length; i++){
+        outcomeRows[i].hidden = !elem.checked;
+    }
+
+    const rows = findAll('.results-table-row').filter(isAllRowsHidden);
+    const allRowsHidden = rows.length == 0 ? true : false;
+    const notFoundMessage = document.getElementById('not-found-message');
+    notFoundMessage.hidden = !allRowsHidden;
+}
+</script>
+    <h1>report_inject_water.html</h1>
+    <p>Report generated on 09-Feb-2023 at 11:32:45 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
+    <h2>Environment</h2>
+    <table id="environment">
+      <tr>
+        <td>Packages</td>
+        <td>{"pluggy": "1.0.0", "pytest": "7.2.1"}</td></tr>
+      <tr>
+        <td>Platform</td>
+        <td>Windows-10-10.0.19041-SP0</td></tr>
+      <tr>
+        <td>Plugins</td>
+        <td>{"anyio": "3.6.2", "html": "3.2.0", "metadata": "2.0.4"}</td></tr>
+      <tr>
+        <td>Python</td>
+        <td>3.7.8</td></tr></table>
+    <h2>Summary</h2>
+    <p>8 tests ran in 1106.65 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">5 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">3 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <h2>Results</h2>
+    <table id="results-table">
+      <thead id="results-table-head">
+        <tr>
+          <th class="sortable result initial-sort" col="result">Result</th>
+          <th class="sortable" col="name">Test</th>
+          <th class="sortable" col="duration">Duration</th>
+          <th class="sortable links" col="links">Links</th></tr>
+        <tr hidden="true" id="not-found-message">
+          <th colspan="4">No results found. Try to check the filters</th></tr></thead>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">Leak_detection_constant_flow_major_fixed_mode.py::test_warning_message_arrived</td>
+          <td class="col-duration">461.56</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">def test_warning_message_arrived():<br/>        try:<br/>            tests.connect_to_product(driver, site_number, water_system_number)<br/>            warning_gotten = tests.is_warning_command_was_gotten(driver, site_number, water_system_number, product_id)<br/>            if warning_gotten:<br/>                assert True<br/>            else:<br/>&gt;               assert False<br/><span class="error">E               assert False</span><br/><br/>..\Leak_detection_constant_flow_major_fixed_mode.py:86: AssertionError<br/><br/>During handling of the above exception, another exception occurred:<br/><br/>    def test_warning_message_arrived():<br/>        try:<br/>            tests.connect_to_product(driver, site_number, water_system_number)<br/>            warning_gotten = tests.is_warning_command_was_gotten(driver, site_number, water_system_number, product_id)<br/>            if warning_gotten:<br/>                assert True<br/>            else:<br/>                assert False<br/>        except:<br/>&gt;           pytest.fail(&#x27;fail to get warning&#x27;)<br/><span class="error">E           Failed: fail to get warning</span><br/><br/>..\Leak_detection_constant_flow_major_fixed_mode.py:88: Failed<br/> ------------------------------Captured stderr call------------------------------ <br/>C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\python.exe: can&#x27;t open file &#x27;injection\inject_simulated_water.py&#x27;: [Errno 2] No such file or directory
+<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">Leak_detection_constant_flow_major_fixed_mode.py::test_close_message_arrived</td>
+          <td class="col-duration">521.98</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">def test_close_message_arrived():<br/>        try:<br/>            sleep(60)<br/>            tests.connect_to_product(driver, site_number, water_system_number)<br/>            close_gotten = tests.is_close_command_was_gotten(driver, site_number, water_system_number, product_id)<br/>            if close_gotten:<br/>                assert True<br/>            else:<br/>&gt;               assert False<br/><span class="error">E               assert False</span><br/><br/>..\Leak_detection_constant_flow_major_fixed_mode.py:99: AssertionError<br/><br/>During handling of the above exception, another exception occurred:<br/><br/>    def test_close_message_arrived():<br/>        try:<br/>            sleep(60)<br/>            tests.connect_to_product(driver, site_number, water_system_number)<br/>            close_gotten = tests.is_close_command_was_gotten(driver, site_number, water_system_number, product_id)<br/>            if close_gotten:<br/>                assert True<br/>            else:<br/>                assert False<br/>        except:<br/>&gt;           pytest.fail(&#x27;fail to get close&#x27;)<br/><span class="error">E           Failed: fail to get close</span><br/><br/>..\Leak_detection_constant_flow_major_fixed_mode.py:101: Failed<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">Leak_detection_constant_flow_major_fixed_mode.py::test_stop_water_simulator</td>
+          <td class="col-duration">0.02</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">self = &lt;psutil._pswindows.Process object at 0x000001FC95695CC8&gt;, args = (), kwargs = {}<br/><br/>    @functools.wraps(fun)<br/>    def wrapper(self, *args, **kwargs):<br/>        try:<br/>&gt;           return fun(self, *args, **kwargs)<br/><br/>..\..\virtualenv-automation\lib\site-packages\psutil\_pswindows.py:688: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = &lt;psutil._pswindows.Process object at 0x000001FC95695CC8&gt;<br/><br/>    @wrap_exceptions<br/>    def create_time(self):<br/>        # Note: proc_times() not put under oneshot() &#x27;cause create_time()<br/>        # is already cached by the main Process class.<br/>        try:<br/>&gt;           user, system, created = cext.proc_times(self.pid)<br/><span class="error">E           ProcessLookupError: [Errno 3] assume no such process (originated from GetExitCodeProcess != STILL_ACTIVE)</span><br/><br/>..\..\virtualenv-automation\lib\site-packages\psutil\_pswindows.py:942: ProcessLookupError<br/><br/>During handling of the above exception, another exception occurred:<br/><br/>self = psutil.Process(pid=183164, name=&#x27;cmd.exe&#x27;, status=&#x27;terminated&#x27;), pid = 183164, _ignore_nsp = False<br/><br/>    def _init(self, pid, _ignore_nsp=False):<br/>        if pid is None:<br/>            pid = os.getpid()<br/>        else:<br/>            if not _PY3 and not isinstance(pid, (int, long)):<br/>                raise TypeError(&#x27;pid must be an integer (got %r)&#x27; % pid)<br/>            if pid &lt; 0:<br/>                raise ValueError(&#x27;pid must be a positive integer (got %s)&#x27;<br/>                                 % pid)<br/>        self._pid = pid<br/>        self._name = None<br/>        self._exe = None<br/>        self._create_time = None<br/>        self._gone = False<br/>        self._pid_reused = False<br/>        self._hash = None<br/>        self._lock = threading.RLock()<br/>        # used for caching on Windows only (on POSIX ppid may change)<br/>        self._ppid = None<br/>        # platform-specific modules define an _psplatform.Process<br/>        # implementation class<br/>        self._proc = _psplatform.Process(pid)<br/>        self._last_sys_cpu_times = None<br/>        self._last_proc_cpu_times = None<br/>        self._exitcode = _SENTINEL<br/>        # cache creation time for later use in is_running() method<br/>        try:<br/>&gt;           self.create_time()<br/><br/>..\..\virtualenv-automation\lib\site-packages\psutil\__init__.py:361: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = psutil.Process(pid=183164, name=&#x27;cmd.exe&#x27;, status=&#x27;terminated&#x27;)<br/><br/>    def create_time(self):<br/>        &quot;&quot;&quot;The process creation time as a floating point number<br/>        expressed in seconds since the epoch.<br/>        The return value is cached after first call.<br/>        &quot;&quot;&quot;<br/>        if self._create_time is None:<br/>&gt;           self._create_time = self._proc.create_time()<br/><br/>..\..\virtualenv-automation\lib\site-packages\psutil\__init__.py:714: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = &lt;psutil._pswindows.Process object at 0x000001FC95695CC8&gt;, args = (), kwargs = {}<br/><br/>    @functools.wraps(fun)<br/>    def wrapper(self, *args, **kwargs):<br/>        try:<br/>            return fun(self, *args, **kwargs)<br/>        except OSError as err:<br/>&gt;           raise convert_oserror(err, pid=self.pid, name=self._name)<br/><span class="error">E           psutil.NoSuchProcess: process no longer exists (pid=183164)</span><br/><br/>..\..\virtualenv-automation\lib\site-packages\psutil\_pswindows.py:690: NoSuchProcess<br/><br/>During handling of the above exception, another exception occurred:<br/><br/>injection_process = &lt;subprocess.Popen object at 0x000001FC9567D188&gt;<br/><br/>    def stop_inject_water(injection_process):<br/>        try:<br/>&gt;           parent = psutil.Process(injection_process.pid)<br/><br/>..\tests.py:181: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = psutil.Process(pid=183164, name=&#x27;cmd.exe&#x27;, status=&#x27;terminated&#x27;), pid = 183164<br/><br/>    def __init__(self, pid=None):<br/>&gt;       self._init(pid)<br/><br/>..\..\virtualenv-automation\lib\site-packages\psutil\__init__.py:332: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = psutil.Process(pid=183164, name=&#x27;cmd.exe&#x27;, status=&#x27;terminated&#x27;), pid = 183164, _ignore_nsp = False<br/><br/>    def _init(self, pid, _ignore_nsp=False):<br/>        if pid is None:<br/>            pid = os.getpid()<br/>        else:<br/>            if not _PY3 and not isinstance(pid, (int, long)):<br/>                raise TypeError(&#x27;pid must be an integer (got %r)&#x27; % pid)<br/>            if pid &lt; 0:<br/>                raise ValueError(&#x27;pid must be a positive integer (got %s)&#x27;<br/>                                 % pid)<br/>        self._pid = pid<br/>        self._name = None<br/>        self._exe = None<br/>        self._create_time = None<br/>        self._gone = False<br/>        self._pid_reused = False<br/>        self._hash = None<br/>        self._lock = threading.RLock()<br/>        # used for caching on Windows only (on POSIX ppid may change)<br/>        self._ppid = None<br/>        # platform-specific modules define an _psplatform.Process<br/>        # implementation class<br/>        self._proc = _psplatform.Process(pid)<br/>        self._last_sys_cpu_times = None<br/>        self._last_proc_cpu_times = None<br/>        self._exitcode = _SENTINEL<br/>        # cache creation time for later use in is_running() method<br/>        try:<br/>            self.create_time()<br/>        except AccessDenied:<br/>            # We should never get here as AFAIK we&#x27;re able to get<br/>            # process creation time on all platforms even as a<br/>            # limited user.<br/>            pass<br/>        except ZombieProcess:<br/>            # Zombies can still be queried by this class (although<br/>            # not always) and pids() return them so just go on.<br/>            pass<br/>        except NoSuchProcess:<br/>            if not _ignore_nsp:<br/>&gt;               raise NoSuchProcess(pid, msg=&#x27;process PID not found&#x27;)<br/><span class="error">E               psutil.NoSuchProcess: process PID not found (pid=183164)</span><br/><br/>..\..\virtualenv-automation\lib\site-packages\psutil\__init__.py:373: NoSuchProcess<br/><br/>During handling of the above exception, another exception occurred:<br/><br/>    def test_stop_water_simulator():<br/>        try:<br/>            global injection_process<br/>&gt;           tests.stop_inject_water(injection_process)<br/><br/>..\Leak_detection_constant_flow_major_fixed_mode.py:106: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>injection_process = &lt;subprocess.Popen object at 0x000001FC9567D188&gt;<br/><br/>    def stop_inject_water(injection_process):<br/>        try:<br/>            parent = psutil.Process(injection_process.pid)<br/>            children = parent.children(recursive=True)<br/>            os.kill(children[0].pid, signal.SIGTERM)<br/>        except:<br/>&gt;           raise Exception(&quot;fail to stop water flow&quot;)<br/><span class="error">E           Exception: fail to stop water flow</span><br/><br/>..\tests.py:185: Exception<br/><br/>During handling of the above exception, another exception occurred:<br/><br/>    def test_stop_water_simulator():<br/>        try:<br/>            global injection_process<br/>            tests.stop_inject_water(injection_process)<br/>        except Exception as e:<br/>&gt;           pytest.fail(str(e))<br/><span class="error">E           Failed: fail to stop water flow</span><br/><br/>..\Leak_detection_constant_flow_major_fixed_mode.py:108: Failed<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">Leak_detection_constant_flow_major_fixed_mode.py::test_login</td>
+          <td class="col-duration">2.88</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">Leak_detection_constant_flow_major_fixed_mode.py::test_pre_testing</td>
+          <td class="col-duration">64.46</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">Leak_detection_constant_flow_major_fixed_mode.py::test_set_default_policy</td>
+          <td class="col-duration">32.35</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">Leak_detection_constant_flow_major_fixed_mode.py::test_inject_simulated_water_flow</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">Leak_detection_constant_flow_major_fixed_mode.py::test_close_connection</td>
+          <td class="col-duration">15.51</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody></table></body></html>

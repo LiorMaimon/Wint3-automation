@@ -1,9 +1,5 @@
 ============================= test session starts =============================
-collecting ... collected 6 items
+collecting ... collected 9 items
 
-..\open_valve.py::test_login PASSED                                      [ 16%]
-..\open_valve.py::test_delete_waiting PASSED                             [ 33%]
-..\open_valve.py::test_clear_all_leaks PASSED                            [ 50%]
-..\open_valve.py::test_delete_valve_error PASSED                         [ 66%]
-..\open_valve.py::test_open_valve_from_system_control PASSED             [ 83%]
-..\open_valve.py::test_close_connection PASSED                           [100%]
+..\Leak_detection_constant_flow_major_fixed_mode.py::test_login PASSED   [ 11%]
+..\Leak_detection_constant_flow_major_fixed_mode.py::test_pre_testing 

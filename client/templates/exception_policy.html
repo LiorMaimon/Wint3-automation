@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>exception_policy.html</title>
+    <link href="static/assets/style.css" rel="stylesheet" type="text/css"/></head>
+  <body onLoad="init()">
+    <script>/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+ * You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+
+function toArray(iter) {
+    if (iter === null) {
+        return null;
+    }
+    return Array.prototype.slice.call(iter);
+}
+
+function find(selector, elem) { // eslint-disable-line no-redeclare
+    if (!elem) {
+        elem = document;
+    }
+    return elem.querySelector(selector);
+}
+
+function findAll(selector, elem) {
+    if (!elem) {
+        elem = document;
+    }
+    return toArray(elem.querySelectorAll(selector));
+}
+
+function sortColumn(elem) {
+    toggleSortStates(elem);
+    const colIndex = toArray(elem.parentNode.childNodes).indexOf(elem);
+    let key;
+    if (elem.classList.contains('result')) {
+        key = keyResult;
+    } else if (elem.classList.contains('links')) {
+        key = keyLink;
+    } else {
+        key = keyAlpha;
+    }
+    sortTable(elem, key(colIndex));
+}
+
+function showAllExtras() { // eslint-disable-line no-unused-vars
+    findAll('.col-result').forEach(showExtras);
+}
+
+function hideAllExtras() { // eslint-disable-line no-unused-vars
+    findAll('.col-result').forEach(hideExtras);
+}
+
+function showExtras(colresultElem) {
+    const extras = colresultElem.parentNode.nextElementSibling;
+    const expandcollapse = colresultElem.firstElementChild;
+    extras.classList.remove('collapsed');
+    expandcollapse.classList.remove('expander');
+    expandcollapse.classList.add('collapser');
+}
+
+function hideExtras(colresultElem) {
+    const extras = colresultElem.parentNode.nextElementSibling;
+    const expandcollapse = colresultElem.firstElementChild;
+    extras.classList.add('collapsed');
+    expandcollapse.classList.remove('collapser');
+    expandcollapse.classList.add('expander');
+}
+
+function showFilters() {
+    let visibleString = getQueryParameter('visible') || 'all';
+    visibleString = visibleString.toLowerCase();
+    const checkedItems = visibleString.split(',');
+
+    const filterItems = document.getElementsByClassName('filter');
+    for (let i = 0; i < filterItems.length; i++) {
+        filterItems[i].hidden = false;
+
+        if (visibleString != 'all') {
+            filterItems[i].checked = checkedItems.includes(filterItems[i].getAttribute('data-test-result'));
+            filterTable(filterItems[i]);
+        }
+    }
+}
+
+function addCollapse() {
+    // Add links for show/hide all
+    const resulttable = find('table#results-table');
+    const showhideall = document.createElement('p');
+    showhideall.innerHTML = '<a href="javascript:showAllExtras()">Show all details</a> / ' +
+                            '<a href="javascript:hideAllExtras()">Hide all details</a>';
+    resulttable.parentElement.insertBefore(showhideall, resulttable);
+
+    // Add show/hide link to each result
+    findAll('.col-result').forEach(function(elem) {
+        const collapsed = getQueryParameter('collapsed') || 'Passed';
+        const extras = elem.parentNode.nextElementSibling;
+        const expandcollapse = document.createElement('span');
+        if (extras.classList.contains('collapsed')) {
+            expandcollapse.classList.add('expander');
+        } else if (collapsed.includes(elem.innerHTML)) {
+            extras.classList.add('collapsed');
+            expandcollapse.classList.add('expander');
+        } else {
+            expandcollapse.classList.add('collapser');
+        }
+        elem.appendChild(expandcollapse);
+
+        elem.addEventListener('click', function(event) {
+            if (event.currentTarget.parentNode.nextElementSibling.classList.contains('collapsed')) {
+                showExtras(event.currentTarget);
+            } else {
+                hideExtras(event.currentTarget);
+            }
+        });
+    });
+}
+
+function getQueryParameter(name) {
+    const match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+}
+
+function init () { // eslint-disable-line no-unused-vars
+    resetSortHeaders();
+
+    addCollapse();
+
+    showFilters();
+
+    sortColumn(find('.initial-sort'));
+
+    findAll('.sortable').forEach(function(elem) {
+        elem.addEventListener('click',
+            function() {
+                sortColumn(elem);
+            }, false);
+    });
+}
+
+function sortTable(clicked, keyFunc) {
+    const rows = findAll('.results-table-row');
+    const reversed = !clicked.classList.contains('asc');
+    const sortedRows = sort(rows, keyFunc, reversed);
+    /* Whole table is removed here because browsers acts much slower
+     * when appending existing elements.
+     */
+    const thead = document.getElementById('results-table-head');
+    document.getElementById('results-table').remove();
+    const parent = document.createElement('table');
+    parent.id = 'results-table';
+    parent.appendChild(thead);
+    sortedRows.forEach(function(elem) {
+        parent.appendChild(elem);
+    });
+    document.getElementsByTagName('BODY')[0].appendChild(parent);
+}
+
+function sort(items, keyFunc, reversed) {
+    const sortArray = items.map(function(item, i) {
+        return [keyFunc(item), i];
+    });
+
+    sortArray.sort(function(a, b) {
+        const keyA = a[0];
+        const keyB = b[0];
+
+        if (keyA == keyB) return 0;
+
+        if (reversed) {
+            return keyA < keyB ? 1 : -1;
+        } else {
+            return keyA > keyB ? 1 : -1;
+        }
+    });
+
+    return sortArray.map(function(item) {
+        const index = item[1];
+        return items[index];
+    });
+}
+
+function keyAlpha(colIndex) {
+    return function(elem) {
+        return elem.childNodes[1].childNodes[colIndex].firstChild.data.toLowerCase();
+    };
+}
+
+function keyLink(colIndex) {
+    return function(elem) {
+        const dataCell = elem.childNodes[1].childNodes[colIndex].firstChild;
+        return dataCell == null ? '' : dataCell.innerText.toLowerCase();
+    };
+}
+
+function keyResult(colIndex) {
+    return function(elem) {
+        const strings = ['Error', 'Failed', 'Rerun', 'XFailed', 'XPassed',
+            'Skipped', 'Passed'];
+        return strings.indexOf(elem.childNodes[1].childNodes[colIndex].firstChild.data);
+    };
+}
+
+function resetSortHeaders() {
+    findAll('.sort-icon').forEach(function(elem) {
+        elem.parentNode.removeChild(elem);
+    });
+    findAll('.sortable').forEach(function(elem) {
+        const icon = document.createElement('div');
+        icon.className = 'sort-icon';
+        icon.textContent = 'vvv';
+        elem.insertBefore(icon, elem.firstChild);
+        elem.classList.remove('desc', 'active');
+        elem.classList.add('asc', 'inactive');
+    });
+}
+
+function toggleSortStates(elem) {
+    //if active, toggle between asc and desc
+    if (elem.classList.contains('active')) {
+        elem.classList.toggle('asc');
+        elem.classList.toggle('desc');
+    }
+
+    //if inactive, reset all other functions and add ascending active
+    if (elem.classList.contains('inactive')) {
+        resetSortHeaders();
+        elem.classList.remove('inactive');
+        elem.classList.add('active');
+    }
+}
+
+function isAllRowsHidden(value) {
+    return value.hidden == false;
+}
+
+function filterTable(elem) { // eslint-disable-line no-unused-vars
+    const outcomeAtt = 'data-test-result';
+    const outcome = elem.getAttribute(outcomeAtt);
+    const classOutcome = outcome + ' results-table-row';
+    const outcomeRows = document.getElementsByClassName(classOutcome);
+
+    for(let i = 0; i < outcomeRows.length; i++){
+        outcomeRows[i].hidden = !elem.checked;
+    }
+
+    const rows = findAll('.results-table-row').filter(isAllRowsHidden);
+    const allRowsHidden = rows.length == 0 ? true : false;
+    const notFoundMessage = document.getElementById('not-found-message');
+    notFoundMessage.hidden = !allRowsHidden;
+}
+</script>
+    <h1>exception_policy.html</h1>
+    <p>Report generated on 16-Feb-2023 at 07:34:49 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
+    <h2>Environment</h2>
+    <table id="environment">
+      <tr>
+        <td>Packages</td>
+        <td>{"pluggy": "1.0.0", "pytest": "7.2.1"}</td></tr>
+      <tr>
+        <td>Platform</td>
+        <td>Windows-10-10.0.19041-SP0</td></tr>
+      <tr>
+        <td>Plugins</td>
+        <td>{"anyio": "3.6.2", "html": "3.2.0", "metadata": "2.0.4"}</td></tr>
+      <tr>
+        <td>Python</td>
+        <td>3.7.8</td></tr></table>
+    <h2>Summary</h2>
+    <p>7 tests ran in 7179.87 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">3 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">4 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <h2>Results</h2>
+    <table id="results-table">
+      <thead id="results-table-head">
+        <tr>
+          <th class="sortable result initial-sort" col="result">Result</th>
+          <th class="sortable" col="name">Test</th>
+          <th class="sortable" col="duration">Duration</th>
+          <th class="sortable links" col="links">Links</th></tr>
+        <tr hidden="true" id="not-found-message">
+          <th colspan="4">No results found. Try to check the filters</th></tr></thead>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">exception_policy.py::test_pre_testing</td>
+          <td class="col-duration">40.37</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">driver = &lt;selenium.webdriver.firefox.webdriver.WebDriver (session=&quot;4030db21-24f8-4475-841c-ec3a18641a4c&quot;)&gt;<br/>site_number = &#x27;2263&#x27;, water_system_number = &#x27;8464&#x27;, product_number = &#x27;10652&#x27;<br/><br/>    def clear_all_leaks(driver, site_number, water_system_number, product_number):<br/>        assistants_functions.find_element_by_xpath_and_click_it(driver,<br/>                                                &quot;//a[@href=&#x27;/en/sites/{}/water_systems/{}/products/{}/commands&#x27;]&quot;.format(<br/>                                                  site_number, water_system_number, product_number))<br/>        sleep(3)<br/>    <br/>        try:<br/>            now = datetime.now()<br/>            assistants_functions.set_new_command_and_check_command_arrived_in_portal(<br/>                driver, site_number, water_system_number, product_number, &#x27;clear&#x27;, NUMBER_OF_COMMANDS_TO_CHECK, TIME_RANGE,<br/>&gt;               &#x27;OP_RES_ALG_CLEAR_ALL_LEAKS&#x27;, now)<br/><br/>..\tests.py:116: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _<br/><br/>driver = &lt;selenium.webdriver.firefox.webdriver.WebDriver (session=&quot;4030db21-24f8-4475-841c-ec3a18641a4c&quot;)&gt;<br/>site_number = &#x27;2263&#x27;, water_system_number = &#x27;8464&#x27;, product_number = &#x27;10652&#x27;<br/>unique_text_command = &#x27;clear&#x27;, number_of_commands_to_check = 8, time_range = 1<br/>message_to_check = &#x27;OP_RES_ALG_CLEAR_ALL_LEAKS&#x27;<br/>now_time = datetime.datetime(2023, 2, 16, 6, 35, 33, 389698)<br/><br/>    def set_new_command_and_check_command_arrived_in_portal(<br/>            driver,site_number,water_system_number,product_number, unique_text_command,<br/>            number_of_commands_to_check,time_range,message_to_check,now_time):<br/>    <br/>        set_new_command(driver,site_number,water_system_number,product_number, unique_text_command)<br/>        sleep(8)<br/>        all_commands_button = WebDriverWait(driver, 10).until(<br/>            EC.visibility_of_element_located((By.XPATH,<br/>                                              &quot;//a[@href=&#x27;/en/sites/{}/water_systems/{}/products/{}/commands&#x27;]&quot;.format(<br/>                                                  site_number, water_system_number, product_number))))<br/>        all_commands_button.click()<br/>&gt;       check_commands_arrived_in_portal(driver,number_of_commands_to_check,time_range,message_to_check,now_time)<br/><br/>..\assistants_functions.py:67: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _<br/><br/>driver = &lt;selenium.webdriver.firefox.webdriver.WebDriver (session=&quot;4030db21-24f8-4475-841c-ec3a18641a4c&quot;)&gt;<br/>number_of_commands_to_check = 8, time_range = 1<br/>message_to_check = &#x27;OP_RES_ALG_CLEAR_ALL_LEAKS&#x27;<br/>now_time = datetime.datetime(2023, 2, 16, 6, 35, 33, 389698), content = False<br/><br/>    def check_commands_arrived_in_portal(driver,number_of_commands_to_check,time_range,message_to_check,now_time, content=False):<br/>        sleep(3)<br/>        tbodys = driver.find_elements(By.TAG_NAME, &#x27;tbody&#x27;)<br/>        tbody_commands = tbodys[1]<br/>        rows = tbody_commands.find_elements(By.CSS_SELECTOR, &quot;tr&quot;)<br/>        for i in range(number_of_commands_to_check):<br/>            cells = rows[i].find_elements(By.CSS_SELECTOR, &quot;td&quot;)<br/>            words = cells[9].text.split(&quot; &quot;)<br/>            hour_time = str(words[1])<br/>            year_time = str(words[0])<br/>            time_from_portal = datetime.strptime(year_time + &#x27; &#x27; + hour_time, &#x27;%Y-%m-%d %H:%M:%S&#x27;)<br/>            if (time_from_portal - timedelta(minutes=time_range) &lt; now_time &lt; time_from_portal + timedelta(minutes=time_range) and cells[<br/>                1].text == message_to_check):<br/>                if not content:<br/>                    return<br/>                else:<br/>    <br/>                    content = cells[2].find_element(By.TAG_NAME,&quot;div&quot;)<br/>    <br/>                    content.click()<br/>                    sleep(1)<br/>                    content_text = cells[2]<br/>                    return content_text.text<br/>&gt;       assert False<br/><span class="error">E       AssertionError</span><br/><br/>..\assistants_functions.py:36: AssertionError<br/><br/>During handling of the above exception, another exception occurred:<br/><br/>    def test_pre_testing():<br/>        try:<br/>            tests.connect_to_product(driver, site_number, water_system_number)<br/>            tests.delete_waiting(driver)<br/>        except:<br/>            pytest.fail(&quot;failed to delete waiting&quot;)<br/>    <br/>        try:<br/>            tests.connect_to_product(driver, site_number, water_system_number)<br/>&gt;           tests.clear_all_leaks(driver, site_number, water_system_number, product_id)<br/><br/>..\exception_policy.py:46: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _<br/><br/>driver = &lt;selenium.webdriver.firefox.webdriver.WebDriver (session=&quot;4030db21-24f8-4475-841c-ec3a18641a4c&quot;)&gt;<br/>site_number = &#x27;2263&#x27;, water_system_number = &#x27;8464&#x27;, product_number = &#x27;10652&#x27;<br/><br/>    def clear_all_leaks(driver, site_number, water_system_number, product_number):<br/>        assistants_functions.find_element_by_xpath_and_click_it(driver,<br/>                                                &quot;//a[@href=&#x27;/en/sites/{}/water_systems/{}/products/{}/commands&#x27;]&quot;.format(<br/>                                                  site_number, water_system_number, product_number))<br/>        sleep(3)<br/>    <br/>        try:<br/>            now = datetime.now()<br/>            assistants_functions.set_new_command_and_check_command_arrived_in_portal(<br/>                driver, site_number, water_system_number, product_number, &#x27;clear&#x27;, NUMBER_OF_COMMANDS_TO_CHECK, TIME_RANGE,<br/>                &#x27;OP_RES_ALG_CLEAR_ALL_LEAKS&#x27;, now)<br/>        except:<br/>&gt;           raise Exception(&quot;no OP_RES_ALG_CLEAR_ALL_LEAKS message was arrived&quot;)<br/><span class="error">E           Exception: no OP_RES_ALG_CLEAR_ALL_LEAKS message was arrived</span><br/><br/>..\tests.py:118: Exception<br/><br/>During handling of the above exception, another exception occurred:<br/><br/>    def test_pre_testing():<br/>        try:<br/>            tests.connect_to_product(driver, site_number, water_system_number)<br/>            tests.delete_waiting(driver)<br/>        except:<br/>            pytest.fail(&quot;failed to delete waiting&quot;)<br/>    <br/>        try:<br/>            tests.connect_to_product(driver, site_number, water_system_number)<br/>            tests.clear_all_leaks(driver, site_number, water_system_number, product_id)<br/>        except Exception as e:<br/>&gt;           pytest.fail(str(e))<br/><span class="error">E           Failed: no OP_RES_ALG_CLEAR_ALL_LEAKS message was arrived</span><br/><br/>..\exception_policy.py:48: Failed<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">exception_policy.py::test_open_valve_from_system_control</td>
+          <td class="col-duration">25.15</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">driver = &lt;selenium.webdriver.firefox.webdriver.WebDriver (session=&quot;4030db21-24f8-4475-841c-ec3a18641a4c&quot;)&gt;<br/>product_number = &#x27;10652&#x27;, site_number = &#x27;2263&#x27;, water_system_number = &#x27;8464&#x27;<br/><br/>    def open_valve_from_system_control(driver, product_number, site_number, water_system_number):<br/>        assistants_functions.find_element_by_xpath_and_click_it(driver, &quot;//*[@id=\&quot;command_open_vlv\&quot;]&quot;)<br/>        now = datetime.now()<br/>        sleep(2)<br/>        alert = driver.switch_to.alert<br/>        alert.accept()<br/>        close_button_popup_message = WebDriverWait(driver, 10).until(<br/>            EC.visibility_of_element_located(<br/>                (By.XPATH, &quot;/html/body/div[1]/div[8]/div[1]/div/div[2]/div[1]/div/div/div/div[3]/button&quot;)))<br/>        close_button_popup_message.click()<br/>        sleep(15)<br/>        assistants_functions.find_element_by_xpath_and_click_it(driver,<br/>                    &quot;//a[@href=&#x27;/en/sites/{}/water_systems/{}/products/{}/commands&#x27;]&quot;.format(<br/>                                                  site_number, water_system_number, product_number))<br/>        try:<br/>            assistants_functions.check_commands_arrived_in_portal(driver, NUMBER_OF_COMMANDS_TO_CHECK, TIME_RANGE,<br/>&gt;                                                                 &#x27;OP_EVT_VALVE_OPEN_FL3&#x27;, now)<br/><br/>..\tests.py:80: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _<br/><br/>driver = &lt;selenium.webdriver.firefox.webdriver.WebDriver (session=&quot;4030db21-24f8-4475-841c-ec3a18641a4c&quot;)&gt;<br/>number_of_commands_to_check = 8, time_range = 1<br/>message_to_check = &#x27;OP_EVT_VALVE_OPEN_FL3&#x27;<br/>now_time = datetime.datetime(2023, 2, 16, 6, 35, 58, 23042), content = False<br/><br/>    def check_commands_arrived_in_portal(driver,number_of_commands_to_check,time_range,message_to_check,now_time, content=False):<br/>        sleep(3)<br/>        tbodys = driver.find_elements(By.TAG_NAME, &#x27;tbody&#x27;)<br/>        tbody_commands = tbodys[1]<br/>        rows = tbody_commands.find_elements(By.CSS_SELECTOR, &quot;tr&quot;)<br/>        for i in range(number_of_commands_to_check):<br/>            cells = rows[i].find_elements(By.CSS_SELECTOR, &quot;td&quot;)<br/>            words = cells[9].text.split(&quot; &quot;)<br/>            hour_time = str(words[1])<br/>            year_time = str(words[0])<br/>            time_from_portal = datetime.strptime(year_time + &#x27; &#x27; + hour_time, &#x27;%Y-%m-%d %H:%M:%S&#x27;)<br/>            if (time_from_portal - timedelta(minutes=time_range) &lt; now_time &lt; time_from_portal + timedelta(minutes=time_range) and cells[<br/>                1].text == message_to_check):<br/>                if not content:<br/>                    return<br/>                else:<br/>    <br/>                    content = cells[2].find_element(By.TAG_NAME,&quot;div&quot;)<br/>    <br/>                    content.click()<br/>                    sleep(1)<br/>                    content_text = cells[2]<br/>                    return content_text.text<br/>&gt;       assert False<br/><span class="error">E       AssertionError</span><br/><br/>..\assistants_functions.py:36: AssertionError<br/><br/>During handling of the above exception, another exception occurred:<br/><br/>    def test_open_valve_from_system_control():<br/>        try:<br/>            tests.connect_to_product(driver, site_number, water_system_number)<br/>&gt;           tests.open_valve_from_system_control(driver, product_id, site_number, water_system_number)<br/><br/>..\exception_policy.py:60: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _<br/><br/>driver = &lt;selenium.webdriver.firefox.webdriver.WebDriver (session=&quot;4030db21-24f8-4475-841c-ec3a18641a4c&quot;)&gt;<br/>product_number = &#x27;10652&#x27;, site_number = &#x27;2263&#x27;, water_system_number = &#x27;8464&#x27;<br/><br/>    def open_valve_from_system_control(driver, product_number, site_number, water_system_number):<br/>        assistants_functions.find_element_by_xpath_and_click_it(driver, &quot;//*[@id=\&quot;command_open_vlv\&quot;]&quot;)<br/>        now = datetime.now()<br/>        sleep(2)<br/>        alert = driver.switch_to.alert<br/>        alert.accept()<br/>        close_button_popup_message = WebDriverWait(driver, 10).until(<br/>            EC.visibility_of_element_located(<br/>                (By.XPATH, &quot;/html/body/div[1]/div[8]/div[1]/div/div[2]/div[1]/div/div/div/div[3]/button&quot;)))<br/>        close_button_popup_message.click()<br/>        sleep(15)<br/>        assistants_functions.find_element_by_xpath_and_click_it(driver,<br/>                    &quot;//a[@href=&#x27;/en/sites/{}/water_systems/{}/products/{}/commands&#x27;]&quot;.format(<br/>                                                  site_number, water_system_number, product_number))<br/>        try:<br/>            assistants_functions.check_commands_arrived_in_portal(driver, NUMBER_OF_COMMANDS_TO_CHECK, TIME_RANGE,<br/>                                                                  &#x27;OP_EVT_VALVE_OPEN_FL3&#x27;, now)<br/>        except:<br/>&gt;           assert False<br/><span class="error">E           AssertionError</span><br/><br/>..\tests.py:82: AssertionError<br/><br/>During handling of the above exception, another exception occurred:<br/><br/>    def test_open_valve_from_system_control():<br/>        try:<br/>            tests.connect_to_product(driver, site_number, water_system_number)<br/>            tests.open_valve_from_system_control(driver, product_id, site_number, water_system_number)<br/>        except:<br/>&gt;           pytest.fail(&quot;No event was received&quot;)<br/><span class="error">E           Failed: No event was received</span><br/><br/>..\exception_policy.py:62: Failed<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">exception_policy.py::test_set_exception_policy_close_valve</td>
+          <td class="col-duration">41.26</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">driver = &lt;selenium.webdriver.firefox.webdriver.WebDriver (session=&quot;4030db21-24f8-4475-841c-ec3a18641a4c&quot;)&gt;<br/>site_number = &#x27;2263&#x27;, water_system_number = &#x27;8464&#x27;, product_number = &#x27;10652&#x27;<br/>valve_status = &#x27;close&#x27;, auto_shutoff = &#x27;enabled&#x27;, detection_mode = &#x27;fixed&#x27;<br/>algo_mode = &#x27;event based&#x27;, warning_threshold = &#x27;50&#x27;, close_threshold = &#x27;150&#x27;<br/>policy_kind = &#x27;exception_policy&#x27;, start_time = &#x27;0&#x27;, end_time = &#x27;2&#x27;<br/><br/>    def set_policy(driver, site_number, water_system_number, product_number, valve_status, auto_shutoff, detection_mode,<br/>                   algo_mode, warning_threshold, close_threshold, policy_kind=&#x27;default_policy&#x27;, start_time=&#x27;0&#x27;,<br/>                   end_time=&quot;5&quot;):<br/>        #  for now, it is for default and recurring need exception<br/>        assistants_functions.find_element_by_xpath_and_click_it(driver,<br/>                                                &quot;//a[@href=&#x27;/en/sites/{}/water_systems/{}/policies&#x27;]&quot;.format(<br/>                                                  site_number, water_system_number))<br/>        if policy_kind == &quot;exception_policy&quot;:<br/>            assistants_functions.find_element_by_xpath_and_click_it(driver, &quot;//*[text()=&#x27;Add Exception&#x27;]&quot;)<br/>            assistants_functions.set_policy_name(driver)<br/>            assistants_functions.set_exception_policy_time(driver, int(start_time), int(end_time))<br/>        if policy_kind == &#x27;recurring_policy&#x27;:<br/>            assistants_functions.find_element_by_xpath_and_click_it(driver, &quot;//*[text()=&#x27;Add Recurring Policy&#x27;]&quot;)<br/>            assistants_functions.set_policy_name(driver)<br/>            assistants_functions.set_recurring_policy_time(driver, int(start_time), int(end_time))<br/>    <br/>        assistants_functions.set_policy_valve_status(driver, valve_status)<br/>        assistants_functions.set_policy_shutoff_status(driver, auto_shutoff)<br/>        assistants_functions.set_policy_detection_mode(driver, detection_mode, warning_threshold, close_threshold,<br/>                                                       algo_mode)<br/>        sleep(3)<br/>        if policy_kind == &#x27;default_policy&#x27;:<br/>            apply_button = WebDriverWait(driver, 10).until(<br/>                EC.visibility_of_element_located((By.XPATH, &quot;//input[@type=&#x27;submit&#x27;][@value=&#x27;Apply&#x27;]&quot;)))<br/>            apply_button.click()<br/>            alert = driver.switch_to.alert<br/>            alert.accept()<br/>        if policy_kind == &#x27;recurring_policy&#x27;:<br/>            create_policy_button = WebDriverWait(driver, 10).until(<br/>                EC.visibility_of_element_located((By.ID, &#x27;create_button&#x27;)))<br/>            create_policy_button.click()<br/>            text = &quot;Recurring - The Recurring policy conflicts with&quot;<br/>            try:<br/>                element = driver.find_element(By.XPATH, &quot;//*[contains(text(), &#x27;&quot; + text + &quot;&#x27;)]&quot;)<br/>                if text in element.text:<br/>                    raise Exception(&quot;The text &#x27;&quot; + text + &quot;&#x27; is present on the page.&quot;)<br/>            except:<br/>                print(&quot;&quot;)<br/>        if policy_kind == &#x27;exception_policy&#x27;:<br/>            create_policy_button = WebDriverWait(driver, 10).until(<br/>                EC.visibility_of_element_located((By.ID, &#x27;create_button&#x27;)))<br/>            create_policy_button.click()<br/>            text = &quot;conflicts with&quot;<br/>            try:<br/>                element = driver.find_element(By.XPATH, &quot;//*[contains(text(), &#x27;&quot; + text + &quot;&#x27;)]&quot;)<br/>                if text in element.text:<br/>                    raise Exception(&quot;The text &#x27;&quot; + text + &quot;&#x27; is present on the page.&quot;)<br/>            except:<br/>                print(&quot;&quot;)<br/>        now = datetime.now()<br/>        sleep(3)<br/>        connect_to_product(driver, site_number, water_system_number)<br/>        sleep(8)<br/>        assistants_functions.find_element_by_xpath_and_click_it(driver,<br/>                                                &quot;//a[@href=&#x27;/en/sites/{}/water_systems/{}/products/{}/commands&#x27;]&quot;.format(<br/>                                                  site_number, water_system_number, product_number))<br/>        sleep(5)<br/>        try:<br/>            policy_content = assistants_functions.check_commands_arrived_in_portal(driver, NUMBER_OF_COMMANDS_TO_CHECK, TIME_RANGE,<br/>&gt;                                                                 &#x27;OP_RES_INSERT_DEVICE_CONF_FL3&#x27;, now, True)<br/><br/>..\tests.py:194: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _<br/><br/>driver = &lt;selenium.webdriver.firefox.webdriver.WebDriver (session=&quot;4030db21-24f8-4475-841c-ec3a18641a4c&quot;)&gt;<br/>number_of_commands_to_check = 8, time_range = 1<br/>message_to_check = &#x27;OP_RES_INSERT_DEVICE_CONF_FL3&#x27;<br/>now_time = datetime.datetime(2023, 2, 16, 6, 36, 37, 429256), content = True<br/><br/>    def check_commands_arrived_in_portal(driver,number_of_commands_to_check,time_range,message_to_check,now_time, content=False):<br/>        sleep(3)<br/>        tbodys = driver.find_elements(By.TAG_NAME, &#x27;tbody&#x27;)<br/>        tbody_commands = tbodys[1]<br/>        rows = tbody_commands.find_elements(By.CSS_SELECTOR, &quot;tr&quot;)<br/>        for i in range(number_of_commands_to_check):<br/>            cells = rows[i].find_elements(By.CSS_SELECTOR, &quot;td&quot;)<br/>            words = cells[9].text.split(&quot; &quot;)<br/>            hour_time = str(words[1])<br/>            year_time = str(words[0])<br/>            time_from_portal = datetime.strptime(year_time + &#x27; &#x27; + hour_time, &#x27;%Y-%m-%d %H:%M:%S&#x27;)<br/>            if (time_from_portal - timedelta(minutes=time_range) &lt; now_time &lt; time_from_portal + timedelta(minutes=time_range) and cells[<br/>                1].text == message_to_check):<br/>                if not content:<br/>                    return<br/>                else:<br/>    <br/>                    content = cells[2].find_element(By.TAG_NAME,&quot;div&quot;)<br/>    <br/>                    content.click()<br/>                    sleep(1)<br/>                    content_text = cells[2]<br/>                    return content_text.text<br/>&gt;       assert False<br/><span class="error">E       AssertionError</span><br/><br/>..\assistants_functions.py:36: AssertionError<br/><br/>During handling of the above exception, another exception occurred:<br/><br/>    def test_set_exception_policy_close_valve():<br/>        try:<br/>            tests.connect_to_product(driver, site_number, water_system_number)<br/>            tests.set_policy(driver, site_number, water_system_number, product_id,<br/>                         valve_status, auto_shutoff, detection_mode, algo_mode, warning_threshold, close_threshold,<br/>&gt;                            &#x27;exception_policy&#x27;,start_time, end_time)<br/><br/>..\exception_policy.py:70: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _<br/><br/>driver = &lt;selenium.webdriver.firefox.webdriver.WebDriver (session=&quot;4030db21-24f8-4475-841c-ec3a18641a4c&quot;)&gt;<br/>site_number = &#x27;2263&#x27;, water_system_number = &#x27;8464&#x27;, product_number = &#x27;10652&#x27;<br/>valve_status = &#x27;close&#x27;, auto_shutoff = &#x27;enabled&#x27;, detection_mode = &#x27;fixed&#x27;<br/>algo_mode = &#x27;event based&#x27;, warning_threshold = &#x27;50&#x27;, close_threshold = &#x27;150&#x27;<br/>policy_kind = &#x27;exception_policy&#x27;, start_time = &#x27;0&#x27;, end_time = &#x27;2&#x27;<br/><br/>    def set_policy(driver, site_number, water_system_number, product_number, valve_status, auto_shutoff, detection_mode,<br/>                   algo_mode, warning_threshold, close_threshold, policy_kind=&#x27;default_policy&#x27;, start_time=&#x27;0&#x27;,<br/>                   end_time=&quot;5&quot;):<br/>        #  for now, it is for default and recurring need exception<br/>        assistants_functions.find_element_by_xpath_and_click_it(driver,<br/>                                                &quot;//a[@href=&#x27;/en/sites/{}/water_systems/{}/policies&#x27;]&quot;.format(<br/>                                                  site_number, water_system_number))<br/>        if policy_kind == &quot;exception_policy&quot;:<br/>            assistants_functions.find_element_by_xpath_and_click_it(driver, &quot;//*[text()=&#x27;Add Exception&#x27;]&quot;)<br/>            assistants_functions.set_policy_name(driver)<br/>            assistants_functions.set_exception_policy_time(driver, int(start_time), int(end_time))<br/>        if policy_kind == &#x27;recurring_policy&#x27;:<br/>            assistants_functions.find_element_by_xpath_and_click_it(driver, &quot;//*[text()=&#x27;Add Recurring Policy&#x27;]&quot;)<br/>            assistants_functions.set_policy_name(driver)<br/>            assistants_functions.set_recurring_policy_time(driver, int(start_time), int(end_time))<br/>    <br/>        assistants_functions.set_policy_valve_status(driver, valve_status)<br/>        assistants_functions.set_policy_shutoff_status(driver, auto_shutoff)<br/>        assistants_functions.set_policy_detection_mode(driver, detection_mode, warning_threshold, close_threshold,<br/>                                                       algo_mode)<br/>        sleep(3)<br/>        if policy_kind == &#x27;default_policy&#x27;:<br/>            apply_button = WebDriverWait(driver, 10).until(<br/>                EC.visibility_of_element_located((By.XPATH, &quot;//input[@type=&#x27;submit&#x27;][@value=&#x27;Apply&#x27;]&quot;)))<br/>            apply_button.click()<br/>            alert = driver.switch_to.alert<br/>            alert.accept()<br/>        if policy_kind == &#x27;recurring_policy&#x27;:<br/>            create_policy_button = WebDriverWait(driver, 10).until(<br/>                EC.visibility_of_element_located((By.ID, &#x27;create_button&#x27;)))<br/>            create_policy_button.click()<br/>            text = &quot;Recurring - The Recurring policy conflicts with&quot;<br/>            try:<br/>                element = driver.find_element(By.XPATH, &quot;//*[contains(text(), &#x27;&quot; + text + &quot;&#x27;)]&quot;)<br/>                if text in element.text:<br/>                    raise Exception(&quot;The text &#x27;&quot; + text + &quot;&#x27; is present on the page.&quot;)<br/>            except:<br/>                print(&quot;&quot;)<br/>        if policy_kind == &#x27;exception_policy&#x27;:<br/>            create_policy_button = WebDriverWait(driver, 10).until(<br/>                EC.visibility_of_element_located((By.ID, &#x27;create_button&#x27;)))<br/>            create_policy_button.click()<br/>            text = &quot;conflicts with&quot;<br/>            try:<br/>                element = driver.find_element(By.XPATH, &quot;//*[contains(text(), &#x27;&quot; + text + &quot;&#x27;)]&quot;)<br/>                if text in element.text:<br/>                    raise Exception(&quot;The text &#x27;&quot; + text + &quot;&#x27; is present on the page.&quot;)<br/>            except:<br/>                print(&quot;&quot;)<br/>        now = datetime.now()<br/>        sleep(3)<br/>        connect_to_product(driver, site_number, water_system_number)<br/>        sleep(8)<br/>        assistants_functions.find_element_by_xpath_and_click_it(driver,<br/>                                                &quot;//a[@href=&#x27;/en/sites/{}/water_systems/{}/products/{}/commands&#x27;]&quot;.format(<br/>                                                  site_number, water_system_number, product_number))<br/>        sleep(5)<br/>        try:<br/>            policy_content = assistants_functions.check_commands_arrived_in_portal(driver, NUMBER_OF_COMMANDS_TO_CHECK, TIME_RANGE,<br/>                                                                  &#x27;OP_RES_INSERT_DEVICE_CONF_FL3&#x27;, now, True)<br/>            if not assistants_functions.policy_check(policy_content, policy_kind):<br/>                assert False<br/>        except:<br/>&gt;           raise Exception(&quot;no &quot;+&quot;OP_RES_INSERT_DEVICE_CONF_FL3 command was arrived&quot;)<br/><span class="error">E           Exception: no OP_RES_INSERT_DEVICE_CONF_FL3 command was arrived</span><br/><br/>..\tests.py:198: Exception<br/><br/>During handling of the above exception, another exception occurred:<br/><br/>    def test_set_exception_policy_close_valve():<br/>        try:<br/>            tests.connect_to_product(driver, site_number, water_system_number)<br/>            tests.set_policy(driver, site_number, water_system_number, product_id,<br/>                         valve_status, auto_shutoff, detection_mode, algo_mode, warning_threshold, close_threshold,<br/>                             &#x27;exception_policy&#x27;,start_time, end_time)<br/>        except:<br/>&gt;           pytest.fail(&quot;fail to set exception policy&quot;)<br/><span class="error">E           Failed: fail to set exception policy</span><br/><br/>..\exception_policy.py:72: Failed<br/> ------------------------------Captured stdout call------------------------------ <br/>
+<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">exception_policy.py::test_close_valve_command_arrived</td>
+          <td class="col-duration">7.49</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">def test_close_valve_command_arrived():<br/>        try:<br/>            tests.connect_to_product(driver, site_number, water_system_number)<br/>&gt;           tests.check_close_content(driver, site_number,water_system_number,product_id, int(start_time))<br/><br/>..\exception_policy.py:78: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _<br/><br/>driver = &lt;selenium.webdriver.firefox.webdriver.WebDriver (session=&quot;4030db21-24f8-4475-841c-ec3a18641a4c&quot;)&gt;<br/>site_number = &#x27;2263&#x27;, water_system_number = &#x27;8464&#x27;, product_number = &#x27;10652&#x27;<br/>time_to_wait = 0<br/><br/>    def check_close_content(driver, site_number, water_system_number, product_number, time_to_wait):<br/>        sleep(time_to_wait * 60)<br/>        assistants_functions.find_element_by_xpath_and_click_it(driver,<br/>                                                &quot;//a[@href=&#x27;/en/sites/{}/water_systems/{}/products/{}/commands&#x27;]&quot;.format(<br/>                                                        site_number, water_system_number, product_number))<br/>        close_content = assistants_functions.check_commands_arrived_in_portal(driver, NUMBER_OF_COMMANDS_TO_CHECK - 4, TIME_RANGE + 1,<br/>&gt;                                                             &quot;OP_EVT_VALVE_CLOSE_FL3&quot;, datetime.now(),True)<br/><br/>..\tests.py:284: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _<br/><br/>driver = &lt;selenium.webdriver.firefox.webdriver.WebDriver (session=&quot;4030db21-24f8-4475-841c-ec3a18641a4c&quot;)&gt;<br/>number_of_commands_to_check = 4, time_range = 2<br/>message_to_check = &#x27;OP_EVT_VALVE_CLOSE_FL3&#x27;<br/>now_time = datetime.datetime(2023, 2, 16, 6, 37, 5, 11972), content = True<br/><br/>    def check_commands_arrived_in_portal(driver,number_of_commands_to_check,time_range,message_to_check,now_time, content=False):<br/>        sleep(3)<br/>        tbodys = driver.find_elements(By.TAG_NAME, &#x27;tbody&#x27;)<br/>        tbody_commands = tbodys[1]<br/>        rows = tbody_commands.find_elements(By.CSS_SELECTOR, &quot;tr&quot;)<br/>        for i in range(number_of_commands_to_check):<br/>            cells = rows[i].find_elements(By.CSS_SELECTOR, &quot;td&quot;)<br/>            words = cells[9].text.split(&quot; &quot;)<br/>            hour_time = str(words[1])<br/>            year_time = str(words[0])<br/>            time_from_portal = datetime.strptime(year_time + &#x27; &#x27; + hour_time, &#x27;%Y-%m-%d %H:%M:%S&#x27;)<br/>            if (time_from_portal - timedelta(minutes=time_range) &lt; now_time &lt; time_from_portal + timedelta(minutes=time_range) and cells[<br/>                1].text == message_to_check):<br/>                if not content:<br/>                    return<br/>                else:<br/>    <br/>                    content = cells[2].find_element(By.TAG_NAME,&quot;div&quot;)<br/>    <br/>                    content.click()<br/>                    sleep(1)<br/>                    content_text = cells[2]<br/>                    return content_text.text<br/>&gt;       assert False<br/><span class="error">E       AssertionError</span><br/><br/>..\assistants_functions.py:36: AssertionError<br/><br/>During handling of the above exception, another exception occurred:<br/><br/>    def test_close_valve_command_arrived():<br/>        try:<br/>            tests.connect_to_product(driver, site_number, water_system_number)<br/>            tests.check_close_content(driver, site_number,water_system_number,product_id, int(start_time))<br/>        except Exception as e:<br/>&gt;           pytest.fail(str(e))<br/><span class="error">E           Failed</span><br/><br/>..\exception_policy.py:80: Failed<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">exception_policy.py::test_login</td>
+          <td class="col-duration">3.07</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">exception_policy.py::test_delete_all_policies</td>
+          <td class="col-duration">5.31</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">exception_policy.py::test_close_connection</td>
+          <td class="col-duration">3456.46</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody></table></body></html>

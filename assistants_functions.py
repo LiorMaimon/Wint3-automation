@@ -116,7 +116,7 @@ def set_policy_detection_mode(driver, detection_mode_status, warning_threshold, 
         fixed_check.click()
 
 
-def set_policy_time(driver, start_time, end_time):
+def set_recurring_policy_time(driver, start_time, end_time):
     start_time_button = driver.find_element(By.XPATH, "/html/body/div[1]/div[4]/div/div/form/div[8]/div[1]/span/span")
     end_time_button = driver.find_element(By.XPATH, "/html/body/div[1]/div[4]/div/div/form/div[8]/div[3]/span/span")
     start_time_button.click()
@@ -169,6 +169,61 @@ def set_policy_time(driver, start_time, end_time):
         for i in range(end_time):
             down_minute_button.click()
 
+
+def set_exception_policy_time(driver, start_time, end_time):
+    start_time_button = driver.find_element(By.XPATH, "/html/body/div[1]/div[4]/div/div/form/div[8]/div/span/span")
+    end_time_button = driver.find_element(By.XPATH, "/html/body/div[1]/div[4]/div/div/form/div[9]/div/span/span")
+    start_time_button.click()
+    find_element_by_xpath_and_click_it(driver, "/html/body/div[2]/ul/li[2]/a/span")
+    start_hour = WebDriverWait(driver, 10).until(
+        EC.visibility_of_element_located((By.XPATH, '/html/body/div[2]/ul/li[3]/div/div[1]/table/tbody/tr[2]/td[1]/span')))
+    start_hour.click()
+    start_hour = (datetime.now()).hour
+    start_hour_str = "{:02d}".format(start_hour)
+    start_hour_table = WebDriverWait(driver, 10).until(
+        EC.visibility_of_element_located((By.XPATH, '/html/body/div[2]/ul/li[3]/div/div[2]/table/tbody')))
+    sleep(1)
+    try:
+        picked_hour = iterate_tbody(start_hour_table, start_hour_str)
+        picked_hour.click()
+    except:
+        raise Exception("not valid hour")
+    if start_time >= 0:
+        up_hour_button = WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, '/html/body/div[2]/ul/li[3]/div/div[1]/table/tbody/tr[1]/td[3]/a/span')))
+        for i in range(start_time):
+            up_hour_button.click()
+    else:
+        down_hour_button = WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, '/html/body/div[2]/ul/li[3]/div/div[1]/table/tbody/tr[3]/td[3]/a/span')))
+        for i in range(start_time):
+            down_hour_button.click()
+
+    end_time_button.click()
+    find_element_by_xpath_and_click_it(driver, "/html/body/div[3]/ul/li[2]/a/span")
+    end_hour = WebDriverWait(driver, 10).until(
+        EC.visibility_of_element_located((By.XPATH, '/html/body/div[3]/ul/li[3]/div/div[1]/table/tbody/tr[2]/td[1]/span')))
+    end_hour.click()
+    end_hour = (datetime.now()).hour
+    start_hour_str = "{:02d}".format(end_hour)
+    end_hour_table = WebDriverWait(driver, 10).until(
+        EC.visibility_of_element_located((By.XPATH, '/html/body/div[3]/ul/li[3]/div/div[2]/table/tbody')))
+    sleep(1)
+    try:
+        picked_hour = iterate_tbody(end_hour_table, start_hour_str)
+        picked_hour.click()
+    except:
+        raise Exception("not valid hour")
+    if end_time >= 0:
+        up_minute_button = WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, '/html/body/div[3]/ul/li[3]/div/div[1]/table/tbody/tr[1]/td[3]/a/span')))
+        for i in range(end_time):
+            up_minute_button.click()
+    else:
+        down_minute_button = WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, '/html/body/div[3]/ul/li[3]/div/div[1]/table/tbody/tr[3]/td[3]/a/span')))
+        for i in range(end_time):
+            down_minute_button.click()
 
 
 def policy_check(policy_command_content, kind_of_policy):

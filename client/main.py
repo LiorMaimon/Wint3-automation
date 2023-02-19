@@ -1,125 +1,77 @@
 import json
 import subprocess
 from time import sleep
-
-from flask import Flask, render_template, request
-
+import server_assistant
+from flask import Flask, render_template, request, send_file
 app = Flask(__name__)
 
 
 @app.route("/")
 def index():
+    file_path = "C:\\Users\\liorm\\Desktop\\Automation-Selenium\\client\\test-output.txt"
+    with open(file_path, 'w') as f:
+        f.write('')
     return render_template("index.html")
+
+@app.route("/javascript/<path>")
+def load_javascript(path):
+    return send_file(path, mimetype='text/javascript')
 
 
 @app.route("/results")
 def tests_results():
     file_path = "C:\\Users\\liorm\\Desktop\\Automation-Selenium\\client\\test-output.txt"
-    #file_path = 'stam.txt'
     try:
-        with open(file_path, 'r') as f:
+
+         with open(file_path, 'r') as f:
             lines = f.readlines()
-            last_line = lines[-1]
-            words = last_line.split()
-            for i, word in enumerate(words):
-                if word.__contains__("test_"):
-                    test_name = word.split("_")[-1]
-                    next_word = words[i + 1] if i + 1 < len(words) else None
-                    py_index = last_line.find(".py")
-                    if py_index != -1:
-                        module_name = last_line[3:py_index]
-                    else:
-                        module_name = None
-                    result = {"test_name": test_name, "next_word": next_word, "module_name": module_name}
-                    return json.dumps(result)
+            response = {}
+            try:
+                for i in range(3, len(lines)):# from line 3
+                    if not lines[i]:
+                        break
+                    words = lines[i].split()
+                    word_from_index_3 = words[0][4:len(words[0])].find('.')+4
+                    key = words[0][3:word_from_index_3]
+                    if key not in response:
+                        response[key] = ''
+                    step_name = words[0][words[0].find('test_')+5:len(words[0])]
+                    response[key] += step_name + ' '
+                    response[key] += words[1] + ' '
+                    response[key] += lines[i][lines[i].find('['):len(lines)-1] + '<br><br>'
+            except:
+                return json.dumps(response)
+            return json.dumps(response)
+
     except:
         sleep(1)
         return json.loads('{}')
 
-tests_results()
+
 @app.route('/run_command', methods=['POST'])
 def run_command():
     selected = request.get_json()['selected']
     reports = []
 
     if 'open_valve' in selected:
-        # Run the command "pytest main.py --no-header -vv --html=report.html"
-        result = subprocess.run(
-            ["pytest", "C:\\Users\\liorm\\Desktop\\Automation-Selenium\\open_valve.py", "--no-header", "-vv",
-             "--html=C:\\Users\\liorm\\Desktop\\Automation-Selenium\\client\\templates\\report_open_valve.html"
-                ],
-            #, ">", "C:\\Users\\liorm\\Desktop\\Automation-Selenium\\client\\test-output.txt"
-            shell=True, )
-        sleep(2)
-        filename = "C:\\Users\\liorm\Desktop\Automation-Selenium\\client\\templates\\report_open_valve.html"
-        with open(filename, "r") as file:
-            contents = file.read()
-
-        contents = contents.replace("href=\"assets/style.css\"", "href=\"static/assets/style.css\"")
-
-        with open(filename, "w") as file:
-            file.write(contents)
-        reports.append(render_template("report_open_valve.html"))
+        server_assistant.run_test_commandline('open_valve', reports)
     if 'close_valve' in selected:
-        result = subprocess.run(
-            ["pytest", "C:\\Users\\liorm\\Desktop\\Automation-Selenium\\close_valve.py", "--no-header", "-vv",
-             "--html=C:\\Users\\liorm\\Desktop\\Automation-Selenium\\client\\templates\\report_close_valve.html"],
-            shell=True, )
-        sleep(2)
-        filename = "C:\\Users\\liorm\Desktop\Automation-Selenium\\client\\templates\\report_close_valve.html"
-        with open(filename, "r") as file:
-            contents = file.read()
-
-        contents = contents.replace("href=\"assets/style.css\"", "href=\"static/assets/style.css\"")
-
-        with open(filename, "w") as file:
-            file.write(contents)
-        reports.append(render_template("report_close_valve.html"))
+        server_assistant.run_test_commandline('close_valve', reports)
     if 'inject_water' in selected:
-        result = subprocess.run(
-            ["pytest", "C:\\Users\\liorm\\Desktop\\Automation-Selenium\\"
-                       "Leak_detection_constant_flow_major_fixed_mode.py", "--no-header", "-vv",
-             "--html=C:\\Users\\liorm\\Desktop\\Automation-Selenium\\client\\templates\\report_inject_water.html"],
-            shell=True, )
-        sleep(2)
-        filename = "C:\\Users\\liorm\Desktop\Automation-Selenium\\client\\templates\\report_inject_water.html"
-        with open(filename, "r") as file:
-            contents = file.read()
-
-        contents = contents.replace("href=\"assets/style.css\"", "href=\"static/assets/style.css\"")
-
-        with open(filename, "w") as file:
-            file.write(contents)
-        reports.append(render_template("report_inject_water.html"))
+        server_assistant.run_test_commandline('Leak_detection_constant_flow_major_fixed_mode', reports)
     if 'set_policy' in selected:
-        result = subprocess.run(
-            ["pytest", "C:\\Users\\liorm\\Desktop\\Automation-Selenium\\set_policy.py", "--no-header", "-vv",
-             "--html=C:\\Users\\liorm\\Desktop\\Automation-Selenium\\client\\templates\\report_set_policy.html"],
-            shell=True, )
-        sleep(2)
-        filename = "C:\\Users\\liorm\Desktop\Automation-Selenium\\client\\templates\\report_set_policy.html"
-        with open(filename, "r") as file:
-            contents = file.read()
-
-        contents = contents.replace("href=\"assets/style.css\"", "href=\"static/assets/style.css\"")
-
-        with open(filename, "w") as file:
-            file.write(contents)
-        reports.append(render_template("report_set_policy.html"))
-    if 'set_recurring_policy' in selected:
-        result = subprocess.run(
-            ["pytest", "C:\\Users\\liorm\\Desktop\\Automation-Selenium\\recurring_policy.py", "--no-header", "-vv",
-             "--html=C:\\Users\\liorm\\Desktop\\Automation-Selenium\\client\\templates\\recurring_policy.html"],
-            shell=True, )
-        sleep(2)
-        filename = "C:\\Users\\liorm\Desktop\Automation-Selenium\\client\\templates\\recurring_policy.html"
-        with open(filename, "r") as file:
-            contents = file.read()
-
-        contents = contents.replace("href=\"assets/style.css\"", "href=\"static/assets/style.css\"")
-
-        with open(filename, "w") as file:
-            file.write(contents)
-        reports.append(render_template("recurring_policy.html"))
+        server_assistant.run_test_commandline('set_policy', reports)
+    if 'recurring_policy' in selected:
+        server_assistant.run_test_commandline('recurring_policy', reports)
+    if 'exception_policy' in selected:
+        server_assistant.run_test_commandline('exception_policy', reports)
     combined_reports = "".join(reports)
     return combined_reports
+
+
+def main():
+    app.run(host="0.0.0.0", port=5000, debug=True)
+
+
+if __name__ == '__main__':
+    main()

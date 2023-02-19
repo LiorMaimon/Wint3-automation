@@ -30,7 +30,7 @@ def connect_to_product(driver, site_number_json, water_system_number_json):
     sleep(2)
     site_number = site_number_json
     water_system_number = water_system_number_json
-    water_system_url = "https://control-staging.wint.ai/en/sites/{}/water_systems/{}".format(site_number,
+    water_system_url = "https://control.wint.ai/en/sites/{}/water_systems/{}".format(site_number,
                                                                                              water_system_number)
     driver.get(water_system_url)
     edit_button = WebDriverWait(driver, 10).until(
@@ -42,7 +42,7 @@ def connect_to_policy_page(driver, site_number_json, water_system_number_json):
     sleep(2)
     site_number = site_number_json
     water_system_number = water_system_number_json
-    water_system_url = "https://control-staging.wint.ai/en/sites/{}/water_systems/{}/policies".format(site_number,
+    water_system_url = "https://control.wint.ai/en/sites/{}/water_systems/{}/policies".format(site_number,
                                                                                              water_system_number)
     driver.get(water_system_url)
     policy_title = WebDriverWait(driver, 10).until(
@@ -139,10 +139,14 @@ def set_policy(driver, site_number, water_system_number, product_number, valve_s
     assistants_functions.find_element_by_xpath_and_click_it(driver,
                                             "//a[@href='/en/sites/{}/water_systems/{}/policies']".format(
                                               site_number, water_system_number))
+    if policy_kind == "exception_policy":
+        assistants_functions.find_element_by_xpath_and_click_it(driver, "//*[text()='Add Exception']")
+        assistants_functions.set_policy_name(driver)
+        assistants_functions.set_exception_policy_time(driver, int(start_time), int(end_time))
     if policy_kind == 'recurring_policy':
         assistants_functions.find_element_by_xpath_and_click_it(driver, "//*[text()='Add Recurring Policy']")
         assistants_functions.set_policy_name(driver)
-        assistants_functions.set_policy_time(driver, int(start_time), int(end_time))
+        assistants_functions.set_recurring_policy_time(driver, int(start_time), int(end_time))
 
     assistants_functions.set_policy_valve_status(driver, valve_status)
     assistants_functions.set_policy_shutoff_status(driver, auto_shutoff)
@@ -166,6 +170,17 @@ def set_policy(driver, site_number, water_system_number, product_number, valve_s
                 raise Exception("The text '" + text + "' is present on the page.")
         except:
             print("")
+    if policy_kind == 'exception_policy':
+        create_policy_button = WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.ID, 'create_button')))
+        create_policy_button.click()
+        text = "conflicts with"
+        try:
+            element = driver.find_element(By.XPATH, "//*[contains(text(), '" + text + "')]")
+            if text in element.text:
+                raise Exception("The text '" + text + "' is present on the page.")
+        except:
+            print("")
     now = datetime.now()
     sleep(3)
     connect_to_product(driver, site_number, water_system_number)
@@ -183,8 +198,9 @@ def set_policy(driver, site_number, water_system_number, product_number, valve_s
         raise Exception("no "+"OP_RES_INSERT_DEVICE_CONF_FL3 command was arrived")
 
 
-def delete_all_policies(driver, site_number, water_system_number, product_number):
-    assistants_functions.find_element_by_xpath_and_click_it(driver,"//a[@href='/en/sites/{}/water_systems/{}/policies']"
+def delete_all_recurring_policies(driver, site_number, water_system_number, product_number):
+    assistants_functions.find_element_by_xpath_and_click_it(driver,
+                                                            "//a[@href='/en/sites/{}/water_systems/{}/policies']"
                                                             .format(site_number, water_system_number))
     assistants_functions.find_element_by_xpath_and_click_it(driver,
                                                             '//a[@data-toggle="tab" and text()="Recurring Policy"]')
@@ -194,7 +210,7 @@ def delete_all_policies(driver, site_number, water_system_number, product_number
     while rows:
         cells = rows[-1].find_elements(By.CSS_SELECTOR, "td")
         delete_symbol = cells[12].find_element(By.XPATH,
-                '//a[@data-method="delete" and @data-confirm="Are you sure?"]')
+                                               '//a[@data-method="delete" and @data-confirm="Are you sure?"]')
         delete_symbol.click()
         alert = driver.switch_to.alert
         alert.accept()
@@ -203,8 +219,8 @@ def delete_all_policies(driver, site_number, water_system_number, product_number
                                                                 '//a[@data-toggle="tab" and text()="Recurring Policy"]')
         connect_to_product(driver, site_number, water_system_number)
         assistants_functions.find_element_by_xpath_and_click_it(driver,
-                                            "//a[@href='/en/sites/{}/water_systems/{}/products/{}/commands']".format(
-                                            site_number, water_system_number, product_number))
+                                                                "//a[@href='/en/sites/{}/water_systems/{}/products/{}/commands']".format(
+                                                                    site_number, water_system_number, product_number))
         assistants_functions.check_commands_arrived_in_portal(driver, NUMBER_OF_COMMANDS_TO_CHECK, TIME_RANGE,
                                                               "OP_RES_INSERT_DEVICE_CONF_FL3", datetime.now())
         connect_to_policy_page(driver, site_number, water_system_number)
@@ -217,6 +233,39 @@ def delete_all_policies(driver, site_number, water_system_number, product_number
         rows = recurring_policies_tbody.find_elements(By.CSS_SELECTOR, "tr")
 
 
+def delete_all_exception_policies(driver, site_number, water_system_number, product_number):
+    assistants_functions.find_element_by_xpath_and_click_it(driver,
+                                                            "//a[@href='/en/sites/{}/water_systems/{}/policies']"
+                                                            .format(site_number, water_system_number))
+    assistants_functions.find_element_by_xpath_and_click_it(driver,
+                                                            '//a[@data-toggle="tab" and text()="Policy Exceptions"]')
+    exception_policies_tbody = driver.find_element(By.XPATH, '/html/body/div/div[6]/div[3]/div/div/div/div/div/div/div[2]/div/div/table/tbody')
+    rows = exception_policies_tbody.find_elements(By.CSS_SELECTOR, "tr")
+    while rows:
+        cells = rows[-1].find_elements(By.CSS_SELECTOR, "td")
+        delete_symbol = cells[11].find_element(By.XPATH,
+                                               '//a[@data-method="delete" and @data-confirm="Are you sure?"]')
+        delete_symbol.click()
+        alert = driver.switch_to.alert
+        alert.accept()
+        sleep(3)
+        assistants_functions.find_element_by_xpath_and_click_it(driver,
+                                                                '//a[@data-toggle="tab" and text()="Policy Exceptions"]')
+        connect_to_product(driver, site_number, water_system_number)
+        assistants_functions.find_element_by_xpath_and_click_it(driver,
+                                                                "//a[@href='/en/sites/{}/water_systems/{}/products/{}/commands']".format(
+                                                                    site_number, water_system_number, product_number))
+        assistants_functions.check_commands_arrived_in_portal(driver, NUMBER_OF_COMMANDS_TO_CHECK, TIME_RANGE,
+                                                              "OP_RES_INSERT_DEVICE_CONF_FL3", datetime.now())
+        connect_to_policy_page(driver, site_number, water_system_number)
+
+        assistants_functions.find_element_by_xpath_and_click_it(driver,
+                                                                '//a[@data-toggle="tab" and text()="Policy Exceptions"]')
+        recurring_policies_tbody = WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH,
+                                              '/html/body/div/div[6]/div[3]/div/div/div/div/div/div/div[2]/div/div/table/tbody')))
+        rows = recurring_policies_tbody.find_elements(By.CSS_SELECTOR, "tr")
+
 def wait_policy_changed(driver, site_number, water_system_number, product_number, time_to_wait):
     sleep(time_to_wait*60)
     assistants_functions.find_element_by_xpath_and_click_it(driver,
@@ -224,6 +273,18 @@ def wait_policy_changed(driver, site_number, water_system_number, product_number
                                               site_number, water_system_number, product_number))
     assistants_functions.check_commands_arrived_in_portal(driver, NUMBER_OF_COMMANDS_TO_CHECK-4,TIME_RANGE+1,
                                                           "OP_EVT_VALVE_OPEN_FL3", datetime.now())
+
+
+def check_close_content(driver, site_number, water_system_number, product_number, time_to_wait):
+    sleep(time_to_wait * 60)
+    assistants_functions.find_element_by_xpath_and_click_it(driver,
+                                            "//a[@href='/en/sites/{}/water_systems/{}/products/{}/commands']".format(
+                                                    site_number, water_system_number, product_number))
+    close_content = assistants_functions.check_commands_arrived_in_portal(driver, NUMBER_OF_COMMANDS_TO_CHECK - 4, TIME_RANGE + 1,
+                                                          "OP_EVT_VALVE_CLOSE_FL3", datetime.now(),True)
+    if '"OwnerId"=>3' in close_content and '"PlungerPos"=>1' in close_content:
+        return
+    raise Exception('no "PlungerPos"=>1, "OwnerId"=>3 shown')
 
 
 def start_inject_water(flow_level='major'):

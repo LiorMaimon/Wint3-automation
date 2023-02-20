@@ -1,5 +1,12 @@
 ============================= test session starts =============================
-collecting ... collected 9 items
+collecting ... collected 6 items
 
-..\Leak_detection_constant_flow_major_fixed_mode.py::test_login PASSED   [ 11%]
-..\Leak_detection_constant_flow_major_fixed_mode.py::test_pre_testing 
+..\close_valve.py::test_login PASSED                                     [ 16%]
+..\close_valve.py::test_delete_waiting PASSED                            [ 33%]
+..\close_valve.py::test_clear_all_leaks PASSED                           [ 50%]
+..\close_valve.py::test_delete_valve_error PASSED                        [ 66%]
+..\close_valve.py::test_close_valve_from_system_control PASSED           [ 83%]
+..\close_valve.py::test_close_connection PASSED                          [100%]
+
+- generated html file: file:///C:/Users/liorm/Desktop/Automation-Selenium/client/templates/report_close_valve.html -
+======================== 6 passed in 133.54s (0:02:13) ========================

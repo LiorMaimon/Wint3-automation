@@ -12,6 +12,7 @@ import sys
 
 def check_commands_arrived_in_portal(driver,number_of_commands_to_check,time_range,message_to_check,now_time, content=False):
     sleep(3)
+    driver.refresh()
     tbodys = driver.find_elements(By.TAG_NAME, 'tbody')
     tbody_commands = tbodys[1]
     rows = tbody_commands.find_elements(By.CSS_SELECTOR, "tr")

@@ -38,9 +38,9 @@ def tests_results():
                     step_name = words[0][words[0].find('test_')+5:len(words[0])]
                     response[key] += step_name + ' '
                     response[key] += words[1] + ' '
-                    response[key] += lines[i][lines[i].find('['):len(lines)-1] + '<br><br>'
+                    response[key] += lines[i][lines[i].find('['):len(lines[i])-1] + '<br><br>'
             except:
-                return json.dumps(response)
+                return json.dumps(response) # try here to call again to test_results
             return json.dumps(response)
 
     except:

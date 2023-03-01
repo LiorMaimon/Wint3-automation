@@ -1,14 +1,12 @@
-import importlib
 import json
-import multiprocessing
 from datetime import datetime, timedelta
 from time import sleep
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import sys
 
+PULSE_RATIO = 0.049
 
 def check_commands_arrived_in_portal(driver,number_of_commands_to_check,time_range,message_to_check,now_time, content=False):
     sleep(10)
@@ -228,26 +226,37 @@ def set_exception_policy_time(driver, start_time, end_time):
 
 
 def policy_check(policy_command_content, kind_of_policy):
-    with open("C:\\Users\\liorm\\Desktop\\Automation-Selenium\\configuration_json.json") as f:
+    with open("C:\\Users\\liorm\\Desktop\\Automation-Selenium\\FL1&2\\configuration_json.json") as f:
         configuration_date = json.load(f)
     valve_status = configuration_date[f'{kind_of_policy}_1']['valve_status']
     if valve_status == 'close':
-        valve_status = "shut_off"
+        valve_status = "0"
+    else:
+        valve_status = '1'
     auto_shutoff = configuration_date[f'{kind_of_policy}_1']['auto_shutoff']
     if auto_shutoff == 'enabled':
-        auto_shutoff = 'true'
+        auto_shutoff = '1'
     else:
-        auto_shutoff = 'false'
+        auto_shutoff = '0'
     detection_mode = configuration_date[f'{kind_of_policy}_1']['detection_mode']
-    algo_mode = (configuration_date[f'{kind_of_policy}_1']['algo_mode']).replace(" ", "_")
+    if detection_mode == 'fixed':
+        detection_mode = 1
+    else:
+        detection_mode = 0
+    algo_mode = configuration_date[f'{kind_of_policy}_1']['algo_mode']
+    if algo_mode == 'event based':
+        algo_mode = 0
+    else:
+        algo_mode = 1
     warning_threshold = configuration_date[f'{kind_of_policy}_1']['warning_threshold']
     close_threshold = configuration_date[f'{kind_of_policy}_1']['close_threshold']
-    valve_status_check = f"\"valveAction\"=>\"{valve_status}\"".lower() in policy_command_content.lower()
+
+    valve_status_check = f"\"valveAction\"=>{valve_status}".lower() in policy_command_content.lower()
     auto_shutoff_check = f"\"autoShutoff\"=>{auto_shutoff}".lower() in policy_command_content.lower()
-    detection_mode_check = f"\"detectionMode\"=>\"{detection_mode}\"".lower() in policy_command_content.lower()
-    algo_mode_check = f"\"fixedAlgoMode\"=>\"{algo_mode}\"".lower() in policy_command_content.lower()
-    warning_threshold_check = f"\"fixedWarningThreshold\"=>{warning_threshold}".lower() in policy_command_content.lower()
-    close_threshold_check = f"\"fixedCloseThreshold\"=>{close_threshold}".lower() in policy_command_content.lower()
+    detection_mode_check = f"\"fixed\"=>{detection_mode}".lower() in policy_command_content.lower()
+    algo_mode_check = f"\"cumulative\"=>{algo_mode}".lower() in policy_command_content.lower()
+    warning_threshold_check = f"\"WarningThreshold\"=>{str(int(int(warning_threshold)/PULSE_RATIO))}".lower() in policy_command_content.lower()
+    close_threshold_check = f"\"CloseThreshold\"=>{str(int(int(close_threshold)/PULSE_RATIO))}".lower() in policy_command_content.lower()
     return valve_status_check and auto_shutoff_check and detection_mode_check and algo_mode_check \
         and warning_threshold_check and close_threshold_check
 
@@ -271,10 +280,5 @@ def find_element_by_xpath_and_click_it(driver, xpath_str):
     button = WebDriverWait(driver, 10).until(
         EC.visibility_of_element_located((By.XPATH, xpath_str)))
     button.click()
-
-# def inject_water_in_process(flow_level='major'):
-#
-#     from injection.inject_simulated_water import main
-#     main()
 
 

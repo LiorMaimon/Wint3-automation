@@ -8448,3 +8448,172 @@ interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mj
 webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
 1676903194673	Marionette	INFO	Stopped listening on port 60172
 Dynamically enable window occlusion 1
+1676905743569	geckodriver	INFO	Listening on 127.0.0.1:61617
+1676905746618	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "61618" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileQgfchU"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1676905747130	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1676905747138	Marionette	INFO	Listening on port 61625
+Read port: 61625
+WebDriver BiDi listening on ws://127.0.0.1:61618
+1676905747281	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileQgfchU\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:61618/devtools/browser/f7a84853-445e-4987-bfa8-00360bb1d051
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1676905797064	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1676905876221	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1676905902898	Marionette	INFO	Stopped listening on port 61625
+Dynamically enable window occlusion 1
+1677568161705	geckodriver	INFO	Listening on 127.0.0.1:55502
+1677568164758	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "55503" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilecy7Wci"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1677568165293	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1677568165300	Marionette	INFO	Listening on port 55515
+Read port: 55515
+WebDriver BiDi listening on ws://127.0.0.1:55503
+1677568165490	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilecy7Wci\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:55503/devtools/browser/bebce87f-3a73-488f-a2e3-8332bfb20b12
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1677568272064	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1677568297810	Marionette	INFO	Stopped listening on port 55515
+Dynamically enable window occlusion 1
+1677568304911	geckodriver	INFO	Listening on 127.0.0.1:55710
+1677568307942	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "55711" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilegjJdEu"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1677568308334	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1677568308341	Marionette	INFO	Listening on port 55722
+Read port: 55722
+WebDriver BiDi listening on ws://127.0.0.1:55711
+1677568308470	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilegjJdEu\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:55711/devtools/browser/fd66287f-7edd-4b05-b39d-5f848820bcb5
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1677568404609	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1677568430240	Marionette	INFO	Stopped listening on port 55722
+Dynamically enable window occlusion 1
+1677568436998	geckodriver	INFO	Listening on 127.0.0.1:55921
+1677568440034	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "55922" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileAbNu2L"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1677568440450	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1677568440455	Marionette	INFO	Listening on port 55933
+WebDriver BiDi listening on ws://127.0.0.1:55922
+Read port: 55933
+1677568440733	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileAbNu2L\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:55922/devtools/browser/f34bb7ae-3dd9-4ac8-913e-3a89bb6ef87b
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1677568463515	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1677568537725	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1677568778719	Marionette	INFO	Stopped listening on port 55933
+Dynamically enable window occlusion 1
+1677568786477	geckodriver	INFO	Listening on 127.0.0.1:56422
+1677568789509	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "56423" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileC10mdu"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1677568789940	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1677568789945	Marionette	INFO	Listening on port 56434
+WebDriver BiDi listening on ws://127.0.0.1:56423
+Read port: 56434
+1677568790191	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileC10mdu\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:56423/devtools/browser/155f291e-0fcc-47c3-93a9-88ec68260bd7
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1677568813644	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1677568921488	Marionette	INFO	Stopped listening on port 56434
+Dynamically enable window occlusion 1
+1677568928354	geckodriver	INFO	Listening on 127.0.0.1:56627
+1677568931377	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "56628" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilepgYQke"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1677568931748	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1677568931755	Marionette	INFO	Listening on port 56638
+Read port: 56638
+WebDriver BiDi listening on ws://127.0.0.1:56628
+1677568931889	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilepgYQke\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:56628/devtools/browser/8ba66fdd-96ed-495b-915c-759de8967a35
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1677569030687	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1677569263519	Marionette	INFO	Stopped listening on port 56638
+Dynamically enable window occlusion 1
+1677569271773	geckodriver	INFO	Listening on 127.0.0.1:57055
+1677569274817	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "57056" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofiley7mjkF"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1677569275213	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1677569275220	Marionette	INFO	Listening on port 57066
+Read port: 57066
+WebDriver BiDi listening on ws://127.0.0.1:57056
+1677569275372	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofiley7mjkF\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:57056/devtools/browser/1ee8f630-b7f4-4a9d-80ec-1997ec0097d9
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1677569371114	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1677569482246	Marionette	INFO	Stopped listening on port 57066
+Dynamically enable window occlusion 1
+[Parent 208228, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:777

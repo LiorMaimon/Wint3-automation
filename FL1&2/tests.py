@@ -76,6 +76,7 @@ def open_valve_from_system_control(driver, product_number, site_number, water_sy
                 "//a[@href='/en/sites/{}/water_systems/{}/products/{}/commands']".format(
                                               site_number, water_system_number, product_number))
     try:
+        sleep(10)
         assistants_functions.check_commands_arrived_in_portal(driver, NUMBER_OF_COMMANDS_TO_CHECK, TIME_RANGE,
                                                               'OP_EVT_VLV_OPNVLV', now)
     except:
@@ -97,8 +98,9 @@ def close_valve_from_system_control(driver, product_number, site_number, water_s
                 "//a[@href='/en/sites/{}/water_systems/{}/products/{}/commands']".format(
                                               site_number, water_system_number, product_number))
     try:
+        sleep(10)
         assistants_functions.check_commands_arrived_in_portal(driver, NUMBER_OF_COMMANDS_TO_CHECK, TIME_RANGE,
-                                                              'OP_EVT_VALVE_CLOSE_FL3', now)
+                                                              'OP_EVT_VLV_CLSVLV', now)
     except:
         assert False
 
@@ -188,14 +190,14 @@ def set_policy(driver, site_number, water_system_number, product_number, valve_s
     assistants_functions.find_element_by_xpath_and_click_it(driver,
                                             "//a[@href='/en/sites/{}/water_systems/{}/products/{}/commands']".format(
                                               site_number, water_system_number, product_number))
-    sleep(5)
+    sleep(15)
     try:
         policy_content = assistants_functions.check_commands_arrived_in_portal(driver, NUMBER_OF_COMMANDS_TO_CHECK, TIME_RANGE,
-                                                              'OP_RES_INSERT_DEVICE_CONF_FL3', now, True)
+                                                              'OP_RES_POLICY_SET', now, True)
         if not assistants_functions.policy_check(policy_content, policy_kind):
             assert False
     except:
-        raise Exception("no "+"OP_RES_INSERT_DEVICE_CONF_FL3 command was arrived")
+        raise Exception("no "+"OP_RES_POLICY_SET command was arrived")
 
 
 def delete_all_recurring_policies(driver, site_number, water_system_number, product_number):
@@ -222,7 +224,7 @@ def delete_all_recurring_policies(driver, site_number, water_system_number, prod
                                                                 "//a[@href='/en/sites/{}/water_systems/{}/products/{}/commands']".format(
                                                                     site_number, water_system_number, product_number))
         assistants_functions.check_commands_arrived_in_portal(driver, NUMBER_OF_COMMANDS_TO_CHECK, TIME_RANGE,
-                                                              "OP_RES_INSERT_DEVICE_CONF_FL3", datetime.now())
+                                                              "OP_RES_DELETE_POLICY", datetime.now())
         connect_to_policy_page(driver, site_number, water_system_number)
 
         assistants_functions.find_element_by_xpath_and_click_it(driver,
@@ -248,7 +250,7 @@ def delete_all_exception_policies(driver, site_number, water_system_number, prod
         delete_symbol.click()
         alert = driver.switch_to.alert
         alert.accept()
-        sleep(3)
+        sleep(13)
         assistants_functions.find_element_by_xpath_and_click_it(driver,
                                                                 '//a[@data-toggle="tab" and text()="Policy Exceptions"]')
         connect_to_product(driver, site_number, water_system_number)
@@ -256,7 +258,7 @@ def delete_all_exception_policies(driver, site_number, water_system_number, prod
                                                                 "//a[@href='/en/sites/{}/water_systems/{}/products/{}/commands']".format(
                                                                     site_number, water_system_number, product_number))
         assistants_functions.check_commands_arrived_in_portal(driver, NUMBER_OF_COMMANDS_TO_CHECK, TIME_RANGE,
-                                                              "OP_RES_INSERT_DEVICE_CONF_FL3", datetime.now())
+                                                              "OP_RES_DELETE_POLICY", datetime.now())
         connect_to_policy_page(driver, site_number, water_system_number)
 
         assistants_functions.find_element_by_xpath_and_click_it(driver,
@@ -272,7 +274,7 @@ def wait_policy_changed(driver, site_number, water_system_number, product_number
                                             "//a[@href='/en/sites/{}/water_systems/{}/products/{}/commands']".format(
                                               site_number, water_system_number, product_number))
     assistants_functions.check_commands_arrived_in_portal(driver, NUMBER_OF_COMMANDS_TO_CHECK-4,TIME_RANGE+1,
-                                                          "OP_EVT_VALVE_OPEN_FL3", datetime.now())
+                                                          "OP_EVT_VLV_OPNVLV", datetime.now())
 
 
 def check_close_content(driver, site_number, water_system_number, product_number, time_to_wait):
@@ -281,7 +283,7 @@ def check_close_content(driver, site_number, water_system_number, product_number
                                             "//a[@href='/en/sites/{}/water_systems/{}/products/{}/commands']".format(
                                                     site_number, water_system_number, product_number))
     close_content = assistants_functions.check_commands_arrived_in_portal(driver, NUMBER_OF_COMMANDS_TO_CHECK - 4, TIME_RANGE + 1,
-                                                          "OP_EVT_VALVE_CLOSE_FL3", datetime.now(),True)
+                                                          "OP_EVT_VLV_CLSVLV", datetime.now(),True)
     if '"OwnerId"=>3' in close_content and '"PlungerPos"=>1' in close_content:
         return
     raise Exception('no "PlungerPos"=>1, "OwnerId"=>3 shown')
@@ -291,7 +293,7 @@ def start_inject_water(flow_level='major'):
     try:
         file_path = "C:\\Users\\liorm\\Desktop\\Automation-Selenium\\injection"
         command1 = "cd " + file_path
-        command2 = "python inject_simulated_water.py"
+        command2 = "python inject_simulated_water.py -f 20200524.bin"
         inject_process = subprocess.Popen(f"{command1} && {command2}", shell=True)
         return inject_process
     except:

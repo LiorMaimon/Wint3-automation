@@ -1,0 +1,38 @@
+{
+	"portal": {
+		"url": "https://control.wint.ai/en",
+		"user_name": "liorm@wint.ai",
+		"password": "0547588533",
+		"site_number": "2232",
+		"water_system_number": "8925",
+		"product_id": "4164"
+	},
+	"default_policy_1": {
+		"valve_status": "open",
+		"auto_shutoff": "enabled",
+		"detection_mode": "fixed",
+		"algo_mode": "event based",
+		"warning_threshold": "50",
+		"close_threshold": "150"
+	},
+	"recurring_policy_1": {
+		"valve_status": "close",
+		"auto_shutoff": "enabled",
+		"detection_mode": "fixed",
+		"algo_mode": "event based",
+		"warning_threshold": "50",
+		"close_threshold": "150",
+		"start_time": "0",
+		"end_time": "2"
+	},
+	"exception_policy_1": {
+		"valve_status": "close",
+		"auto_shutoff": "enabled",
+		"detection_mode": "fixed",
+		"algo_mode": "event based",
+		"warning_threshold": "50",
+		"close_threshold": "150",
+		"start_time": "0",
+		"end_time": "2"
+	}
+}

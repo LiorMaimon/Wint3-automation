@@ -45,7 +45,7 @@ def get_time_values(filename):
 
 
 @click.command()
-@click.option('--filename', '-f', default='major.bin', show_default=True, type=str, help='Data file name.')
+@click.option('--filename', '-f', default='20200524.bin', show_default=True, type=str, help='Data file name.')
 @click.option('--verbose', '-v',is_flag=True, show_default=True, default=False,
               help='Verbose mode - log debug messages.')
 @click.option('--line', '-l', show_default=True, default=1, type=int, help='Digital output number [0-7]')
@@ -73,8 +73,8 @@ def main(filename, verbose, line):
             for delay, pulse in ret_val[18:]:
                 task.write(True)
                 # set 0 < pulse < 2001
-                delay = delay if delay > 1 else 1000  # if the dt is negative number, i fix it to 1 second
-                delay = delay if delay < 2000 else 2000
+                delay = delay-1 if delay > 1 else 1  # if the dt is negative number, i fix it to 1 second
+                # delay = delay if delay < 2000 else 2000
                 time.sleep(delay/1000.0)
                 task.write(False)
         except nidaqmx.DaqError as e:

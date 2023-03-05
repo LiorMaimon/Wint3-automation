@@ -20,24 +20,29 @@ client.connect(hostname=host, port=local_port, username='w3d', pkey=key)
 
 
 # Optionally, send data via STDIN, and shutdown when done
-docker_cmd = 'docker compose logs -f --tail 10 cloud'
-stdin, stdout, stderr = client.exec_command('bash --login -c "w3d"')
-print(f'STDOUT: {stdout.read().decode("utf8")}')
-print(f'STDERR: {stderr.read().decode("utf8")}')
+docker_cmd = 'cd /home/w3d/wint3-os; docker compose logs -f --tail 10 cloud'
+docker_cmd = 'cd /home/w3d/wint3-os; dcl modbus'
+docker_cmd = 'source /home/w3d/.profile; docker compose logs -f --tail 10 algo | grep ERROR'
 
-stdin, stdout, stderr = client.exec_command('echo "$DATA_DIR"')
-print(f'STDOUT: {stdout.read().decode("utf8")}')
-print(f'STDERR: {stderr.read().decode("utf8")}')
+#docker_cmd = 'export | grep COMPOSE'
 
+xstdin, xstdout, xstderr = client.exec_command('source /home/w3d/.profile')
+print(f'STDOUT: {xstdout.read().decode("utf8")}')
+print(f'STDERR: {xstderr.read().decode("utf8")}')
 
+'''stdin, stdout, stderr = client.exec_command('echo "$DATA_DIR"')
+print(f'STDOUT: {xstdout.read().decode("utf8")}')
+print(f'STDERR: {xstderr.read().decode("utf8")}')
+'''
 
-stdin, stdout, stderr = client.exec_command(docker_cmd)
-output = stdout.read().decode('utf-8')
-print(output)
+ystdin, ystdout, ystderr = client.exec_command(docker_cmd)
+while True:
+    output = ystdout.read(80).decode('utf-8')
+    print(output)
 
 # Print output of command. Will wait for command to finish.
-print(f'STDOUT: {stdout.read().decode("utf8")}')
-print(f'STDERR: {stderr.read().decode("utf8")}')
+print(f'STDOUT: {ystdout.read().decode("utf8")}', end="")
+print(f'STDERR: {ystderr.read().decode("utf8")}')
 
 
 # c = Connection(host=host, user=user_name, port=local_port, connect_kwargs={'key_filename': './lior_ecdsa'})

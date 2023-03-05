@@ -226,7 +226,7 @@ def set_exception_policy_time(driver, start_time, end_time):
 
 
 def policy_check(policy_command_content, kind_of_policy):
-    with open("C:\\Users\\liorm\\Desktop\\Automation-Selenium\\FL1&2\\configuration_json.json") as f:
+    with open("C:\\Users\\liorm\\Desktop\\Automation-Selenium\\FL1and2\\configuration_json.json") as f:
         configuration_date = json.load(f)
     valve_status = configuration_date[f'{kind_of_policy}_1']['valve_status']
     if valve_status == 'close':

@@ -31,8 +31,9 @@ def tests_results():
                     if not lines[i]:
                         break
                     words = lines[i].split()
-                    word_from_index_3 = words[0][4:len(words[0])].find('.')+4
-                    key = words[0][3:word_from_index_3]
+                    first_index =words[0].split('\\')
+                    test_name = first_index[-1][0:first_index[-1].find('.')]
+                    key = test_name
                     if key not in response:
                         response[key] = ''
                     step_name = words[0][words[0].find('test_')+5:len(words[0])]
@@ -51,20 +52,21 @@ def tests_results():
 @app.route('/run_command', methods=['POST'])
 def run_command():
     selected = request.get_json()['selected']
+    prod_type = request.get_json()['selected_radio']
     reports = []
 
     if 'open_valve' in selected:
-        server_assistant.run_test_commandline('open_valve', reports)
+        server_assistant.run_test_commandline('open_valve', reports, prod_type)
     if 'close_valve' in selected:
-        server_assistant.run_test_commandline('close_valve', reports)
+        server_assistant.run_test_commandline('close_valve', reports, prod_type)
     if 'inject_water' in selected:
-        server_assistant.run_test_commandline('Leak_detection_constant_flow_major_fixed_mode', reports)
+        server_assistant.run_test_commandline('Leak_detection_constant_flow_major_fixed_mode', reports, prod_type)
     if 'set_policy' in selected:
-        server_assistant.run_test_commandline('set_policy', reports)
+        server_assistant.run_test_commandline('set_policy', reports, prod_type)
     if 'recurring_policy' in selected:
-        server_assistant.run_test_commandline('recurring_policy', reports)
+        server_assistant.run_test_commandline('recurring_policy', reports, prod_type)
     if 'exception_policy' in selected:
-        server_assistant.run_test_commandline('exception_policy', reports)
+        server_assistant.run_test_commandline('exception_policy', reports, prod_type)
     combined_reports = "".join(reports)
     return combined_reports
 

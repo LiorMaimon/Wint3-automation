@@ -8617,3 +8617,503 @@ console.warn: LoginRecipes: "Falling back to a synchronous message for: https://
 1677569482246	Marionette	INFO	Stopped listening on port 57066
 Dynamically enable window occlusion 1
 [Parent 208228, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:777
+1678002124238	geckodriver	INFO	Listening on 127.0.0.1:64514
+1678002127258	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "64515" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofiletUKHSG"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678002127964	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678002127972	Marionette	INFO	Listening on port 64522
+Read port: 64522
+WebDriver BiDi listening on ws://127.0.0.1:64515
+1678002128226	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofiletUKHSG\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:64515/devtools/browser/b029e40c-2136-479a-9468-e7002ac47798
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678002141984	Marionette	INFO	Stopped listening on port 64522
+Dynamically enable window occlusion 1
+JavaScript error: chrome://remote/content/marionette/cert.sys.mjs, line 51: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+!!! error running onStopped callback: TypeError: callback is not a function
+1678002142072	RemoteAgent	ERROR	unable to stop listener: [Exception... "Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]"  nsresult: "0x80040111 (NS_ERROR_NOT_AVAILABLE)"  location: "JS frame :: chrome://remote/content/marionette/cert.sys.mjs :: allowAllCerts.disable :: line 51"  data: no] Stack trace: allowAllCerts.disable()@sys.mjs:51
+destroy()@sys.mjs:207
+deleteSession()@sys.mjs:142
+stop()@sys.mjs:229
+WARNING: A blocker encountered an error while we were waiting.
+          Blocker:  Waiting for ping task
+          Phase: TelemetryController: Waiting for pending ping activity
+          State: (none)
+WARNING: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+WARNING: addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:727:15
+addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:523:26
+addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:458:15
+setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1548:28
+@resource://gre/modules/osfile/osfile_async_front.jsm:1568:16
+@resource://gre/modules/osfile.jsm:12:30
+@resource://gre/modules/TelemetryStorage.sys.mjs:10:28
+_checkPendingPings@resource://gre/modules/TelemetrySend.sys.mjs:863:17
+setup@resource://gre/modules/TelemetrySend.sys.mjs:803:18
+setup@resource://gre/modules/TelemetrySend.sys.mjs:241:30
+setupTelemetry/this._delayedInitTask<@resource://gre/modules/TelemetryControllerParent.sys.mjs:829:36
+observe@resource://gre/modules/AsyncShutdown.sys.mjs:576:16
+
+WARNING: A blocker encountered an error while we were waiting.
+          Blocker:  Waiting for ping task
+          Phase: TelemetryController: Waiting for pending ping activity
+          State: (none)
+WARNING: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+WARNING: addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:727:15
+addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:523:26
+addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:458:15
+setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1548:28
+@resource://gre/modules/osfile/osfile_async_front.jsm:1568:16
+@resource://gre/modules/osfile.jsm:12:30
+@resource://gre/modules/TelemetryStorage.sys.mjs:10:28
+_checkPendingPings@resource://gre/modules/TelemetrySend.sys.mjs:863:17
+setup@resource://gre/modules/TelemetrySend.sys.mjs:803:18
+setup@resource://gre/modules/TelemetrySend.sys.mjs:241:30
+setupTelemetry/this._delayedInitTask<@resource://gre/modules/TelemetryControllerParent.sys.mjs:829:36
+observe@resource://gre/modules/AsyncShutdown.sys.mjs:576:16
+
+WARNING: A blocker encountered an error while we were waiting.
+          Blocker:  Waiting for ping task
+          Phase: TelemetryController: Waiting for pending ping activity
+          State: (none)
+WARNING: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+WARNING: addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:727:15
+addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:523:26
+addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:458:15
+setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1548:28
+@resource://gre/modules/osfile/osfile_async_front.jsm:1568:16
+@resource://gre/modules/osfile.jsm:12:30
+@resource://gre/modules/TelemetryStorage.sys.mjs:10:28
+_checkPendingPings@resource://gre/modules/TelemetrySend.sys.mjs:863:17
+setup@resource://gre/modules/TelemetrySend.sys.mjs:803:18
+setup@resource://gre/modules/TelemetrySend.sys.mjs:241:30
+setupTelemetry/this._delayedInitTask<@resource://gre/modules/TelemetryControllerParent.sys.mjs:829:36
+observe@resource://gre/modules/AsyncShutdown.sys.mjs:576:16
+
+WARNING: A blocker encountered an error while we were waiting.
+          Blocker:  TelemetryController: shutting down
+          Phase: profile-before-change-telemetry
+          State: Error getting state: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange" at addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:727:15
+addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:523:26
+addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:458:15
+setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1548:28
+@resource://gre/modules/osfile/osfile_async_front.jsm:1568:16
+@resource://gre/modules/osfile.jsm:12:30
+@resource://gre/modules/TelemetryStorage.sys.mjs:10:28
+_checkPendingPings@resource://gre/modules/TelemetrySend.sys.mjs:863:17
+setup@resource://gre/modules/TelemetrySend.sys.mjs:803:18
+setup@resource://gre/modules/TelemetrySend.sys.mjs:241:30
+setupTelemetry/this._delayedInitTask<@resource://gre/modules/TelemetryControllerParent.sys.mjs:829:36
+observe@resource://gre/modules/AsyncShutdown.sys.mjs:576:16
+
+WARNING: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+WARNING: addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:727:15
+addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:523:26
+addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:458:15
+setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1548:28
+@resource://gre/modules/osfile/osfile_async_front.jsm:1568:16
+@resource://gre/modules/osfile.jsm:12:30
+@resource://gre/modules/TelemetryStorage.sys.mjs:10:28
+_checkPendingPings@resource://gre/modules/TelemetrySend.sys.mjs:863:17
+setup@resource://gre/modules/TelemetrySend.sys.mjs:803:18
+setup@resource://gre/modules/TelemetrySend.sys.mjs:241:30
+setupTelemetry/this._delayedInitTask<@resource://gre/modules/TelemetryControllerParent.sys.mjs:829:36
+observe@resource://gre/modules/AsyncShutdown.sys.mjs:576:16
+
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 727: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 727: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 727: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 727: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 727: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 727: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+1678005079526	geckodriver	INFO	Listening on 127.0.0.1:51270
+1678005082564	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51271" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilelVhoS2"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678005083123	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678005083130	Marionette	INFO	Listening on port 51280
+Read port: 51280
+WebDriver BiDi listening on ws://127.0.0.1:51271
+1678005083328	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilelVhoS2\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51271/devtools/browser/ed583929-c44e-4cef-938b-f77e7127fc72
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678005107571	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678005183503	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1678005209525	Marionette	INFO	Stopped listening on port 51280
+Dynamically enable window occlusion 1
+[Parent 261548, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:777
+1678005216992	geckodriver	INFO	Listening on 127.0.0.1:51412
+1678005220029	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51413" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile4vg93e"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678005220439	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678005220445	Marionette	INFO	Listening on port 51422
+Read port: 51422
+WebDriver BiDi listening on ws://127.0.0.1:51413
+1678005220597	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile4vg93e\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51413/devtools/browser/1f31fe9a-e96b-49d7-b064-b1c720e4482b
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678005319306	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1678005344891	Marionette	INFO	Stopped listening on port 51422
+Dynamically enable window occlusion 1
+1678016722525	geckodriver	INFO	Listening on 127.0.0.1:62121
+1678016725582	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "62122" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilebiOpfa"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678016726432	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678016726457	Marionette	INFO	Listening on port 62134
+Read port: 62134
+WebDriver BiDi listening on ws://127.0.0.1:62122
+1678016727126	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilebiOpfa\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:62122/devtools/browser/8dfc52cc-f147-433e-b62e-99a82e039737
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678016756997	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1678016758145	Marionette	INFO	Stopped listening on port 62134
+Dynamically enable window occlusion 1
+JavaScript error: chrome://remote/content/marionette/cert.sys.mjs, line 51: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+!!! error running onStopped callback: TypeError: callback is not a function
+1678016758341	RemoteAgent	ERROR	unable to stop listener: [Exception... "Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]"  nsresult: "0x80040111 (NS_ERROR_NOT_AVAILABLE)"  location: "JS frame :: chrome://remote/content/marionette/cert.sys.mjs :: allowAllCerts.disable :: line 51"  data: no] Stack trace: allowAllCerts.disable()@sys.mjs:51
+destroy()@sys.mjs:207
+deleteSession()@sys.mjs:142
+stop()@sys.mjs:229
+observe()@resource://gre/modules/AsyncShutdown.sys.mjs:576
+WARNING: A blocker encountered an error while we were waiting.
+          Blocker:  Waiting for ping task
+          Phase: TelemetryController: Waiting for pending ping activity
+          State: (none)
+WARNING: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+WARNING: addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:727:15
+addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:523:26
+addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:458:15
+setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1548:28
+@resource://gre/modules/osfile/osfile_async_front.jsm:1568:16
+@resource://gre/modules/osfile.jsm:12:30
+@resource://gre/modules/TelemetryStorage.sys.mjs:10:28
+_checkPendingPings@resource://gre/modules/TelemetrySend.sys.mjs:863:17
+setup@resource://gre/modules/TelemetrySend.sys.mjs:803:18
+setup@resource://gre/modules/TelemetrySend.sys.mjs:241:30
+setupTelemetry/this._delayedInitTask<@resource://gre/modules/TelemetryControllerParent.sys.mjs:829:36
+observe@resource://gre/modules/AsyncShutdown.sys.mjs:576:16
+
+WARNING: A blocker encountered an error while we were waiting.
+          Blocker:  Waiting for ping task
+          Phase: TelemetryController: Waiting for pending ping activity
+          State: (none)
+WARNING: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+WARNING: addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:727:15
+addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:523:26
+addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:458:15
+setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1548:28
+@resource://gre/modules/osfile/osfile_async_front.jsm:1568:16
+@resource://gre/modules/osfile.jsm:12:30
+@resource://gre/modules/TelemetryStorage.sys.mjs:10:28
+_checkPendingPings@resource://gre/modules/TelemetrySend.sys.mjs:863:17
+setup@resource://gre/modules/TelemetrySend.sys.mjs:803:18
+setup@resource://gre/modules/TelemetrySend.sys.mjs:241:30
+setupTelemetry/this._delayedInitTask<@resource://gre/modules/TelemetryControllerParent.sys.mjs:829:36
+observe@resource://gre/modules/AsyncShutdown.sys.mjs:576:16
+
+WARNING: A blocker encountered an error while we were waiting.
+          Blocker:  Waiting for ping task
+          Phase: TelemetryController: Waiting for pending ping activity
+          State: (none)
+WARNING: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+WARNING: addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:727:15
+addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:523:26
+addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:458:15
+setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1548:28
+@resource://gre/modules/osfile/osfile_async_front.jsm:1568:16
+@resource://gre/modules/osfile.jsm:12:30
+@resource://gre/modules/TelemetryStorage.sys.mjs:10:28
+_checkPendingPings@resource://gre/modules/TelemetrySend.sys.mjs:863:17
+setup@resource://gre/modules/TelemetrySend.sys.mjs:803:18
+setup@resource://gre/modules/TelemetrySend.sys.mjs:241:30
+setupTelemetry/this._delayedInitTask<@resource://gre/modules/TelemetryControllerParent.sys.mjs:829:36
+observe@resource://gre/modules/AsyncShutdown.sys.mjs:576:16
+
+WARNING: A blocker encountered an error while we were waiting.
+          Blocker:  TelemetryController: shutting down
+          Phase: profile-before-change-telemetry
+          State: Error getting state: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange" at addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:727:15
+addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:523:26
+addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:458:15
+setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1548:28
+@resource://gre/modules/osfile/osfile_async_front.jsm:1568:16
+@resource://gre/modules/osfile.jsm:12:30
+@resource://gre/modules/TelemetryStorage.sys.mjs:10:28
+_checkPendingPings@resource://gre/modules/TelemetrySend.sys.mjs:863:17
+setup@resource://gre/modules/TelemetrySend.sys.mjs:803:18
+setup@resource://gre/modules/TelemetrySend.sys.mjs:241:30
+setupTelemetry/this._delayedInitTask<@resource://gre/modules/TelemetryControllerParent.sys.mjs:829:36
+observe@resource://gre/modules/AsyncShutdown.sys.mjs:576:16
+
+WARNING: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+WARNING: addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:727:15
+addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:523:26
+addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:458:15
+setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1548:28
+@resource://gre/modules/osfile/osfile_async_front.jsm:1568:16
+@resource://gre/modules/osfile.jsm:12:30
+@resource://gre/modules/TelemetryStorage.sys.mjs:10:28
+_checkPendingPings@resource://gre/modules/TelemetrySend.sys.mjs:863:17
+setup@resource://gre/modules/TelemetrySend.sys.mjs:803:18
+setup@resource://gre/modules/TelemetrySend.sys.mjs:241:30
+setupTelemetry/this._delayedInitTask<@resource://gre/modules/TelemetryControllerParent.sys.mjs:829:36
+observe@resource://gre/modules/AsyncShutdown.sys.mjs:576:16
+
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 727: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 727: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 727: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 727: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 727: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 727: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+1678017242761	geckodriver	INFO	Listening on 127.0.0.1:63079
+1678017245816	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "63080" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileZHpGE3"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678017246334	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678017246343	Marionette	INFO	Listening on port 63090
+Read port: 63090
+WebDriver BiDi listening on ws://127.0.0.1:63080
+1678017246537	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileZHpGE3\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:63080/devtools/browser/cc92e39a-a05a-4b18-96d2-28a0f9a3c903
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678017360699	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1678017405216	Marionette	INFO	Stopped listening on port 63090
+Dynamically enable window occlusion 1
+1678017751707	geckodriver	INFO	Listening on 127.0.0.1:63708
+1678017754748	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "63709" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile5A57gq"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678017755182	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678017755191	Marionette	INFO	Listening on port 63717
+Read port: 63717
+WebDriver BiDi listening on ws://127.0.0.1:63709
+1678017755394	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile5A57gq\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:63709/devtools/browser/0bf4ae9c-5d1d-47d7-bb4f-fa4f8b0a642b
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+[Parent 283064, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:777
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678017868608	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1678017911353	Marionette	INFO	Stopped listening on port 63717
+Dynamically enable window occlusion 1
+1678018407929	geckodriver	INFO	Listening on 127.0.0.1:64445
+1678018410957	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "64446" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileYKfGs5"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678018411342	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678018411348	Marionette	INFO	Listening on port 64456
+Read port: 64456
+WebDriver BiDi listening on ws://127.0.0.1:64446
+1678018411504	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileYKfGs5\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:64446/devtools/browser/17f29523-2b6c-4d96-be88-f118af72034e
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+[Parent 265580, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:777
+1678018435999	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678018512301	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1678018538140	Marionette	INFO	Stopped listening on port 64456
+Dynamically enable window occlusion 1
+1678018722508	geckodriver	INFO	Listening on 127.0.0.1:64867
+1678018725539	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "64868" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileB9waQ6"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678018725976	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678018725982	Marionette	INFO	Listening on port 64876
+Read port: 64876
+WebDriver BiDi listening on ws://127.0.0.1:64868
+1678018726122	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileB9waQ6\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:64868/devtools/browser/febb7ef6-f25f-4d4b-a604-f55ebae8ec45
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678018901348	Marionette	INFO	Stopped listening on port 64876
+Dynamically enable window occlusion 1
+1678019088138	geckodriver	INFO	Listening on 127.0.0.1:65306
+1678019091172	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "65307" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilevJ9LJk"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678019091617	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678019091625	Marionette	INFO	Listening on port 65315
+Read port: 65315
+WebDriver BiDi listening on ws://127.0.0.1:65307
+1678019091863	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilevJ9LJk\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:65307/devtools/browser/e4a1d78e-bcde-4f46-9439-1be22e04d333
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678019260868	Marionette	INFO	Stopped listening on port 65315
+Dynamically enable window occlusion 1
+1678020784879	geckodriver	INFO	Listening on 127.0.0.1:51802
+1678020787918	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51803" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilellCD0M"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678020788446	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678020788452	Marionette	INFO	Listening on port 51815
+Read port: 51815
+WebDriver BiDi listening on ws://127.0.0.1:51803
+1678020788607	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilellCD0M\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51803/devtools/browser/42087a46-8130-4cf7-8c1c-7daf86491ff8
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678020911772	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1678020954596	Marionette	INFO	Stopped listening on port 51815
+Dynamically enable window occlusion 1
+1678021252588	geckodriver	INFO	Listening on 127.0.0.1:52353
+1678021255625	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "52354" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileLToMzo"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678021256344	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678021256354	Marionette	INFO	Listening on port 52363
+Read port: 52363
+WebDriver BiDi listening on ws://127.0.0.1:52354
+1678021256542	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileLToMzo\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:52354/devtools/browser/21906949-fdbd-4e68-b34d-b1756e21b7e0
+[Parent 282236, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:777
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678021347964	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1678021371429	Marionette	INFO	Stopped listening on port 52363
+Dynamically enable window occlusion 1
+JavaScript error: chrome://remote/content/marionette/cert.sys.mjs, line 51: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+!!! error running onStopped callback: TypeError: callback is not a function
+1678021371622	RemoteAgent	ERROR	unable to stop listener: [Exception... "Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]"  nsresult: "0x80040111 (NS_ERROR_NOT_AVAILABLE)"  location: "JS frame :: chrome://remote/content/marionette/cert.sys.mjs :: allowAllCerts.disable :: line 51"  data: no] Stack trace: allowAllCerts.disable()@sys.mjs:51
+destroy()@sys.mjs:207
+deleteSession()@sys.mjs:142
+stop()@sys.mjs:229
+observe()@resource://gre/modules/AsyncShutdown.sys.mjs:576
+1678021391559	geckodriver	INFO	Listening on 127.0.0.1:52518
+1678021394548	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "52519" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilemekTj1"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678021394995	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678021395002	Marionette	INFO	Listening on port 52528
+Read port: 52528
+WebDriver BiDi listening on ws://127.0.0.1:52519
+1678021395182	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilemekTj1\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:52519/devtools/browser/e89245d8-fa6d-4576-b467-a59c24e6ee5f
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678021419230	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678021510620	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1678021553579	Marionette	INFO	Stopped listening on port 52528
+Dynamically enable window occlusion 1
+1678027424334	geckodriver	INFO	Listening on 127.0.0.1:57605
+1678027427401	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "57606" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileBxsctY"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678027428254	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678027428262	Marionette	INFO	Listening on port 57620
+Read port: 57620
+WebDriver BiDi listening on ws://127.0.0.1:57606
+1678027428481	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileBxsctY\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:57606/devtools/browser/427e8d19-0884-42dd-9b0b-04febc1cca6f
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678027529193	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1678027554844	Marionette	INFO	Stopped listening on port 57620
+Dynamically enable window occlusion 1
+1678027573530	geckodriver	INFO	Listening on 127.0.0.1:57971
+1678027576549	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "57972" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilee3vEkn"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678027576983	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678027576990	Marionette	INFO	Listening on port 57982
+Read port: 57982
+WebDriver BiDi listening on ws://127.0.0.1:57972
+1678027577219	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilee3vEkn\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:57972/devtools/browser/3195e909-9871-41bf-84d5-dfe3a259f4a6
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+[Parent 277880, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:777
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678027745646	Marionette	INFO	Stopped listening on port 57982
+Dynamically enable window occlusion 1

@@ -4,7 +4,8 @@ from selenium import webdriver
 import json
 import tests
 
-with open("C:\\Users\\liorm\\Desktop\\Automation-Selenium\\FL1&2\\configuration_json.json") as f:
+
+with open("C:\\Users\\liorm\\Desktop\\Automation-Selenium\\FL1and2\\configuration_json.json") as f:
     configuration_date = json.load(f)
 
     # Set the URL of the website to be tested
@@ -16,6 +17,12 @@ password = configuration_date['portal']['password']
 site_number = configuration_date['portal']['site_number']
 water_system_number = configuration_date['portal']['water_system_number']
 product_id = configuration_date['portal']['product_id']
+valve_status = configuration_date['default_policy_1']['valve_status']
+auto_shutoff = configuration_date['default_policy_1']['auto_shutoff']
+detection_mode = configuration_date['default_policy_1']['detection_mode']
+algo_mode = configuration_date['default_policy_1']['algo_mode']
+warning_threshold = configuration_date['default_policy_1']['warning_threshold']
+close_threshold = configuration_date['default_policy_1']['close_threshold']
 
 def test_login():
     try:
@@ -24,37 +31,32 @@ def test_login():
         pytest.fail("failed to login")
 
 
-def test_delete_waiting():
+def test_pre_testing():
     try:
         tests.connect_to_product(driver, site_number, water_system_number)
         tests.delete_waiting(driver)
     except:
         pytest.fail("failed to delete waiting")
 
-
-def test_clear_all_leaks():
     try:
         tests.connect_to_product(driver, site_number, water_system_number)
         tests.clear_all_leaks(driver, site_number, water_system_number, product_id)
-    except:
-        pytest.fail("failed to clear all leaks")
+    except Exception as e:
+        pytest.fail(str(e))
 
-
-def test_delete_valve_error():
     try:
         tests.connect_to_product(driver, site_number, water_system_number)
         tests.delete_valve_error(driver, site_number, water_system_number, product_id)
     except Exception as e:
         pytest.fail(str(e))
 
-
-def test_close_valve_from_system_control():
+def test_set_default_policy():
     try:
         tests.connect_to_product(driver, site_number, water_system_number)
-        tests.close_valve_from_system_control(driver, product_id, site_number, water_system_number)
-    except:
-        pytest.fail("No event was received")
-
+        tests.set_policy(driver, site_number, water_system_number, product_id,
+                         valve_status, auto_shutoff, detection_mode, algo_mode, warning_threshold, close_threshold)
+    except Exception as e:
+        pytest.fail(str(e))
 
 def test_close_connection():
     sleep(3)

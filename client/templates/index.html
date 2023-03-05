@@ -7,9 +7,7 @@
     <title>Wint Automation Testing Station</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="/javascript/index.js"></script>
-    <script>
 
-    </script>
     <style>
       tr:hover {
         background-color: #DAF8FC;
@@ -22,6 +20,10 @@
       .passed {
         color: green;
       }
+      .prod_item {
+			text-align: center;
+			font-size: 24px;
+		}
     </style>
 
     <script>
@@ -30,6 +32,12 @@
   </head>
   <body onload="MyOnLoad()" >
     <h1>Wint Automation Testing Station</h1>
+    <div class="prod_item">
+      <label>Wint3</label>
+      <input type="radio" name="option" value="Wint3" checked>
+      <label>FL1&2</label>
+      <input type="radio" name="option" value="FL1&2">
+    </div>
     <div class="container-fluid">
       <form id="myForm">
         <table id="myTable" class="table">
@@ -113,17 +121,24 @@
           });
         });
 
-
     </script>
     <script>
       const form = document.getElementById("myForm");
+      const radioButtons = document.getElementsByName("option");
       form.addEventListener("submit", (e) => {
         e.preventDefault();
         const checkboxes = form.elements;
         const selected = [];
+        let selectedRadio = null
         for (let i = 0; i < checkboxes.length; i++) {
           if (checkboxes[i].type === "checkbox" && checkboxes[i].checked) {
             selected.push(checkboxes[i].name);
+            }
+        }
+        for (let i = 0; i < radioButtons.length; i++) {
+          if (radioButtons[i].checked) {
+            selectedRadio = radioButtons[i].value;
+            break;
           }
         }
         fetch("/run_command", {
@@ -133,6 +148,7 @@
           },
           body: JSON.stringify({
             selected: selected,
+            selected_radio: selectedRadio,
           }),
         })
           .then((response) => {

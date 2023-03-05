@@ -49,3 +49,40 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
       }
+
+
+const form = document.getElementById("myForm");
+const radioButtons = document.getElementsByName("option");
+form.addEventListener("submit", (e) => {
+e.preventDefault();
+const checkboxes = form.elements;
+const selected = [];
+const select_radio = null
+for (let i = 0; i < checkboxes.length; i++) {
+  if (checkboxes[i].type === "checkbox" && checkboxes[i].checked) {
+    selected.push(checkboxes[i].name);
+    }
+  if (radioButtons[i].checked){
+    selected_radio = radioButtons[i].value;
+    }
+}
+fetch("/run_command", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    selected: selected,
+  }),
+})
+  .then((response) => {
+    return response.text();
+  })
+  .then((htmlContent) => {
+    const responseContent = document.getElementById("response-content");
+    responseContent.innerHTML += htmlContent;
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
+});

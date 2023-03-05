@@ -10,7 +10,7 @@ import json
 import tests
 import threading
 
-with open("C:\\Users\\liorm\\Desktop\\Automation-Selenium\\FL1&2\\configuration_json.json") as f:
+with open("C:\\Users\\liorm\\Desktop\\Automation-Selenium\\FL1and2\\configuration_json.json") as f:
     configuration_date = json.load(f)
 
 # Set the URL of the website to be tested

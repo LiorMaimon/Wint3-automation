@@ -272,9 +272,5 @@ def find_element_by_xpath_and_click_it(driver, xpath_str):
         EC.visibility_of_element_located((By.XPATH, xpath_str)))
     button.click()
 
-# def inject_water_in_process(flow_level='major'):
-#
-#     from injection.inject_simulated_water import main
-#     main()
 
 

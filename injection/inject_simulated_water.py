@@ -45,7 +45,7 @@ def get_time_values(filename):
 
 
 @click.command()
-@click.option('--filename', '-f', default='20200524.bin', show_default=True, type=str, help='Data file name.')
+@click.option('--filename', '-f', default='major.bin', show_default=True, type=str, help='Data file name.')
 @click.option('--verbose', '-v',is_flag=True, show_default=True, default=False,
               help='Verbose mode - log debug messages.')
 @click.option('--line', '-l', show_default=True, default=1, type=int, help='Digital output number [0-7]')

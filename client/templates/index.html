@@ -1,12 +1,12 @@
 <!--<!DOCTYPE html>-->
 
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
   <head>
     <meta charset="UTF-8">
     <title>Wint Automation Testing Station</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="/javascript/index.js"></script>
+
 
     <style>
       tr:hover {
@@ -26,11 +26,11 @@
 		}
     </style>
 
-    <script>
+    <script src="{{ url_for('static', filename='js/index.js') }}">
 
     </script>
   </head>
-  <body onload="MyOnLoad()" >
+  <body>
     <h1>Wint Automation Testing Station</h1>
     <div class="prod_item">
       <label>Wint3</label>
@@ -70,8 +70,8 @@
                 <input type="checkbox" name="inject_water"> Inject Water</input>
               </td>
               <td>test of full injection cycle - <br> 1. set default policy(default_policy_1). <br> 2. start inject simulated water flow.
-               <br> 3. wait for warning threshold. <br> 4. wait for close threshold. <br> expected result:
-               getting warning + close events</td>
+               <br> 3. wait for warning threshold. <br> 4. wait for close threshold. <br> 5. wait till valve error
+                <br>expected result: getting warning + close + valve error events</td>
               <td id="Leak_detection_constant_flow_major_fixed_mode_result"></td>
             </tr>
             <tr>
@@ -107,87 +107,14 @@
       <div id="response-content"></div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
-
-
     <script>
-        $(document).ready(function() {
-          $('input[type="checkbox"]').click(function() {
-            if($(this).is(':checked')) {
-              $(this).closest('tr').css('background-color', '#DAF8FC');
-            } else {
-              $(this).closest('tr').css('background-color', '');
-            }
-          });
-        });
-
+    paintClick();
     </script>
     <script>
-      const form = document.getElementById("myForm");
-      const radioButtons = document.getElementsByName("option");
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const checkboxes = form.elements;
-        const selected = [];
-        let selectedRadio = null
-        for (let i = 0; i < checkboxes.length; i++) {
-          if (checkboxes[i].type === "checkbox" && checkboxes[i].checked) {
-            selected.push(checkboxes[i].name);
-            }
-        }
-        for (let i = 0; i < radioButtons.length; i++) {
-          if (radioButtons[i].checked) {
-            selectedRadio = radioButtons[i].value;
-            break;
-          }
-        }
-        fetch("/run_command", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            selected: selected,
-            selected_radio: selectedRadio,
-          }),
-        })
-          .then((response) => {
-            return response.text();
-          })
-          .then((htmlContent) => {
-            const responseContent = document.getElementById("response-content");
-            responseContent.innerHTML += htmlContent;
-          })
-          .catch((error) => {
-            console.error("Error:", error);
-          });
-      });
+    runCommandRequest();
     </script>
     <script>
-        //var button = document.getElementById("show-results-button");
-        document.addEventListener("DOMContentLoaded", function() {
-          setInterval(function() {
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function() {
-              if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-
-                var result = document.getElementById("open_valve_result");
-                var response = JSON.parse(xhr.responseText);
-                var html = "";
-                for (var key in response) {
-                  key.replace(/\\/g, '');
-                  result = document.getElementById(key + "_result");
-                  html += "<p><b>"  + "</b> " + response[key] + "</p>";
-                }
-                if (html !== ("")){
-                  result.innerHTML = html;
-                }
-              }
-            };
-            xhr.open("GET", "/results", true);
-            xhr.send();
-          }, 4000);
-        });
+    updateResultCol();
     </script>
 
   </body>

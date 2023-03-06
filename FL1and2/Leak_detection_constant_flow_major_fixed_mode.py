@@ -87,7 +87,8 @@ def test_inject_simulated_water_flow():
 def test_warning_message_arrived():
     try:
         tests.connect_to_product(driver, site_number, water_system_number)
-        warning_gotten = tests.is_warning_command_was_gotten(driver, site_number, water_system_number, product_id)
+        warning_gotten = tests.is_command_was_gotten_loop(driver, site_number, water_system_number, product_id,
+                                                          'OP_EVT_SMG_LEAKDETECT', '"LeakNotificationLevel"=>2')
         if warning_gotten:
             assert True
         else:
@@ -100,7 +101,8 @@ def test_close_message_arrived():
     try:
         sleep(60)
         tests.connect_to_product(driver, site_number, water_system_number)
-        close_gotten = tests.is_close_command_was_gotten(driver, site_number, water_system_number, product_id)
+        close_gotten = tests.is_command_was_gotten_loop(driver, site_number, water_system_number, product_id,
+                                                        'OP_EVT_SMG_LEAKDETECT', '"LeakNotificationLevel"=>3')
         if close_gotten:
             assert True
         else:
@@ -108,6 +110,18 @@ def test_close_message_arrived():
     except:
         pytest.fail('fail to get close')
 
+
+def test_valve_error_arrived():
+    try:
+        tests.connect_to_product(driver, site_number, water_system_number)
+        error_gotten = tests.is_command_was_gotten_loop(driver, site_number, water_system_number, product_id,
+                                                        'OP_EVT_VALVE_ERROR',None, False)
+        if error_gotten:
+            assert True
+        else:
+            assert False
+    except:
+        pytest.fail('fail to get close')
 
 def test_stop_water_simulator():
     try:

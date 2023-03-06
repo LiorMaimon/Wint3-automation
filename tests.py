@@ -307,21 +307,23 @@ def stop_inject_water(injection_process):
         raise Exception("fail to stop water flow")
 
 
-def is_warning_command_was_gotten(driver, site_number, water_system_number, product_number):
+def is_command_was_gotten_loop(driver, site_number, water_system_number, product_number, command_to_check,
+                               content_to_check=None, relevant_content=True):
     assistants_functions.find_element_by_xpath_and_click_it(driver,
                                             "//a[@href='/en/sites/{}/water_systems/{}/products/{}/commands']".format(
                                                 site_number, water_system_number, product_number))
-    leak_detect_content = None
     for i in range(30):
         now = datetime.now()
         try:
             leak_detect_content = assistants_functions.check_commands_arrived_in_portal(driver,
                                                                                         NUMBER_OF_COMMANDS_TO_CHECK,
                                                                                         TIME_RANGE,
-                                                                                        'OP_EVT_SMG_LEAKDETECT', now,
+                                                                                        command_to_check, now,
                                                                                         True)
             if leak_detect_content:
-                if '"LeakNotificationLevel"=>2' in leak_detect_content:
+                if not relevant_content:
+                    return True
+                if content_to_check in leak_detect_content:
                     return True
         except:
             print("")
@@ -329,30 +331,4 @@ def is_warning_command_was_gotten(driver, site_number, water_system_number, prod
         driver.refresh()
 
     return False
-
-
-def is_close_command_was_gotten(driver, site_number, water_system_number, product_number):
-    assistants_functions.find_element_by_xpath_and_click_it(driver,
-                                            "//a[@href='/en/sites/{}/water_systems/{}/products/{}/commands']".format(
-                                                site_number, water_system_number, product_number))
-    leak_detect_content = None
-    for i in range(30):
-        now = datetime.now()
-        try:
-            leak_detect_content = assistants_functions.check_commands_arrived_in_portal(driver,
-                                                                                        NUMBER_OF_COMMANDS_TO_CHECK,
-                                                                                        TIME_RANGE,
-                                                                                        'OP_EVT_SMG_LEAKDETECT'
-                                                                                        , now,
-                                                                                        True)
-            if leak_detect_content:
-                if '"LeakNotificationLevel"=>3' in leak_detect_content:
-                    return True
-        except:
-            print("")
-        sleep(10)
-        driver.refresh()
-
-    return False
-
 

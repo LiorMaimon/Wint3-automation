@@ -9117,3 +9117,48 @@ JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't fin
 console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
 1678027745646	Marionette	INFO	Stopped listening on port 57982
 Dynamically enable window occlusion 1
+1678101270856	geckodriver	INFO	Listening on 127.0.0.1:52184
+1678101273914	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "52185" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileimXTFj"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678101274520	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678101274529	Marionette	INFO	Listening on port 52199
+Read port: 52199
+WebDriver BiDi listening on ws://127.0.0.1:52185
+1678101274737	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileimXTFj\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:52185/devtools/browser/68c80cb4-5461-4519-82e9-cc3672b6b128
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678101379550	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1678101405441	Marionette	INFO	Stopped listening on port 52199
+Dynamically enable window occlusion 1
+1678101413538	geckodriver	INFO	Listening on 127.0.0.1:52552
+1678101416569	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "52553" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileAOgP8B"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678101417023	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678101417030	Marionette	INFO	Listening on port 52566
+Read port: 52566
+WebDriver BiDi listening on ws://127.0.0.1:52553
+1678101417200	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileAOgP8B\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:52553/devtools/browser/a6124272-2e07-4dda-8fc9-c8547cf1a826
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678101515734	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1678101541882	Marionette	INFO	Stopped listening on port 52566
+Dynamically enable window occlusion 1
+!!! error running onStopped callback: TypeError: callback is not a function

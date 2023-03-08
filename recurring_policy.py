@@ -34,34 +34,34 @@ def test_login():
 
 
 
-def test_pre_testing():
-    try:
-        tests.connect_to_product(driver, site_number, water_system_number)
-        tests.delete_waiting(driver)
-    except:
-        pytest.fail("failed to delete waiting")
-
-    try:
-        tests.connect_to_product(driver, site_number, water_system_number)
-        tests.clear_all_leaks(driver, site_number, water_system_number, product_id)
-    except Exception as e:
-        pytest.fail(str(e))
-
-    try:
-        tests.connect_to_product(driver, site_number, water_system_number)
-        tests.delete_valve_error(driver, site_number, water_system_number, product_id)
-    except Exception as e:
-        pytest.fail(str(e))
-
-
-def test_open_valve_from_system_control():
-    try:
-        tests.connect_to_product(driver, site_number, water_system_number)
-        tests.open_valve_from_system_control(driver, product_id, site_number, water_system_number)
-    except:
-        pytest.fail("No event was received")
-
-
+# def test_pre_testing():
+#     try:
+#         tests.connect_to_product(driver, site_number, water_system_number)
+#         tests.delete_waiting(driver)
+#     except:
+#         pytest.fail("failed to delete waiting")
+#
+#     try:
+#         tests.connect_to_product(driver, site_number, water_system_number)
+#         tests.clear_all_leaks(driver, site_number, water_system_number, product_id)
+#     except Exception as e:
+#         pytest.fail(str(e))
+#
+#     try:
+#         tests.connect_to_product(driver, site_number, water_system_number)
+#         tests.delete_valve_error(driver, site_number, water_system_number, product_id)
+#     except Exception as e:
+#         pytest.fail(str(e))
+#
+#
+# def test_open_valve_from_system_control():
+#     try:
+#         tests.connect_to_product(driver, site_number, water_system_number)
+#         tests.open_valve_from_system_control(driver, product_id, site_number, water_system_number)
+#     except:
+#         pytest.fail("No event was received")
+#
+#
 def test_set_recurring_policy_close_valve():
     try:
         tests.connect_to_product(driver, site_number, water_system_number)

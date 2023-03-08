@@ -253,7 +253,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>report_Leak_detection_constant_flow_major_fixed_mode.html</h1>
-    <p>Report generated on 28-Feb-2023 at 09:19:43 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
+    <p>Report generated on 08-Mar-2023 at 16:18:57 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -269,8 +269,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.7.8</td></tr></table>
     <h2>Summary</h2>
-    <p>9 tests ran in 346.46 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">9 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>10 tests ran in 648.41 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">9 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">1 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -281,11 +281,20 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
           <th class="sortable links" col="links">Links</th></tr>
         <tr hidden="true" id="not-found-message">
           <th colspan="4">No results found. Try to check the filters</th></tr></thead>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">Leak_detection_constant_flow_major_fixed_mode.py::test_set_default_policy</td>
+          <td class="col-duration">61.62</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">driver = &lt;selenium.webdriver.firefox.webdriver.WebDriver (session=&quot;db3c1e0b-3d5f-469d-821b-2f5dff3392f2&quot;)&gt;<br/>site_number = &#x27;2232&#x27;, water_system_number = &#x27;8925&#x27;, product_number = &#x27;4164&#x27;<br/>valve_status = &#x27;open&#x27;, auto_shutoff = &#x27;enabled&#x27;, detection_mode = &#x27;fixed&#x27;<br/>algo_mode = &#x27;event based&#x27;, warning_threshold = &#x27;50&#x27;, close_threshold = &#x27;150&#x27;<br/>policy_kind = &#x27;default_policy&#x27;, start_time = &#x27;0&#x27;, end_time = &#x27;5&#x27;<br/><br/>    def set_policy(driver, site_number, water_system_number, product_number, valve_status, auto_shutoff, detection_mode,<br/>                   algo_mode, warning_threshold, close_threshold, policy_kind=&#x27;default_policy&#x27;, start_time=&#x27;0&#x27;,<br/>                   end_time=&quot;5&quot;):<br/>        #  for now, it is for default and recurring need exception<br/>        assistants_functions.find_element_by_xpath_and_click_it(driver,<br/>                                                &quot;//a[@href=&#x27;/en/sites/{}/water_systems/{}/policies&#x27;]&quot;.format(<br/>                                                  site_number, water_system_number))<br/>        if policy_kind == &quot;exception_policy&quot;:<br/>            assistants_functions.find_element_by_xpath_and_click_it(driver, &quot;//*[text()=&#x27;Add Exception&#x27;]&quot;)<br/>            assistants_functions.set_policy_name(driver)<br/>            assistants_functions.set_exception_policy_time(driver, int(start_time), int(end_time))<br/>        if policy_kind == &#x27;recurring_policy&#x27;:<br/>            assistants_functions.find_element_by_xpath_and_click_it(driver, &quot;//*[text()=&#x27;Add Recurring Policy&#x27;]&quot;)<br/>            assistants_functions.set_policy_name(driver)<br/>            assistants_functions.set_recurring_policy_time(driver, int(start_time), int(end_time))<br/>    <br/>        assistants_functions.set_policy_valve_status(driver, valve_status)<br/>        assistants_functions.set_policy_shutoff_status(driver, auto_shutoff)<br/>        assistants_functions.set_policy_detection_mode(driver, detection_mode, warning_threshold, close_threshold,<br/>                                                       algo_mode)<br/>        sleep(3)<br/>        if policy_kind == &#x27;default_policy&#x27;:<br/>            apply_button = WebDriverWait(driver, 10).until(<br/>                EC.visibility_of_element_located((By.XPATH, &quot;//input[@type=&#x27;submit&#x27;][@value=&#x27;Apply&#x27;]&quot;)))<br/>            apply_button.click()<br/>            alert = driver.switch_to.alert<br/>            alert.accept()<br/>        if policy_kind == &#x27;recurring_policy&#x27;:<br/>            create_policy_button = WebDriverWait(driver, 10).until(<br/>                EC.visibility_of_element_located((By.ID, &#x27;create_button&#x27;)))<br/>            create_policy_button.click()<br/>            text = &quot;Recurring - The Recurring policy conflicts with&quot;<br/>            try:<br/>                element = driver.find_element(By.XPATH, &quot;//*[contains(text(), &#x27;&quot; + text + &quot;&#x27;)]&quot;)<br/>                if text in element.text:<br/>                    raise Exception(&quot;The text &#x27;&quot; + text + &quot;&#x27; is present on the page.&quot;)<br/>            except:<br/>                print(&quot;&quot;)<br/>        if policy_kind == &#x27;exception_policy&#x27;:<br/>            create_policy_button = WebDriverWait(driver, 10).until(<br/>                EC.visibility_of_element_located((By.ID, &#x27;create_button&#x27;)))<br/>            create_policy_button.click()<br/>            text = &quot;conflicts with&quot;<br/>            try:<br/>                element = driver.find_element(By.XPATH, &quot;//*[contains(text(), &#x27;&quot; + text + &quot;&#x27;)]&quot;)<br/>                if text in element.text:<br/>                    raise Exception(&quot;The text &#x27;&quot; + text + &quot;&#x27; is present on the page.&quot;)<br/>            except:<br/>                print(&quot;&quot;)<br/>        now = datetime.now()<br/>        sleep(3)<br/>        connect_to_product(driver, site_number, water_system_number)<br/>        sleep(8)<br/>        assistants_functions.find_element_by_xpath_and_click_it(driver,<br/>                                                &quot;//a[@href=&#x27;/en/sites/{}/water_systems/{}/products/{}/commands&#x27;]&quot;.format(<br/>                                                  site_number, water_system_number, product_number))<br/>        sleep(5 + int(CONFIGURATION_FILE[&#x27;extra_sleep&#x27;]))<br/>        try:<br/>            policy_content = assistants_functions.check_commands_arrived_in_portal(driver, NUMBER_OF_COMMANDS_TO_CHECK, TIME_RANGE,<br/>                                CONFIGURATION_FILE[&#x27;portal_response&#x27;][&#x27;set_policy&#x27;], now, True)<br/>&gt;           if not assistants_functions.policy_check(policy_content, policy_kind):<br/><br/>..\tests.py:201: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _<br/><br/>policy_command_content = &#x27;{&quot;ResponseCode.ResponseCode&quot;=&gt;0, &quot;ResponseCode.ResponseFlags&quot;=&gt;0, &quot;Active&quot;=&gt;1, &quot;PolicyId&quot;=&gt;7186, &quot;Fixed&quot;=&gt;1, &quot;Warning...&quot;hours&quot;=&gt;0, &quot;minutes&quot;=&gt;0, &quot;WorkingMinutesDuration&quot;=&gt;0, &quot;StartTime&quot;=&gt;0, &quot;EndTime&quot;=&gt;0, &quot;DoNotLearn&quot;=&gt;0, &quot;Cumulative&quot;=&gt;0}&#x27;<br/>kind_of_policy = &#x27;default_policy&#x27;<br/><br/>    def policy_check(policy_command_content, kind_of_policy):<br/>        with open(CONFIG_PATH) as f:<br/>            configuration_date = json.load(f)<br/>        pulse_ratio = configuration_date[&#x27;translate&#x27;][&#x27;PULSE_RATIO&#x27;]<br/>        valve_status = configuration_date[f&#x27;{kind_of_policy}_1&#x27;][&#x27;valve_status&#x27;]<br/>        if valve_status == &#x27;close&#x27;:<br/>            valve_status = configuration_date[&#x27;translate&#x27;][&#x27;close&#x27;]<br/>        if valve_status == &#x27;open&#x27;:<br/>            valve_status = configuration_date[&#x27;translate&#x27;][&#x27;open&#x27;]<br/>        auto_shutoff = configuration_date[f&#x27;{kind_of_policy}_1&#x27;][&#x27;auto_shutoff&#x27;]<br/>        if auto_shutoff == &#x27;enabled&#x27;:<br/>            auto_shutoff = configuration_date[&#x27;translate&#x27;][&#x27;enabled&#x27;]<br/>        else:<br/>            auto_shutoff = configuration_date[&#x27;translate&#x27;][&#x27;disabled&#x27;]<br/>        detection_mode = configuration_date[f&#x27;{kind_of_policy}_1&#x27;][&#x27;detection_mode&#x27;]<br/>        if detection_mode == &#x27;fixed&#x27;:<br/>            detection_mode = configuration_date[&#x27;translate&#x27;][&#x27;fixed&#x27;]<br/>        else:<br/>            detection_mode = configuration_date[&#x27;translate&#x27;][&#x27;adaptive&#x27;]<br/>    <br/>        algo_mode = configuration_date[f&#x27;{kind_of_policy}_1&#x27;][&#x27;algo_mode&#x27;]<br/>        if algo_mode == &#x27;event based&#x27;:<br/>            algo_mode = configuration_date[&#x27;translate&#x27;][&#x27;event based&#x27;]<br/>        else:<br/>            algo_mode = configuration_date[&#x27;translate&#x27;][&#x27;cumulative&#x27;]<br/>        warning_threshold = configuration_date[f&#x27;{kind_of_policy}_1&#x27;][&#x27;warning_threshold&#x27;]<br/>        close_threshold = configuration_date[f&#x27;{kind_of_policy}_1&#x27;][&#x27;close_threshold&#x27;]<br/>    <br/>        valve_status_check = f&quot;\&quot;valveAction\&quot;=&gt;{valve_status}&quot;.lower() in policy_command_content.lower()<br/>        auto_shutoff_check = f&quot;\&quot;autoShutoff\&quot;=&gt;{auto_shutoff}&quot;.lower() in policy_command_content.lower()<br/>        detection_mode_check = f&quot;=&gt;{detection_mode}&quot;.lower() in policy_command_content.lower()<br/>        algo_mode_check = f&quot;=&gt;{algo_mode}&quot;.lower() in policy_command_content.lower()<br/>&gt;       warning_threshold_check = f&quot;WarningThreshold\&quot;=&gt;{str(int(int(warning_threshold)/int(pulse_ratio)))}&quot;.lower() in policy_command_content.lower()<br/><span class="error">E       ValueError: invalid literal for int() with base 10: &#x27;0.049&#x27;</span><br/><br/>..\assistants_functions.py:262: ValueError<br/><br/>During handling of the above exception, another exception occurred:<br/><br/>    def test_set_default_policy():<br/>        try:<br/>            tests.connect_to_product(driver, site_number, water_system_number)<br/>            tests.set_policy(driver, site_number, water_system_number,product_id,<br/>&gt;                            valve_status, auto_shutoff, detection_mode, algo_mode, warning_threshold, close_threshold)<br/><br/>..\Leak_detection_constant_flow_major_fixed_mode.py:73: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _<br/><br/>driver = &lt;selenium.webdriver.firefox.webdriver.WebDriver (session=&quot;db3c1e0b-3d5f-469d-821b-2f5dff3392f2&quot;)&gt;<br/>site_number = &#x27;2232&#x27;, water_system_number = &#x27;8925&#x27;, product_number = &#x27;4164&#x27;<br/>valve_status = &#x27;open&#x27;, auto_shutoff = &#x27;enabled&#x27;, detection_mode = &#x27;fixed&#x27;<br/>algo_mode = &#x27;event based&#x27;, warning_threshold = &#x27;50&#x27;, close_threshold = &#x27;150&#x27;<br/>policy_kind = &#x27;default_policy&#x27;, start_time = &#x27;0&#x27;, end_time = &#x27;5&#x27;<br/><br/>    def set_policy(driver, site_number, water_system_number, product_number, valve_status, auto_shutoff, detection_mode,<br/>                   algo_mode, warning_threshold, close_threshold, policy_kind=&#x27;default_policy&#x27;, start_time=&#x27;0&#x27;,<br/>                   end_time=&quot;5&quot;):<br/>        #  for now, it is for default and recurring need exception<br/>        assistants_functions.find_element_by_xpath_and_click_it(driver,<br/>                                                &quot;//a[@href=&#x27;/en/sites/{}/water_systems/{}/policies&#x27;]&quot;.format(<br/>                                                  site_number, water_system_number))<br/>        if policy_kind == &quot;exception_policy&quot;:<br/>            assistants_functions.find_element_by_xpath_and_click_it(driver, &quot;//*[text()=&#x27;Add Exception&#x27;]&quot;)<br/>            assistants_functions.set_policy_name(driver)<br/>            assistants_functions.set_exception_policy_time(driver, int(start_time), int(end_time))<br/>        if policy_kind == &#x27;recurring_policy&#x27;:<br/>            assistants_functions.find_element_by_xpath_and_click_it(driver, &quot;//*[text()=&#x27;Add Recurring Policy&#x27;]&quot;)<br/>            assistants_functions.set_policy_name(driver)<br/>            assistants_functions.set_recurring_policy_time(driver, int(start_time), int(end_time))<br/>    <br/>        assistants_functions.set_policy_valve_status(driver, valve_status)<br/>        assistants_functions.set_policy_shutoff_status(driver, auto_shutoff)<br/>        assistants_functions.set_policy_detection_mode(driver, detection_mode, warning_threshold, close_threshold,<br/>                                                       algo_mode)<br/>        sleep(3)<br/>        if policy_kind == &#x27;default_policy&#x27;:<br/>            apply_button = WebDriverWait(driver, 10).until(<br/>                EC.visibility_of_element_located((By.XPATH, &quot;//input[@type=&#x27;submit&#x27;][@value=&#x27;Apply&#x27;]&quot;)))<br/>            apply_button.click()<br/>            alert = driver.switch_to.alert<br/>            alert.accept()<br/>        if policy_kind == &#x27;recurring_policy&#x27;:<br/>            create_policy_button = WebDriverWait(driver, 10).until(<br/>                EC.visibility_of_element_located((By.ID, &#x27;create_button&#x27;)))<br/>            create_policy_button.click()<br/>            text = &quot;Recurring - The Recurring policy conflicts with&quot;<br/>            try:<br/>                element = driver.find_element(By.XPATH, &quot;//*[contains(text(), &#x27;&quot; + text + &quot;&#x27;)]&quot;)<br/>                if text in element.text:<br/>                    raise Exception(&quot;The text &#x27;&quot; + text + &quot;&#x27; is present on the page.&quot;)<br/>            except:<br/>                print(&quot;&quot;)<br/>        if policy_kind == &#x27;exception_policy&#x27;:<br/>            create_policy_button = WebDriverWait(driver, 10).until(<br/>                EC.visibility_of_element_located((By.ID, &#x27;create_button&#x27;)))<br/>            create_policy_button.click()<br/>            text = &quot;conflicts with&quot;<br/>            try:<br/>                element = driver.find_element(By.XPATH, &quot;//*[contains(text(), &#x27;&quot; + text + &quot;&#x27;)]&quot;)<br/>                if text in element.text:<br/>                    raise Exception(&quot;The text &#x27;&quot; + text + &quot;&#x27; is present on the page.&quot;)<br/>            except:<br/>                print(&quot;&quot;)<br/>        now = datetime.now()<br/>        sleep(3)<br/>        connect_to_product(driver, site_number, water_system_number)<br/>        sleep(8)<br/>        assistants_functions.find_element_by_xpath_and_click_it(driver,<br/>                                                &quot;//a[@href=&#x27;/en/sites/{}/water_systems/{}/products/{}/commands&#x27;]&quot;.format(<br/>                                                  site_number, water_system_number, product_number))<br/>        sleep(5 + int(CONFIGURATION_FILE[&#x27;extra_sleep&#x27;]))<br/>        try:<br/>            policy_content = assistants_functions.check_commands_arrived_in_portal(driver, NUMBER_OF_COMMANDS_TO_CHECK, TIME_RANGE,<br/>                                CONFIGURATION_FILE[&#x27;portal_response&#x27;][&#x27;set_policy&#x27;], now, True)<br/>            if not assistants_functions.policy_check(policy_content, policy_kind):<br/>                assert False<br/>        except:<br/>&gt;           raise Exception(&quot;no &quot;+&quot;OP_RES_INSERT_DEVICE_CONF_FL3 command was arrived&quot;)<br/><span class="error">E           Exception: no OP_RES_INSERT_DEVICE_CONF_FL3 command was arrived</span><br/><br/>..\tests.py:204: Exception<br/><br/>During handling of the above exception, another exception occurred:<br/><br/>    def test_set_default_policy():<br/>        try:<br/>            tests.connect_to_product(driver, site_number, water_system_number)<br/>            tests.set_policy(driver, site_number, water_system_number,product_id,<br/>                             valve_status, auto_shutoff, detection_mode, algo_mode, warning_threshold, close_threshold)<br/>        except Exception as e:<br/>&gt;           pytest.fail(str(e))<br/><span class="error">E           Failed: no OP_RES_INSERT_DEVICE_CONF_FL3 command was arrived</span><br/><br/>..\Leak_detection_constant_flow_major_fixed_mode.py:75: Failed<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">Leak_detection_constant_flow_major_fixed_mode.py::test_login</td>
-          <td class="col-duration">2.91</td>
+          <td class="col-duration">2.70</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -294,7 +303,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">Leak_detection_constant_flow_major_fixed_mode.py::test_pre_testing</td>
-          <td class="col-duration">78.77</td>
+          <td class="col-duration">101.43</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -303,16 +312,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">Leak_detection_constant_flow_major_fixed_mode.py::test_open_valve_from_system_control</td>
-          <td class="col-duration">31.17</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">Leak_detection_constant_flow_major_fixed_mode.py::test_set_default_policy</td>
-          <td class="col-duration">41.19</td>
+          <td class="col-duration">51.74</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -330,12 +330,11 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">Leak_detection_constant_flow_major_fixed_mode.py::test_warning_message_arrived</td>
-          <td class="col-duration">83.01</td>
+          <td class="col-duration">106.34</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-
 
 
 <br/></div></td></tr></tbody>
@@ -343,7 +342,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">Leak_detection_constant_flow_major_fixed_mode.py::test_close_message_arrived</td>
-          <td class="col-duration">91.11</td>
+          <td class="col-duration">171.53</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -352,8 +351,20 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
+          <td class="col-name">Leak_detection_constant_flow_major_fixed_mode.py::test_valve_error_arrived</td>
+          <td class="col-duration">108.63</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
           <td class="col-name">Leak_detection_constant_flow_major_fixed_mode.py::test_stop_water_simulator</td>
-          <td class="col-duration">0.02</td>
+          <td class="col-duration">0.05</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -362,7 +373,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">Leak_detection_constant_flow_major_fixed_mode.py::test_close_connection</td>
-          <td class="col-duration">7.34</td>
+          <td class="col-duration">28.28</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">

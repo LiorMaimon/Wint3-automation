@@ -1,3 +1,4 @@
+import json
 import os
 import psutil
 import signal
@@ -12,7 +13,10 @@ import assistants_functions
 
 NUMBER_OF_COMMANDS_TO_CHECK = 8
 TIME_RANGE = 1
-
+CONFIG_PATH = "C:\\Users\\liorm\\Desktop\\Automation-Selenium\\configuration_json.json"
+INJECTION_PATH ="C:\\Users\\liorm\\Desktop\\Automation-Selenium\\injection"
+with open(CONFIG_PATH) as f:
+    CONFIGURATION_FILE = json.load(f)
 
 def loggin(driver, user_name_json, password_json):
     user_name = driver.find_element(By.XPATH, "//*[@id=\"user_email\"]")
@@ -76,8 +80,9 @@ def open_valve_from_system_control(driver, product_number, site_number, water_sy
                 "//a[@href='/en/sites/{}/water_systems/{}/products/{}/commands']".format(
                                               site_number, water_system_number, product_number))
     try:
+        sleep(int(CONFIGURATION_FILE['extra_sleep']))
         assistants_functions.check_commands_arrived_in_portal(driver, NUMBER_OF_COMMANDS_TO_CHECK, TIME_RANGE,
-                                                              'OP_EVT_VALVE_OPEN_FL3', now)
+                                                              CONFIGURATION_FILE['portal_response']['open_valve'], now)
     except:
         assert False
 
@@ -97,8 +102,9 @@ def close_valve_from_system_control(driver, product_number, site_number, water_s
                 "//a[@href='/en/sites/{}/water_systems/{}/products/{}/commands']".format(
                                               site_number, water_system_number, product_number))
     try:
+        sleep(int(CONFIGURATION_FILE['extra_sleep']))
         assistants_functions.check_commands_arrived_in_portal(driver, NUMBER_OF_COMMANDS_TO_CHECK, TIME_RANGE,
-                                                              'OP_EVT_VALVE_CLOSE_FL3', now)
+                                                              CONFIGURATION_FILE['portal_response']['close_valve'], now)
     except:
         assert False
 
@@ -112,8 +118,8 @@ def clear_all_leaks(driver, site_number, water_system_number, product_number):
     try:
         now = datetime.now()
         assistants_functions.set_new_command_and_check_command_arrived_in_portal(
-            driver, site_number, water_system_number, product_number, 'clear', NUMBER_OF_COMMANDS_TO_CHECK, TIME_RANGE,
-            'OP_RES_ALG_CLEAR_ALL_LEAKS', now)
+            driver, site_number, water_system_number, product_number, 'clear all', NUMBER_OF_COMMANDS_TO_CHECK, TIME_RANGE,
+            CONFIGURATION_FILE['portal_response']['clear_all_leaks'], now)
     except:
         raise Exception("no OP_RES_ALG_CLEAR_ALL_LEAKS message was arrived")
 
@@ -126,8 +132,8 @@ def delete_valve_error(driver, site_number, water_system_number, product_number)
     try:
         now = datetime.now()
         assistants_functions.set_new_command_and_check_command_arrived_in_portal(
-            driver, site_number, water_system_number, product_number, 'delete', NUMBER_OF_COMMANDS_TO_CHECK, TIME_RANGE,
-            'OP_RES_CLEAN_VALVE_ERROR', now)
+            driver, site_number, water_system_number, product_number, 'delete valve', NUMBER_OF_COMMANDS_TO_CHECK, TIME_RANGE,
+            CONFIGURATION_FILE['portal_response']['delete_valve_error'], now)
     except:
         raise Exception("no OP_RES_CLEAN_VALVE_ERROR message was arrived")
 
@@ -188,10 +194,10 @@ def set_policy(driver, site_number, water_system_number, product_number, valve_s
     assistants_functions.find_element_by_xpath_and_click_it(driver,
                                             "//a[@href='/en/sites/{}/water_systems/{}/products/{}/commands']".format(
                                               site_number, water_system_number, product_number))
-    sleep(5)
+    sleep(5 + int(CONFIGURATION_FILE['extra_sleep']))
     try:
         policy_content = assistants_functions.check_commands_arrived_in_portal(driver, NUMBER_OF_COMMANDS_TO_CHECK, TIME_RANGE,
-                                                              'OP_RES_INSERT_DEVICE_CONF_FL3', now, True)
+                            CONFIGURATION_FILE['portal_response']['set_policy'], now, True)
         if not assistants_functions.policy_check(policy_content, policy_kind):
             assert False
     except:
@@ -221,8 +227,17 @@ def delete_all_recurring_policies(driver, site_number, water_system_number, prod
         assistants_functions.find_element_by_xpath_and_click_it(driver,
                                                                 "//a[@href='/en/sites/{}/water_systems/{}/products/{}/commands']".format(
                                                                     site_number, water_system_number, product_number))
-        assistants_functions.check_commands_arrived_in_portal(driver, NUMBER_OF_COMMANDS_TO_CHECK, TIME_RANGE,
-                                                              "OP_RES_INSERT_DEVICE_CONF_FL3", datetime.now())
+        try:
+            assistants_functions.check_commands_arrived_in_portal(driver, NUMBER_OF_COMMANDS_TO_CHECK, TIME_RANGE,
+                                                              CONFIGURATION_FILE['portal_response']['set_policy'], datetime.now())
+        except:
+            try:
+                assistants_functions.check_commands_arrived_in_portal(driver, NUMBER_OF_COMMANDS_TO_CHECK, TIME_RANGE,
+                                                                  CONFIGURATION_FILE['portal_response']['delete_policy'],
+                                                                  datetime.now())
+            except:
+                assert False
+
         connect_to_policy_page(driver, site_number, water_system_number)
 
         assistants_functions.find_element_by_xpath_and_click_it(driver,
@@ -248,15 +263,23 @@ def delete_all_exception_policies(driver, site_number, water_system_number, prod
         delete_symbol.click()
         alert = driver.switch_to.alert
         alert.accept()
-        sleep(3)
+        sleep(3 +int(CONFIGURATION_FILE['extra_sleep']))
         assistants_functions.find_element_by_xpath_and_click_it(driver,
                                                                 '//a[@data-toggle="tab" and text()="Policy Exceptions"]')
         connect_to_product(driver, site_number, water_system_number)
         assistants_functions.find_element_by_xpath_and_click_it(driver,
                                                                 "//a[@href='/en/sites/{}/water_systems/{}/products/{}/commands']".format(
                                                                     site_number, water_system_number, product_number))
-        assistants_functions.check_commands_arrived_in_portal(driver, NUMBER_OF_COMMANDS_TO_CHECK, TIME_RANGE,
-                                                              "OP_RES_INSERT_DEVICE_CONF_FL3", datetime.now())
+        try:
+            assistants_functions.check_commands_arrived_in_portal(driver, NUMBER_OF_COMMANDS_TO_CHECK, TIME_RANGE,
+                                                              CONFIGURATION_FILE['portal_response']['set_policy'], datetime.now())
+        except:
+            try:
+                assistants_functions.check_commands_arrived_in_portal(driver, NUMBER_OF_COMMANDS_TO_CHECK, TIME_RANGE,
+                                                                  CONFIGURATION_FILE['portal_response']['delete_policy'],
+                                                                  datetime.now())
+            except:
+                assert False
         connect_to_policy_page(driver, site_number, water_system_number)
 
         assistants_functions.find_element_by_xpath_and_click_it(driver,
@@ -272,7 +295,7 @@ def wait_policy_changed(driver, site_number, water_system_number, product_number
                                             "//a[@href='/en/sites/{}/water_systems/{}/products/{}/commands']".format(
                                               site_number, water_system_number, product_number))
     assistants_functions.check_commands_arrived_in_portal(driver, NUMBER_OF_COMMANDS_TO_CHECK-4,TIME_RANGE+1,
-                                                          "OP_EVT_VALVE_OPEN_FL3", datetime.now())
+                                                          CONFIGURATION_FILE['portal_response']['open_valve'], datetime.now())
 
 
 def check_close_content(driver, site_number, water_system_number, product_number, time_to_wait):
@@ -281,7 +304,7 @@ def check_close_content(driver, site_number, water_system_number, product_number
                                             "//a[@href='/en/sites/{}/water_systems/{}/products/{}/commands']".format(
                                                     site_number, water_system_number, product_number))
     close_content = assistants_functions.check_commands_arrived_in_portal(driver, NUMBER_OF_COMMANDS_TO_CHECK - 4, TIME_RANGE + 1,
-                                                          "OP_EVT_VALVE_CLOSE_FL3", datetime.now(),True)
+                                                          CONFIGURATION_FILE['portal_response']['close_valve'], datetime.now(),True)
     if '"OwnerId"=>3' in close_content and '"PlungerPos"=>1' in close_content:
         return
     raise Exception('no "PlungerPos"=>1, "OwnerId"=>3 shown')
@@ -289,9 +312,9 @@ def check_close_content(driver, site_number, water_system_number, product_number
 
 def start_inject_water(flow_level='major'):
     try:
-        file_path = "C:\\Users\\liorm\\Desktop\\Automation-Selenium\\injection"
+        file_path = INJECTION_PATH
         command1 = "cd " + file_path
-        command2 = "python inject_simulated_water.py"
+        command2 = f"python inject_simulated_water.py -f {CONFIGURATION_FILE['injection_file']}"
         inject_process = subprocess.Popen(f"{command1} && {command2}", shell=True)
         return inject_process
     except:

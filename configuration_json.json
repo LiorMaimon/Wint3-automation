@@ -1,38 +1,59 @@
 {
-	"portal": {
-		"url": "https://control.wint.ai/en",
-		"user_name": "liorm@wint.ai",
-		"password": "0547588533",
-		"site_number": "2263",
-		"water_system_number": "11826",
-		"product_id": "15847"
-	},
-	"default_policy_1": {
-		"valve_status": "open",
-		"auto_shutoff": "enabled",
-		"detection_mode": "fixed",
-		"algo_mode": "event based",
-		"warning_threshold": "50",
-		"close_threshold": "150"
-	},
-	"recurring_policy_1": {
-		"valve_status": "close",
-		"auto_shutoff": "enabled",
-		"detection_mode": "fixed",
-		"algo_mode": "event based",
-		"warning_threshold": "50",
-		"close_threshold": "150",
-		"start_time": "0",
-		"end_time": "2"
-	},
-	"exception_policy_1": {
-		"valve_status": "close",
-		"auto_shutoff": "enabled",
-		"detection_mode": "fixed",
-		"algo_mode": "event based",
-		"warning_threshold": "50",
-		"close_threshold": "150",
-		"start_time": "0",
-		"end_time": "2"
-	}
+    "portal": {
+        "url": "https://control.wint.ai/en",
+        "user_name": "liorm@wint.ai",
+        "password": "0547588533",
+        "site_number": "2232",
+        "water_system_number": "8925",
+        "product_id": "4164"
+    },
+    "default_policy_1": {
+        "valve_status": "open",
+        "auto_shutoff": "enabled",
+        "detection_mode": "fixed",
+        "algo_mode": "event based",
+        "warning_threshold": "50",
+        "close_threshold": "150"
+    },
+    "recurring_policy_1": {
+        "valve_status": "close",
+        "auto_shutoff": "enabled",
+        "detection_mode": "fixed",
+        "algo_mode": "event based",
+        "warning_threshold": "50",
+        "close_threshold": "150",
+        "start_time": "0",
+        "end_time": "2"
+    },
+    "exception_policy_1": {
+        "valve_status": "close",
+        "auto_shutoff": "enabled",
+        "detection_mode": "fixed",
+        "algo_mode": "event based",
+        "warning_threshold": "50",
+        "close_threshold": "150",
+        "start_time": "0",
+        "end_time": "2"
+    },
+    "translate": {
+        "close": "0",
+        "open": "1",
+        "enabled": "1",
+        "disabled": "0",
+        "fixed": "1",
+        "adaptive": "0",
+        "event based": "0",
+        "cumulative": "1",
+        "PULSE_RATIO": "0.049"
+    },
+    "injection_file": "20200524.bin",
+    "extra_sleep": "10",
+    "portal_response": {
+        "open_valve": "OP_EVT_VLV_OPNVLV",
+        "close_valve": "OP_EVT_VLV_CLSVLV",
+        "clear_all_leaks": "OP_RES_ALG_CLEAR_ALL_LEAKS",
+        "delete_valve_error": "OP_RES_CLEAN_VALVE_ERROR",
+        "set_policy": "OP_RES_POLICY_SET",
+        "delete_policy": "OP_RES_DELETE_POLICY"
+    }
 }

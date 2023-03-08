@@ -34,5 +34,26 @@
 		"close_threshold": "150",
 		"start_time": "0",
 		"end_time": "2"
+	},
+	"translate": {
+		"close": "0",
+		"open": "1",
+		"enabled": "1",
+		"disabled": "0",
+		"fixed": "1",
+		"adaptive": "0",
+		"event based": "0",
+		"cumulative": "1",
+		"PULSE_RATIO": "0.049"
+	},
+	"injection_file": "20200524.bin",
+	"extra_sleep": "10",
+	"portal_response": {
+		"open_valve": "OP_EVT_VLV_OPNVLV",
+		"close_valve": "OP_EVT_VLV_CLSVLV",
+		"clear_all_leaks": "OP_RES_ALG_CLEAR_ALL_LEAKS",
+		"delete_valve_error": "OP_RES_CLEAN_VALVE_ERROR",
+		"set_policy": "OP_RES_POLICY_SET",
+		"delete_policy": "OP_RES_DELETE_POLICY"
 	}
 }

@@ -1,17 +1,17 @@
-import importlib
 import json
-import multiprocessing
 from datetime import datetime, timedelta
 from time import sleep
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import sys
 
+CONFIG_PATH = "C:\\Users\\liorm\\Desktop\\Automation-Selenium\\configuration_json.json"
+with open(CONFIG_PATH) as f:
+    CONFIGURATION_FILE = json.load(f)
 
 def check_commands_arrived_in_portal(driver,number_of_commands_to_check,time_range,message_to_check,now_time, content=False):
-    sleep(3)
+    sleep(3 + int(CONFIGURATION_FILE['extra_sleep']))
     driver.refresh()
     tbodys = driver.find_elements(By.TAG_NAME, 'tbody')
     tbody_commands = tbodys[1]
@@ -228,26 +228,39 @@ def set_exception_policy_time(driver, start_time, end_time):
 
 
 def policy_check(policy_command_content, kind_of_policy):
-    with open("C:\\Users\\liorm\\Desktop\\Automation-Selenium\\configuration_json.json") as f:
+    with open(CONFIG_PATH) as f:
         configuration_date = json.load(f)
+    pulse_ratio = configuration_date['translate']['PULSE_RATIO']
     valve_status = configuration_date[f'{kind_of_policy}_1']['valve_status']
     if valve_status == 'close':
-        valve_status = "shut_off"
+        valve_status = configuration_date['translate']['close']
+    if valve_status == 'open':
+        valve_status = configuration_date['translate']['open']
     auto_shutoff = configuration_date[f'{kind_of_policy}_1']['auto_shutoff']
     if auto_shutoff == 'enabled':
-        auto_shutoff = 'true'
+        auto_shutoff = configuration_date['translate']['enabled']
     else:
-        auto_shutoff = 'false'
+        auto_shutoff = configuration_date['translate']['disabled']
     detection_mode = configuration_date[f'{kind_of_policy}_1']['detection_mode']
-    algo_mode = (configuration_date[f'{kind_of_policy}_1']['algo_mode']).replace(" ", "_")
+    if detection_mode == 'fixed':
+        detection_mode = configuration_date['translate']['fixed']
+    else:
+        detection_mode = configuration_date['translate']['adaptive']
+
+    algo_mode = configuration_date[f'{kind_of_policy}_1']['algo_mode']
+    if algo_mode == 'event based':
+        algo_mode = configuration_date['translate']['event based']
+    else:
+        algo_mode = configuration_date['translate']['cumulative']
     warning_threshold = configuration_date[f'{kind_of_policy}_1']['warning_threshold']
     close_threshold = configuration_date[f'{kind_of_policy}_1']['close_threshold']
-    valve_status_check = f"\"valveAction\"=>\"{valve_status}\"".lower() in policy_command_content.lower()
+
+    valve_status_check = f"\"valveAction\"=>{valve_status}".lower() in policy_command_content.lower()
     auto_shutoff_check = f"\"autoShutoff\"=>{auto_shutoff}".lower() in policy_command_content.lower()
-    detection_mode_check = f"\"detectionMode\"=>\"{detection_mode}\"".lower() in policy_command_content.lower()
-    algo_mode_check = f"\"fixedAlgoMode\"=>\"{algo_mode}\"".lower() in policy_command_content.lower()
-    warning_threshold_check = f"\"fixedWarningThreshold\"=>{warning_threshold}".lower() in policy_command_content.lower()
-    close_threshold_check = f"\"fixedCloseThreshold\"=>{close_threshold}".lower() in policy_command_content.lower()
+    detection_mode_check = f"=>{detection_mode}".lower() in policy_command_content.lower()
+    algo_mode_check = f"=>{algo_mode}".lower() in policy_command_content.lower()
+    warning_threshold_check = f"WarningThreshold\"=>{str(int(int(warning_threshold)/float(pulse_ratio)))}".lower() in policy_command_content.lower()
+    close_threshold_check = f"CloseThreshold\"=>{str(int(int(close_threshold)/float(pulse_ratio)))}".lower() in policy_command_content.lower()
     return valve_status_check and auto_shutoff_check and detection_mode_check and algo_mode_check \
         and warning_threshold_check and close_threshold_check
 

@@ -16321,3 +16321,399 @@ JavaScript error: https://control.wint.ai/en/sites/2263/water_systems/11826/prod
 JavaScript error: https://control.wint.ai/en/sites/2263/water_systems/11826/products/15847/commands, line 252: ReferenceError: $ is not defined
 1678112237601	Marionette	INFO	Stopped listening on port 53969
 Dynamically enable window occlusion 1
+1678175636501	geckodriver	INFO	Listening on 127.0.0.1:52501
+1678175639516	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "52502" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileIMTNG3"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678175640288	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678175640294	Marionette	INFO	Listening on port 52516
+Read port: 52516
+WebDriver BiDi listening on ws://127.0.0.1:52502
+1678175640467	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileIMTNG3\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:52502/devtools/browser/dae909f5-fd32-4349-892f-bf15dee038e7
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678175733745	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1678175759348	Marionette	INFO	Stopped listening on port 52516
+Dynamically enable window occlusion 1
+1678179849429	geckodriver	INFO	Listening on 127.0.0.1:53439
+1678179852463	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "53440" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile0ta27J"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678179853078	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678179853085	Marionette	INFO	Listening on port 53448
+Read port: 53448
+WebDriver BiDi listening on ws://127.0.0.1:53440
+1678179853265	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile0ta27J\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:53440/devtools/browser/f8640ea3-095a-44e8-916c-657eeb35f1fa
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678180189152	geckodriver	INFO	Listening on 127.0.0.1:53821
+1678180192206	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "53822" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofiletj0LaI"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678180192629	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678180192636	Marionette	INFO	Listening on port 53829
+Read port: 53829
+WebDriver BiDi listening on ws://127.0.0.1:53822
+1678180192780	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofiletj0LaI\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:53822/devtools/browser/cb7c57bc-f57f-44b0-888f-c62e180ab640
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678180814461	geckodriver	INFO	Listening on 127.0.0.1:53991
+1678180817488	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "53992" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileFQJzTL"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678180817928	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678180817934	Marionette	INFO	Listening on port 53999
+WebDriver BiDi listening on ws://127.0.0.1:53992
+Read port: 53999
+1678180818215	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileFQJzTL\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:53992/devtools/browser/e820b8a2-1f95-4847-9804-e9fe31969d54
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678257734768	Marionette	INFO	Stopped listening on port 53999
+Dynamically enable window occlusion 1
+1678269778007	geckodriver	INFO	Listening on 127.0.0.1:51773
+1678269781043	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51774" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilehRzhlk"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678269781671	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678269781679	Marionette	INFO	Listening on port 51783
+Read port: 51783
+WebDriver BiDi listening on ws://127.0.0.1:51774
+1678269781874	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilehRzhlk\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51774/devtools/browser/420b2d48-17eb-4a70-aea8-79db1a7bcaff
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678269805960	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678269879445	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1678269905255	Marionette	INFO	Stopped listening on port 51783
+Dynamically enable window occlusion 1
+1678269928040	geckodriver	INFO	Listening on 127.0.0.1:51961
+1678269931075	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51962" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileCcRQYI"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678269931773	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678269931783	Marionette	INFO	Listening on port 51969
+Read port: 51969
+WebDriver BiDi listening on ws://127.0.0.1:51962
+1678269932032	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileCcRQYI\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51962/devtools/browser/967e118d-c0a3-4025-8d1c-f074032cdae4
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678269957385	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678270031063	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1678270056983	Marionette	INFO	Stopped listening on port 51969
+Dynamically enable window occlusion 1
+1678273263836	geckodriver	INFO	Listening on 127.0.0.1:52585
+1678273266922	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "52586" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileE5QUT1"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678273267499	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678273267506	Marionette	INFO	Listening on port 52594
+Read port: 52594
+WebDriver BiDi listening on ws://127.0.0.1:52586
+1678273267674	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileE5QUT1\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:52586/devtools/browser/e5485cfe-3fc9-4eaa-8a50-766096837448
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678273366229	Marionette	INFO	Stopped listening on port 52594
+Dynamically enable window occlusion 1
+1678273478559	geckodriver	INFO	Listening on 127.0.0.1:52857
+1678273481594	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "52858" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileWgrfMt"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678273482047	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678273482055	Marionette	INFO	Listening on port 52868
+Read port: 52868
+WebDriver BiDi listening on ws://127.0.0.1:52858
+1678273482233	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileWgrfMt\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:52858/devtools/browser/33a87e95-aafc-4b4b-8284-696e8b9fa2b4
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678273749350	Marionette	INFO	Stopped listening on port 52868
+Dynamically enable window occlusion 1
+1678273882724	geckodriver	INFO	Listening on 127.0.0.1:53230
+1678273885764	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "53231" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilefnlVP5"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678273886357	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678273886363	Marionette	INFO	Listening on port 53239
+Read port: 53239
+WebDriver BiDi listening on ws://127.0.0.1:53231
+1678273886547	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilefnlVP5\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:53231/devtools/browser/bd0dc785-5a6a-4e47-9275-b4b5bf72b784
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678273908392	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678274049387	Marionette	INFO	Stopped listening on port 53239
+Dynamically enable window occlusion 1
+1678274069082	geckodriver	INFO	Listening on 127.0.0.1:53412
+1678274072123	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "53413" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileqNj3xW"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678274072730	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678274072740	Marionette	INFO	Listening on port 53420
+Read port: 53420
+WebDriver BiDi listening on ws://127.0.0.1:53413
+1678274072984	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileqNj3xW\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:53413/devtools/browser/69393954-3681-4b91-a624-36b0ac716863
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678274178845	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678274637812	geckodriver	INFO	Listening on 127.0.0.1:54043
+1678274640842	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "54044" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile3ngvFN"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678274641520	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678274641528	Marionette	INFO	Listening on port 54052
+Read port: 54052
+WebDriver BiDi listening on ws://127.0.0.1:54044
+1678274641744	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile3ngvFN\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:54044/devtools/browser/70955b92-4d05-4fcd-b5bf-34299e5eebd5
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678274776011	geckodriver	INFO	Listening on 127.0.0.1:54206
+1678274779017	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "54207" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileM4eRN6"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678274779736	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678274779747	Marionette	INFO	Listening on port 54214
+Read port: 54214
+WebDriver BiDi listening on ws://127.0.0.1:54207
+1678274780064	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileM4eRN6\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:54207/devtools/browser/f1cb329e-98a7-4772-8799-109f3bb6211e
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678274951735	geckodriver	INFO	Listening on 127.0.0.1:54363
+1678274954793	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "54364" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilew1d6Fz"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678274955483	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678274955491	Marionette	INFO	Listening on port 54372
+Read port: 54372
+WebDriver BiDi listening on ws://127.0.0.1:54364
+1678274955739	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilew1d6Fz\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:54364/devtools/browser/bf094922-64e8-49b4-98fd-9f50c8e08d07
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678275844744	geckodriver	INFO	Listening on 127.0.0.1:54778
+1678275847645	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "54779" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileNuHyan"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678275848946	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678275848959	Marionette	INFO	Listening on port 54786
+Read port: 54786
+WebDriver BiDi listening on ws://127.0.0.1:54779
+1678275849216	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileNuHyan\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:54779/devtools/browser/824af79c-e41a-4c48-8268-512974238485
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678276520069	Marionette	INFO	Stopped listening on port 54786
+Dynamically enable window occlusion 1
+1678276578446	geckodriver	INFO	Listening on 127.0.0.1:55171
+1678276581482	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "55172" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile965OZG"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678276582024	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678276582033	Marionette	INFO	Listening on port 55179
+Read port: 55179
+WebDriver BiDi listening on ws://127.0.0.1:55172
+1678276582341	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofile965OZG\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:55172/devtools/browser/8c4e80a4-09d6-4e2d-8898-57ee3e41f275
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678276610747	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678276846105	Marionette	INFO	Stopped listening on port 55179
+Dynamically enable window occlusion 1
+[Parent 338852, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:777
+1678277889751	geckodriver	INFO	Listening on 127.0.0.1:55450
+1678277892806	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "55451" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileYg1s09"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678277893340	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678277893347	Marionette	INFO	Listening on port 55458
+Read port: 55458
+WebDriver BiDi listening on ws://127.0.0.1:55451
+1678277893561	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileYg1s09\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:55451/devtools/browser/0f50fc00-6ad8-48f5-8f38-6c20f288e528
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678277987769	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678278228373	Marionette	INFO	Stopped listening on port 55458
+Dynamically enable window occlusion 1
+1678279003239	geckodriver	INFO	Listening on 127.0.0.1:56637
+1678279006270	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "56638" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileoPa9FQ"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678279006815	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678279006823	Marionette	INFO	Listening on port 56649
+Read port: 56649
+WebDriver BiDi listening on ws://127.0.0.1:56638
+1678279007008	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileoPa9FQ\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:56638/devtools/browser/2f38adb5-5048-4950-b967-0cd8f4946fb8
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678279032656	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678279110463	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+[Parent 341144, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:777
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678279230644	Marionette	INFO	Stopped listening on port 56649
+Dynamically enable window occlusion 1
+1678287753771	geckodriver	INFO	Listening on 127.0.0.1:50966
+1678287756790	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "50967" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileOIOdbU"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678287757432	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678287757442	Marionette	INFO	Listening on port 50979
+Read port: 50979
+WebDriver BiDi listening on ws://127.0.0.1:50967
+1678287757682	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileOIOdbU\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:50967/devtools/browser/cd469ee1-2bdb-479c-8e69-ef59213c1594
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1678287864157	geckodriver	INFO	Listening on 127.0.0.1:51197
+1678287867203	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51198" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilewvanQP"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678287868421	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678287868434	Marionette	INFO	Listening on port 51207
+Read port: 51207
+WebDriver BiDi listening on ws://127.0.0.1:51198
+1678287869045	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofilewvanQP\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51198/devtools/browser/ac9bfc81-9c95-4128-bee6-e42e6e2c101c
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678287906236	geckodriver	INFO	Listening on 127.0.0.1:51306
+1678287909227	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51307" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileCnnSLB"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1678287909959	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1678287909968	Marionette	INFO	Listening on port 51317
+Read port: 51317
+WebDriver BiDi listening on ws://127.0.0.1:51307
+1678287910224	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\liorm\\AppData\\Local\\Temp\\rust_mozprofileCnnSLB\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51307/devtools/browser/074760d5-a302-42f5-8405-8d0224ae1a83
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://control.wint.ai."
+1678288190705	Marionette	INFO	Stopped listening on port 51317
+Dynamically enable window occlusion 1

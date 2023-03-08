@@ -1,0 +1,59 @@
+{
+	"portal": {
+		"url": "https://control.wint.ai/en",
+		"user_name": "liorm@wint.ai",
+		"password": "0547588533",
+		"site_number": "2263",
+		"water_system_number": "11826",
+		"product_id": "15847"
+	},
+	"default_policy_1": {
+		"valve_status": "open",
+		"auto_shutoff": "enabled",
+		"detection_mode": "fixed",
+		"algo_mode": "event based",
+		"warning_threshold": "50",
+		"close_threshold": "150"
+	},
+	"recurring_policy_1": {
+		"valve_status": "close",
+		"auto_shutoff": "enabled",
+		"detection_mode": "fixed",
+		"algo_mode": "event based",
+		"warning_threshold": "50",
+		"close_threshold": "150",
+		"start_time": "0",
+		"end_time": "2"
+	},
+	"exception_policy_1": {
+		"valve_status": "close",
+		"auto_shutoff": "enabled",
+		"detection_mode": "fixed",
+		"algo_mode": "event based",
+		"warning_threshold": "50",
+		"close_threshold": "150",
+		"start_time": "0",
+		"end_time": "2"
+	},
+	"translate": {
+		"close": "\"shut_off\"",
+		"open": "\"open\"",
+		"enabled": "true",
+		"disabled": "false",
+		"fixed": "\"fixed\"",
+		"adaptive": "\"adaptive\"",
+		"event based": "\"event_based\"",
+		"cumulative": "\"cumulative\"",
+		"PULSE_RATIO": "1"
+	},
+	"injection_file": "major.bin",
+	"extra_sleep": "0",
+	"portal_response": {
+		"open_valve": "OP_EVT_VALVE_OPEN_FL3",
+		"close_valve": "OP_EVT_VALVE_CLOSE_FL3",
+		"clear_all_leaks": "OP_RES_ALG_CLEAR_ALL_LEAKS",
+		"delete_valve_error": "OP_RES_CLEAN_VALVE_ERROR",
+		"set_policy": "OP_RES_INSERT_DEVICE_CONF_FL3"
+	}
+		
+}

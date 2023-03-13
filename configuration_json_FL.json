@@ -1,6 +1,6 @@
 {
 	"portal": {
-		"url": "https://control.wint.ai/en",
+		"url": "https://control-staging.wint.ai/en",
 		"user_name": "liorm@wint.ai",
 		"password": "0547588533",
 		"site_number": "2232",
@@ -14,6 +14,14 @@
 		"algo_mode": "event based",
 		"warning_threshold": "50",
 		"close_threshold": "150"
+	},
+	"default_policy_2": {
+		"valve_status": "open",
+		"auto_shutoff": "enabled",
+		"detection_mode": "fixed",
+		"algo_mode": "event based",
+		"warning_threshold": "50",
+		"close_threshold": "850"
 	},
 	"recurring_policy_1": {
 		"valve_status": "close",
@@ -54,6 +62,7 @@
 		"clear_all_leaks": "OP_RES_ALG_CLEAR_ALL_LEAKS",
 		"delete_valve_error": "OP_RES_CLEAN_VALVE_ERROR",
 		"set_policy": "OP_RES_POLICY_SET",
-		"delete_policy": "OP_RES_DELETE_POLICY"
+		"delete_policy": "OP_RES_DELETE_POLICY",
+		"keep_alive": "OP_EVT_SMG_KEEPALV"
 	}
 }

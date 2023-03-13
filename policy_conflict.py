@@ -1,4 +1,6 @@
+import logging
 from time import sleep
+
 import pytest
 from selenium import webdriver
 import json
@@ -62,22 +64,24 @@ def test_open_valve_from_system_control():
         pytest.fail("No event was received")
 
 
-def test_set_recurring_policy_close_valve():
+def test_set_new_recurring_policy():
     try:
         tests.connect_to_product(driver, site_number, water_system_number)
-        tests.set_policy(driver, site_number, water_system_number, product_id,
-                     valve_status, auto_shutoff, detection_mode, algo_mode, warning_threshold, close_threshold,
-                         'recurring_policy',start_time, end_time)
+        tests.set_policy(driver,site_number,water_system_number,product_id, valve_status, auto_shutoff, detection_mode,
+                         algo_mode, warning_threshold, close_threshold, 'recurring_policy', start_time, str(int(end_time)+5))
     except:
         pytest.fail("fail to set recurring policy")
 
 
-def test_wait_and_and_check_open_valve():
+def test_another_same_time_policy():
     try:
         tests.connect_to_product(driver, site_number, water_system_number)
-        tests.wait_policy_changed(driver, site_number,water_system_number,product_id, (int(end_time)-int(start_time)))
+        tests.set_policy(driver, site_number, water_system_number, product_id, valve_status, auto_shutoff, detection_mode,
+                     algo_mode, warning_threshold, close_threshold, 'recurring_policy', start_time, str(int(end_time)+5))
+    except ValueError as e:
+        print('overlapping policies')
     except:
-        pytest.fail("fail to get open valve")
+        pytest.fail("no overlapping policies, unexpected")
 
 
 def test_delete_all_policies():
@@ -86,7 +90,6 @@ def test_delete_all_policies():
         tests.delete_all_recurring_policies(driver, site_number, water_system_number, product_id)
     except:
         pytest.fail("fail to delete policies")
-
 
 def test_close_connection():
     sleep(3)

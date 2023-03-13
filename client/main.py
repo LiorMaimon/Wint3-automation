@@ -67,6 +67,8 @@ def run_command():
         server_assistant.run_test_commandline('recurring_policy', reports, prod_type)
     if 'exception_policy' in selected:
         server_assistant.run_test_commandline('exception_policy', reports, prod_type)
+    if 'policy_conflict' in selected:
+        server_assistant.run_test_commandline('policy_conflict', reports, prod_type)
     combined_reports = "".join(reports)
     return combined_reports
 

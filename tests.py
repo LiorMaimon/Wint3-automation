@@ -34,7 +34,7 @@ def connect_to_product(driver, site_number_json, water_system_number_json):
     sleep(2)
     site_number = site_number_json
     water_system_number = water_system_number_json
-    water_system_url = "https://control.wint.ai/en/sites/{}/water_systems/{}".format(site_number,
+    water_system_url = "https://control-staging.wint.ai/en/sites/{}/water_systems/{}".format(site_number,
                                                                                              water_system_number)
     driver.get(water_system_url)
     edit_button = WebDriverWait(driver, 10).until(
@@ -46,7 +46,7 @@ def connect_to_policy_page(driver, site_number_json, water_system_number_json):
     sleep(2)
     site_number = site_number_json
     water_system_number = water_system_number_json
-    water_system_url = "https://control.wint.ai/en/sites/{}/water_systems/{}/policies".format(site_number,
+    water_system_url = "https://control-staging.wint.ai/en/sites/{}/water_systems/{}/policies".format(site_number,
                                                                                              water_system_number)
     driver.get(water_system_url)
     policy_title = WebDriverWait(driver, 10).until(
@@ -173,9 +173,13 @@ def set_policy(driver, site_number, water_system_number, product_number, valve_s
         try:
             element = driver.find_element(By.XPATH, "//*[contains(text(), '" + text + "')]")
             if text in element.text:
-                raise Exception("The text '" + text + "' is present on the page.")
+                raise ValueError("The text '" + text + "' is present on the page.")
+        except ValueError as e:
+            raise e
         except:
-            print("")
+            pass
+
+
     if policy_kind == 'exception_policy':
         create_policy_button = WebDriverWait(driver, 10).until(
             EC.visibility_of_element_located((By.ID, 'create_button')))
@@ -185,8 +189,10 @@ def set_policy(driver, site_number, water_system_number, product_number, valve_s
             element = driver.find_element(By.XPATH, "//*[contains(text(), '" + text + "')]")
             if text in element.text:
                 raise Exception("The text '" + text + "' is present on the page.")
+        except ValueError as e:
+            raise e
         except:
-            print("")
+            pass
     now = datetime.now()
     sleep(3)
     connect_to_product(driver, site_number, water_system_number)

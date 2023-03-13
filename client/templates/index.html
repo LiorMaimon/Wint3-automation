@@ -99,6 +99,16 @@
               <br> 3. close valve commands is sent with "PlungerPos"=>1, "OwnerId"=>2</td>
               <td id="exception_policy_result"></td>
             </tr>
+            <tr>
+              <td>
+                <input type="checkbox" name="policy_conflict"> recurring policies conflict </input>
+              </td>
+              <td>test for set overlapping recurring policies (recurring_policy_1) -
+              <br> 1. set recurring policy to open valve. <br> 2. wait till policy get into effect.
+              <br> 3. set another recurring policy with the same time <br>
+               4. see an error message at the top of the page on the left, conflict policy message</td>
+              <td id="policy_conflict_result"></td>
+            </tr>
           </tbody>
         </table>
         <button id="submit-button" type="submit" class="btn btn-primary">Submit</button>

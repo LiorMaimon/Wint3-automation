@@ -1,11 +1,11 @@
 {
     "portal": {
-        "url": "https://control.wint.ai/en",
+        "url": "https://control-staging.wint.ai/en",
         "user_name": "liorm@wint.ai",
         "password": "0547588533",
-        "site_number": "2232",
-        "water_system_number": "8925",
-        "product_id": "4164"
+        "site_number": "2263",
+        "water_system_number": "8464",
+        "product_id": "10693"
     },
     "default_policy_1": {
         "valve_status": "open",
@@ -36,24 +36,23 @@
         "end_time": "2"
     },
     "translate": {
-        "close": "0",
-        "open": "1",
-        "enabled": "1",
-        "disabled": "0",
-        "fixed": "1",
-        "adaptive": "0",
-        "event based": "0",
-        "cumulative": "1",
-        "PULSE_RATIO": "0.049"
+        "close": "\"shut_off\"",
+        "open": "\"open\"",
+        "enabled": "true",
+        "disabled": "false",
+        "fixed": "\"fixed\"",
+        "adaptive": "\"adaptive\"",
+        "event based": "\"event_based\"",
+        "cumulative": "\"cumulative\"",
+        "PULSE_RATIO": "1"
     },
-    "injection_file": "20200524.bin",
-    "extra_sleep": "10",
+    "injection_file": "major.bin",
+    "extra_sleep": "0",
     "portal_response": {
-        "open_valve": "OP_EVT_VLV_OPNVLV",
-        "close_valve": "OP_EVT_VLV_CLSVLV",
+        "open_valve": "OP_EVT_VALVE_OPEN_FL3",
+        "close_valve": "OP_EVT_VALVE_CLOSE_FL3",
         "clear_all_leaks": "OP_RES_ALG_CLEAR_ALL_LEAKS",
         "delete_valve_error": "OP_RES_CLEAN_VALVE_ERROR",
-        "set_policy": "OP_RES_POLICY_SET",
-        "delete_policy": "OP_RES_DELETE_POLICY"
+        "set_policy": "OP_RES_INSERT_DEVICE_CONF_FL3"
     }
 }

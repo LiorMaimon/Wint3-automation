@@ -1,8 +1,6 @@
-
 import json
 import subprocess
 from time import sleep
-
 from flask import Flask, render_template, request, send_file
 
 def run_test_commandline(test_name, reports, prod_type):
